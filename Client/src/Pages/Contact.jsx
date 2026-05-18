@@ -38,10 +38,7 @@ export default function Contact() {
           </h1>
 
           {/* Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col gap-8"
-          >
+          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
 
             {/* Row 1 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -54,15 +51,7 @@ export default function Contact() {
                   <span className="text-red-500 ml-1">*</span>
                 </label>
 
-                <input
-                  type="text"
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  required
-                  placeholder="John"
-                  className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-emerald-400 transition-colors"
-                />
+                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required placeholder="John" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-emerald-400 transition-colors" />
 
               </div>
 
@@ -74,15 +63,7 @@ export default function Contact() {
                   <span className="text-red-500 ml-1">*</span>
                 </label>
 
-                <input
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  required
-                  placeholder="Doe"
-                  className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-emerald-400 transition-colors"
-                />
+                <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required placeholder="Doe" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-emerald-400 transition-colors" />
 
               </div>
 
@@ -99,15 +80,7 @@ export default function Contact() {
                   <span className="text-red-500 ml-1">*</span>
                 </label>
 
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="john@example.com"
-                  className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-emerald-400 transition-colors"
-                />
+                <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-emerald-400 transition-colors" />
 
               </div>
 
@@ -118,14 +91,7 @@ export default function Contact() {
                   Mobile Number
                 </label>
 
-                <input
-                  type="text"
-                  name="mobile"
-                  value={formData.mobile}
-                  onChange={handleChange}
-                  placeholder="+91 12345 67890"
-                  className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-emerald-400 transition-colors"
-                />
+                <input type="text" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="+91 12345 67890" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-emerald-400 transition-colors" />
 
               </div>
 
@@ -138,24 +104,14 @@ export default function Contact() {
                 Your Message
               </label>
 
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows="6"
-                placeholder="Write your message here..."
-                className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-4 text-base outline-none focus:border-emerald-400 transition-colors resize-y"
-              />
+              <textarea name="message" value={formData.message} onChange={handleChange} rows="6" placeholder="Write your message here..." className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-4 text-base outline-none focus:border-emerald-400 transition-colors resize-y" />
 
             </div>
 
             {/* Submit */}
             <div>
 
-              <button
-                type="submit"
-                className="bg-emerald-400 text-black font-semibold px-8 py-3 rounded-2xl hover:bg-emerald-300 hover:scale-105 transition-all duration-300 cursor-pointer"
-              >
+              <button type="submit" className="bg-emerald-400 text-black font-semibold px-8 py-3 rounded-2xl hover:bg-emerald-300 hover:scale-105 transition-all duration-300 cursor-pointer">
                 Submit
               </button>
 
