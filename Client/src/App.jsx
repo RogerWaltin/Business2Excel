@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import Contact from "./Pages/Contact.jsx"
 import Home from "./Pages/Home.jsx"
 import About from "./Pages/About.jsx"
+import Footer from "./Components/Footer.jsx"
 
  export default function App() {
 
@@ -14,6 +15,7 @@ import About from "./Pages/About.jsx"
         <Route path="/About" element = {<About />} />
         <Route path="/Contact" element = {<Contact />} />
       </Routes>
+      <Footer />
     </div>
   )
 }
