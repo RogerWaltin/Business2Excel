@@ -7,6 +7,7 @@ export default function Contact() {
     lastName: "",
     email: "",
     mobile: "",
+    howDidYouHear: "",
     message: "",
   })
 
@@ -94,6 +95,27 @@ export default function Contact() {
                 <input type="text" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="+91 12345 67890" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-emerald-400 transition-colors" />
 
               </div>
+
+            </div>
+
+            {/* How did you hear about us */}
+            <div className="flex flex-col gap-3">
+
+              <label className="text-lg text-zinc-200">
+                How did you hear about us?
+              </label>
+
+              <select name="howDidYouHear" value={formData.howDidYouHear} onChange={handleChange} className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-emerald-400 transition-colors text-zinc-200">
+
+                <option value="">Select an option</option>
+                <option value="google">Google</option>
+                <option value="youtube">YouTube</option>
+                <option value="friend">Friend</option>
+                <option value="social-media">Social Media</option>
+                <option value="advertisement">Advertisement</option>
+                <option value="other">Other</option>
+
+              </select>
 
             </div>
 
