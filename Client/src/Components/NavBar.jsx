@@ -26,8 +26,8 @@ export default function Navbar() {
           <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
 
             {/* Logo */}
-            <Link to="/" className="text-2xl font-bold tracking-tight text-white hover:text-emerald-400 transition-colors duration-300">
-              Business2Excel
+            <Link to="/" className="text-2xl font-bold tracking-tight group text-white hover:text-emerald-400 transition-colors duration-300">
+              Business<span className="text-emerald-400 group-hover:text-white transition-colors duration-300">2</span>Excel
             </Link>
 
             {/* Desktop Nav */}
