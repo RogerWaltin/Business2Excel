@@ -5,8 +5,6 @@ Official website for Business2Excel, a Kingdom-focused business transformation e
 ## Tech Stack
 
 * React
-* Node.js
-* Express.js
 * Tailwind CSS
 
 ## Features
