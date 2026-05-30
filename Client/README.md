@@ -1,18 +1,48 @@
-# React + Vite
+# Business2Excel Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Official website for Business2Excel, a Kingdom-focused business transformation ecosystem that combines consulting, certification, leadership development, training, and community building.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* React
+* Node.js
+* Express.js
+* Tailwind CSS
 
-## React Compiler
+## Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+* Kingdom Certification
+* Business Consulting
+* Leadership Development
+* Training & Events
+* Community Platform
+* Resources Hub
+* Impact Stories
 
-Note: This will impact Vite dev & build performances.
+## Getting Started
 
-## Expanding the ESLint configuration
+### Install Dependencies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+```
+
+### Run Development Server
+
+```bash
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+## Project Status
+
+🚧 Currently under development.
+
+## Client
+
+Business2Excel
