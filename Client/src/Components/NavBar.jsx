@@ -22,7 +22,7 @@ export default function Navbar() {
       <div className="relative">
 
         {/* Navbar */}
-        <nav className="bg-zinc-950 border-b border-zinc-800">
+        <nav className="bg-zinc-900/75 backdrop-blur-md border-b border-zinc-800">
 
           <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
 
