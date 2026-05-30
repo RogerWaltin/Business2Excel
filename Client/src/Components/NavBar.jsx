@@ -99,7 +99,7 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden bg-zinc-950 border-b border-zinc-800 overflow-hidden transition-all duration-500 ${menuOpen ? "max-h-[3000px]" : "max-h-0"}`}>
+        <div className={`lg:hidden bg-zinc-950 border-b border-zinc-800 overflow-hidden transition-all duration-500 ${menuOpen ? "max-h-750" : "max-h-0"}`}>
 
           <div className="px-6 py-4 flex flex-col gap-2">
 
