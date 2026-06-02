@@ -239,7 +239,7 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden bg-zinc-950 border-b border-zinc-800 overflow-hidden transition-[max-height] duration-300 ease-in-out ${menuOpen ? "max-h-[2000px]" : "max-h-0"}`}
+          className={`lg:hidden bg-zinc-950 border-b border-zinc-800 overflow-hidden transition-[max-height] duration-300 ease-in-out ${menuOpen ? "max-h-500" : "max-h-0"}`}
         >
 
           <div className="px-6 py-4 flex flex-col gap-2">
@@ -290,7 +290,7 @@ export default function Navbar() {
                 {section.dropdown && (
 
                   <div
-                    className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${mobileDropdowns[section.label] ? "max-h-[1000px]" : "max-h-0"}`}
+                    className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${mobileDropdowns[section.label] ? "max-h-250" : "max-h-0"}`}
                   >
 
                     <div className="pb-3">
