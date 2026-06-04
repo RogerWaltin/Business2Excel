@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { HashLink } from "react-router-hash-link"
-
+//BUG when clicking a page in navbar, it goes to the bottom of the page not top.
+// BUG when clicking on a page that you are currently on, it doesnt go back to top of page
 const navSections = [
 
   {
@@ -163,20 +164,110 @@ export default function Navbar() {
                   {section.dropdown && (
 
                     <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                      <div className="w-225 bg-zinc-900/95 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 shadow-2xl">
-                        <div className="grid grid-cols-3 gap-3">
-                          {section.dropdown.map((item) => (
-                            <HashLink
-                              key={item.label}
-                              smooth
-                              to={item.to}
-                              className="flex items-center rounded-2xl px-5 py-4 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                            >
-                              {item.label}
-                            </HashLink>
-                          ))}
-                        </div>
+
+                      <div className={`${section.label === "Services" ? "w-187.5" : "w-225"} bg-zinc-900/95 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 shadow-2xl`}>
+
+                        {section.label === "Services" ? (
+
+                          <div className="grid grid-cols-2 gap-12">
+
+                            {/* Consulting */}
+
+                            <div>
+
+                              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                                Consulting
+                              </p>
+
+                              <div className="mt-3 h-px bg-zinc-800" />
+
+                              <div className="mt-5 flex flex-col">
+
+                                <HashLink
+                                  smooth
+                                  to="/services#business-transformation"
+                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                >
+                                  Business Transformation
+                                </HashLink>
+
+                                <HashLink
+                                  smooth
+                                  to="/services#kingdom-leadership"
+                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                >
+                                  Kingdom Leadership
+                                </HashLink>
+
+                                <HashLink
+                                  smooth
+                                  to="/services#stewardship-and-wealth"
+                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                >
+                                  Stewardship & Wealth
+                                </HashLink>
+
+                                <HashLink
+                                  smooth
+                                  to="/services#business-as-mission"
+                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                >
+                                  Business as Mission
+                                </HashLink>
+
+                              </div>
+
+                            </div>
+
+                            {/* Certification */}
+
+                            <div>
+
+                              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                                Certification
+                              </p>
+
+                              <div className="mt-3 h-px bg-zinc-800" />
+
+                              <div className="mt-5 flex flex-col">
+
+                                <HashLink
+                                  smooth
+                                  to="/services#kingdom-certification"
+                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                >
+                                  Kingdom Certification
+                                </HashLink>
+
+                              </div>
+
+                            </div>
+
+                          </div>
+
+                        ) : (
+
+                          <div className="grid grid-cols-3 gap-3">
+
+                            {section.dropdown.map((item) => (
+
+                              <HashLink
+                                key={item.label}
+                                smooth
+                                to={item.to}
+                                className="flex items-center rounded-2xl px-5 py-4 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                              >
+                                {item.label}
+                              </HashLink>
+
+                            ))}
+
+                          </div>
+
+                        )}
+
                       </div>
+
                     </div>
 
                   )}

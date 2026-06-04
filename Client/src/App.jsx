@@ -5,6 +5,7 @@ import Home from "./Pages/Home.jsx"
 import About from "./Pages/About.jsx"
 import Footer from "./Components/Footer.jsx"
 import Services from "./Pages/Services.jsx"
+import Resources from "./Pages/Resources.jsx"
 
 export default function App() {
 
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Services" element={<Services />} />
+        <Route path="/Resources" element={<Resources />}/>
       </Routes>
       <Footer />
     </div>
