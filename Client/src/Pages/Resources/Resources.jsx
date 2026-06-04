@@ -1,6 +1,6 @@
-import FeaturedInsights from "../Components/Resources/FeaturedInsights";
-import FeaturedResources from "../Components/Resources/FeaturedResources";
-import Hero from "../Components/Resources/Hero";
+import FeaturedInsights from "./Components/FeaturedInsights";
+import FeaturedResources from "./Components/FeaturedResources";
+import Hero from "./Components/Hero";
 
 export default function Resources() {
   return (
