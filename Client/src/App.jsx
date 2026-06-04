@@ -16,14 +16,6 @@ export default function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Services" element={<Services />} />
-
-        <Route path="/about/leadership" element={<About />} />
-        <Route path="/about/founder-story" element={<About />} />
-        <Route path="/about/vision-mission" element={<About />} />
-        <Route path="/about/kingdom-worldview" element={<About />} />
-        <Route path="/about/why-business2excel-exists" element={<About />} />
-        <Route path="/about/testimonials-case-studies" element={<About />} />
-        <Route path="/about/faq" element={<About />} />
       </Routes>
       <Footer />
     </div>
