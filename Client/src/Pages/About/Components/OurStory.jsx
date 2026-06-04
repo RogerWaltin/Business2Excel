@@ -1,5 +1,5 @@
 export default function OurStory() {
-   
+  //  TODO make props for all headings and subheadings that can be change from About.jsx itself
     return (
         
         <section id="our-story" className="py-28 border-b border-zinc-900">

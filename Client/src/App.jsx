@@ -1,25 +1,14 @@
-import Navbar from "./Components/NavBar.jsx"
-import { Route, Routes } from "react-router-dom"
-import Contact from "./Pages/Contact.jsx"
-import Home from "./Pages/Home.jsx"
-import About from "./Pages/About.jsx"
-import Footer from "./Components/Footer.jsx"
-import Services from "./Pages/Services.jsx"
-import Resources from "./Pages/Resources.jsx"
+import React from 'react'
+import AppRouter from './Components/AppRouter'
+import Navbar from './Components/NavBar'
+import Footer from './Components/Footer'
 
 export default function App() {
-
-  return (
-    <div className="min-h-screen bg-zinc-950 text-white">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Services" element={<Services />} />
-        <Route path="/Resources" element={<Resources />}/>
-      </Routes>
-      <Footer />
-    </div>
-  )
+    return (
+        <div className="min-h-screen bg-zinc-950 text-white">
+            <Navbar />
+            <AppRouter />
+            <Footer />
+        </div>
+    )
 }
