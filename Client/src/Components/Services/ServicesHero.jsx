@@ -1,4 +1,10 @@
 export default function ServicesHero() {
+    const scrollToServices = () => {
+        document.getElementById("kingdom-certification")?.scrollIntoView({
+            behavior: "smooth",
+        });
+    }
+
     return (
         <section className="relative overflow-hidden bg-linear-to-b from-zinc-950 via-black to-black">
 
@@ -35,7 +41,7 @@ export default function ServicesHero() {
                                 Book Consultation
                             </button> {/*TODO this button goes to consultation page*/}
 
-                            <button className="rounded-xl border border-zinc-700 px-6 py-4 font-semibold text-white transition-all duration-300 hover:border-emerald-500 hover:text-emerald-400 cursor-pointer">
+                            <button onClick={scrollToServices} className="rounded-xl border border-zinc-700 px-6 py-4 font-semibold text-white transition-all duration-300 hover:border-emerald-500 hover:text-emerald-400 cursor-pointer">
                                 Explore Certification
                             </button> {/*TODO this button scrolls down to kingdom certification part*/}
 
