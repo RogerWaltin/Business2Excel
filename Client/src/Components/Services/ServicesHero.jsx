@@ -43,7 +43,7 @@ export default function ServicesHero() {
 
                             <button onClick={scrollToServices} className="rounded-xl border border-zinc-700 px-6 py-4 font-semibold text-white transition-all duration-300 hover:border-emerald-500 hover:text-emerald-400 cursor-pointer">
                                 Explore Certification
-                            </button> {/*TODO this button scrolls down to kingdom certification part*/}
+                            </button>
 
                         </div>
 
