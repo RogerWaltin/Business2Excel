@@ -1,4 +1,4 @@
-export default function ResourcesHero() {
+export default function Hero() {
   return (
     <section className="bg-black py-32">
 

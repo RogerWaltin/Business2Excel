@@ -1,11 +1,14 @@
-import ResourcesFeatured from "../Components/Resources/ResourcesFeatured";
-import ResourcesHero from "../Components/Resources/ResourcesHero";
+import FeaturedInsights from "../Components/Resources/FeaturedInsights";
+import FeaturedResources from "../Components/Resources/FeaturedResources";
+import Hero from "../Components/Resources/Hero";
 
 export default function Resources() {
   return (
     <div>
-        <ResourcesHero />
-        <ResourcesFeatured />
+        <Hero />
+        <FeaturedInsights />
+        <FeaturedResources />
+        
     </div>
   )
 }

@@ -1,4 +1,4 @@
-export default function ResourcesFeatured() {
+export default function FeaturedInsights() {
     return (
         <section className="bg-zinc-950 py-32">
 
