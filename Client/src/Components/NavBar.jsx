@@ -34,7 +34,7 @@ const navSections = [
       { label: "AI + Ethics Reports", to: "/resources/ai-ethics-reports" },
       { label: "Biblical Business Insights", to: "/resources/biblical-business-insights" },
       { label: "Leadership Devotionals", to: "/resources/leadership-devotionals" },
-      { label: "Downloadable Frameworks", to: "/resources/downloadable-frameworks" },
+      { label: "Downloadable Frameworks", to: "/resources/frameworks" },
       { label: "Case Studies", to: "/resources/case-studies" },
       { label: "Media Archive", to: "/resources/media-archive" },
     ],
