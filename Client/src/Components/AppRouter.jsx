@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home.jsx"
 import About from "../Pages/About/About.jsx"
 import Services from "../Pages/Services/Services.jsx"
 import Resources from "../Pages/Resources/Resources.jsx"
+import Community from "../Pages/Community/Community.jsx"
 import Articles from "../Pages/Resources/Components/Library stuff/Articles.jsx"
 import Whitepapers from "../Pages/Resources/Components/Library stuff/Whitepapers.jsx"
 import AiEthicsReports from "../Pages/Resources/Components/Library stuff/AiEthicsReports.jsx"
@@ -25,6 +26,7 @@ export default function AppRouter() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Resources" element={<Resources />} />
+        <Route path="/Community" element={<Community />} />
 
         <Route path="/resources/articles" element={<Articles />} />
         <Route path="/resources/whitepapers" element={<Whitepapers />} />
