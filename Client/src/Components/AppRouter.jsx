@@ -4,6 +4,7 @@ import Home from "../Pages/Home/Home.jsx"
 import About from "../Pages/About/About.jsx"
 import Services from "../Pages/Services/Services.jsx"
 import Resources from "../Pages/Resources/Resources.jsx"
+import Community from "../Pages/Community/Community.jsx"
 
 export default function AppRouter() {
 
@@ -15,6 +16,7 @@ export default function AppRouter() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Resources" element={<Resources />} />
+        <Route path="/Community" element={<Community />} />
       </Routes>
     </div>
   )
