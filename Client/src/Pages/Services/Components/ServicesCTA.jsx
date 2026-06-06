@@ -31,7 +31,7 @@ export default function ServicesCTA() {
           <button className="cursor-pointer rounded-xl bg-emerald-500 px-8 py-4 font-semibold text-black transition-all duration-300 hover:bg-emerald-400">
             Book Consultation
           </button>
-
+          
           <button className="rounded-xl border border-zinc-700 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-emerald-500 hover:text-emerald-400 cursor-pointer">
             Apply For Certification
           </button> 
@@ -39,9 +39,10 @@ export default function ServicesCTA() {
           {/*TODO figure out what to do with these two button*/}
 
         </div>
-
+    
       </div>
 
+      
     </section>
   )
 }

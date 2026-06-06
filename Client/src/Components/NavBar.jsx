@@ -35,8 +35,7 @@ const navSections = [
       { label: "Biblical Business Insights", to: "/resources/biblical-business-insights" },
       { label: "Leadership Devotionals", to: "/resources/leadership-devotionals" },
       { label: "Downloadable Frameworks", to: "/resources/frameworks" },
-      { label: "Case Studies", to: "/resources/case-studies" },
-      { label: "Media Archive", to: "/resources/media-archive" },
+      { label: "Case Studies", to: "/resources/case-studies" }
     ],
   },
 
@@ -245,26 +244,111 @@ export default function Navbar() {
 
                           </div>
 
-                        ) : (
+                        ) : section.label === "Resources" ?
+                          (<div className="grid grid-cols-2 gap-12">
 
-                          <div className="grid grid-cols-3 gap-3">
+                            <div>
 
-                            {section.dropdown.map((item) => (
+                              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                                Featured
+                              </p>
 
-                              <HashLink
-                                key={item.label}
-                                smooth
-                                to={item.to}
-                                className="flex items-center rounded-2xl px-5 py-4 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                              >
-                                {item.label}
-                              </HashLink>
+                              <div className="mt-3 h-px bg-zinc-800" />
 
-                            ))}
+                              <div className="mt-5 flex flex-col">
+
+                                <HashLink
+                                  smooth
+                                  to="/resources#featured-insight"
+                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                >
+                                  Featured Insight
+                                </HashLink>
+
+                                <HashLink
+                                  smooth
+                                  to="/resources#featured-resources"
+                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                >
+                                  Featured Resources
+                                </HashLink>
+
+                              </div>
+
+                            </div>
+
+                            <div>
+
+                              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                                Resource Library
+                              </p>
+
+                              <div className="mt-3 h-px bg-zinc-800" />
+
+                              <div className="mt-5 grid grid-cols-2 gap-y-1">
+
+                                <HashLink smooth to="/resources/articles" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
+                                  Articles
+                                </HashLink>
+
+                                <HashLink smooth to="/resources/videos" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
+                                  Videos
+                                </HashLink>
+
+                                <HashLink smooth to="/resources/whitepapers" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
+                                  Whitepapers
+                                </HashLink>
+
+                                <HashLink smooth to="/resources/podcasts" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
+                                  Podcasts
+                                </HashLink>
+
+                                <HashLink smooth to="/resources/ai-ethics-reports" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
+                                  AI + Ethics Reports
+                                </HashLink>
+
+                                <HashLink smooth to="/resources/frameworks" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
+                                  Frameworks
+                                </HashLink>
+
+                                <HashLink smooth to="/resources/biblical-business-insights" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
+                                  Biblical Business Insights
+                                </HashLink>
+
+                                <HashLink smooth to="/resources/case-studies" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
+                                  Case Studies
+                                </HashLink>
+
+                                <HashLink smooth to="/resources/leadership-devotionals" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
+                                  Leadership Devotionals
+                                </HashLink>
+
+                              </div>
+
+                            </div>
 
                           </div>
+                          )
+                          : (
 
-                        )}
+                            <div className="grid grid-cols-3 gap-3">
+
+                              {section.dropdown.map((item) => (
+
+                                <HashLink
+                                  key={item.label}
+                                  smooth
+                                  to={item.to}
+                                  className="flex items-center rounded-2xl px-5 py-4 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                >
+                                  {item.label}
+                                </HashLink>
+
+                              ))}
+
+                            </div>
+
+                          )}
 
                       </div>
 

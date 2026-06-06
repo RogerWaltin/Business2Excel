@@ -1,6 +1,6 @@
 export default function FeaturedResources() {
   return (
-    <section className="bg-black py-32">
+    <section id="featured-resources" className="bg-black py-32">
 
       <div className="mx-auto max-w-7xl px-6">
 
