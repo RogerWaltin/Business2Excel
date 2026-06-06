@@ -137,19 +137,6 @@ export default function Library() {
                 </p>
               </Link>
 
-              <Link
-                to="/resources/media-archive"
-                className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-              >
-                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-emerald-400">
-                  Media Archive →
-                </h3>
-
-                <p className="mt-1 text-sm text-zinc-400">
-                  Historical resources, recordings, and featured content.
-                </p>
-              </Link>
-
             </div>
 
           </div>

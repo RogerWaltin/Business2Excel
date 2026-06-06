@@ -1,6 +1,6 @@
 export default function FeaturedInsights() {
     return (
-        <section className="bg-zinc-950 py-32">
+        <section id="featured-insight" className="bg-zinc-950 py-32">
 
             <div className="mx-auto max-w-7xl px-6">
 
