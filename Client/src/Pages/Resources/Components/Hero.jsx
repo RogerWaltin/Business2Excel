@@ -1,12 +1,8 @@
 export default function Hero() {
   return (
-    <section className="bg-black py-32">
+    <section className="bg-black py-1">
 
       <div className="mx-auto max-w-7xl px-6">
-
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
-          Resources
-        </p>
 
         <h1 className="mt-4 max-w-5xl text-5xl font-bold leading-tight tracking-tight text-white md:text-7xl">
           Insights, Frameworks, And Tools For Leaders Navigating A Changing World
