@@ -6,7 +6,6 @@ import Leadership from "./Components/Leadership"
 import OurStory from "./Components/OurStory"
 import Testimonials from "./Components/Testimonials"
 import VisionMission from "./Components/VisionMission"
-import WhyB2E from "./Components/WhyB2E"
 
 export default function About() {
 
@@ -18,7 +17,6 @@ export default function About() {
       <FounderStory />
       <VisionMission />
       <KingdomWorldview />
-      <WhyB2E />
       <Testimonials />
       <FAQ />
     </div>

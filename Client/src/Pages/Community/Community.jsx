@@ -36,7 +36,7 @@ export default function Community() {
 
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_35%)]" />
 
-        <div className="max-w-7xl mx-auto px-6 py-32 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 py-17 relative z-10">
 
           <div className="max-w-5xl">
 
@@ -75,30 +75,22 @@ export default function Community() {
 
       {/* COMMUNITY & IMPACT */}
       <section
-        id="community"
+        id="community-impact"
         className="scroll-mt-24 py-28 border-b border-zinc-900"
       >
-
-        
-
-        {/* Hidden Anchor Targets */}
-        <div id="" className="scroll-mt-24" />
-        <div id="impact" className="scroll-mt-24" />
-        <div id="mission-projects" className="scroll-mt-24" />
-        <div id="transformation-stories" className="scroll-mt-24" />
 
         <div className="max-w-7xl mx-auto px-6">
 
           <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm tracking-widest uppercase text-emerald-400">
-                Community & Impact
-              </span>
+            Community & Impact
+          </span>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start mt-12">
 
             {/* Left Side */}
             <div>
 
-              
+
 
               <h2 className="text-4xl md:text-5xl font-bold mt-6">
                 Connection That Leads to Transformation
@@ -147,7 +139,21 @@ export default function Community() {
 
           </div>
 
-          {/* Feature Cards */}
+        </div>
+
+      </section>
+
+      {/* Feature Cards */}
+      <section
+        id="network-projects-stories"
+        className="scroll-mt-24 py-10 border-b border-zinc-900"
+      >
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm tracking-widest uppercase text-emerald-400">
+            Networks, Projects & Stories
+          </span>
 
           <div className="grid lg:grid-cols-3 gap-8 mt-24">
 
@@ -217,7 +223,6 @@ export default function Community() {
           </div>
 
         </div>
-
       </section>
 
       {/* LEADERSHIP DEVELOPMENT */}
@@ -225,12 +230,6 @@ export default function Community() {
         id="training-events"
         className="scroll-mt-24 py-28 border-b border-zinc-900"
       >
-
-        {/* Hidden Anchor Targets */}
-        <div id="workshops" className="scroll-mt-24" />
-        <div id="conferences" className="scroll-mt-24" />
-        <div id="webinars" className="scroll-mt-24" />
-        <div id="mentorship" className="scroll-mt-24" />
 
         <div className="max-w-7xl mx-auto px-6">
 
@@ -255,7 +254,7 @@ export default function Community() {
           <div className="grid lg:grid-cols-2 gap-8 mt-20">
 
             {/* Workshops */}
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300">
+            <div id="workshops" className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300">
 
               <span className="text-emerald-400 uppercase tracking-wider text-sm">
                 Workshops
@@ -300,7 +299,7 @@ export default function Community() {
             </div>
 
             {/* Conferences */}
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300">
+            <div id="conferences" className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300">
 
               <span className="text-emerald-400 uppercase tracking-wider text-sm">
                 Conferences
@@ -323,7 +322,7 @@ export default function Community() {
             </div>
 
             {/* Webinars */}
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300">
+            <div id="webinars" className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300">
 
               <span className="text-emerald-400 uppercase tracking-wider text-sm">
                 Webinars
@@ -368,7 +367,7 @@ export default function Community() {
             </div>
 
             {/* Mentorship */}
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300">
+            <div id="mentorship" className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300">
 
               <span className="text-emerald-400 uppercase tracking-wider text-sm">
                 Mentorship
@@ -479,110 +478,6 @@ export default function Community() {
                 </div>
 
               ))}
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-      {/* MEMBERSHIP PATHWAY */}
-      <section className="py-28 border-b border-zinc-900">
-
-        <div className="max-w-7xl mx-auto px-6">
-
-          <div className="max-w-4xl mx-auto text-center">
-
-            <span className="text-emerald-400 uppercase tracking-widest text-sm">
-              Membership Pathway
-            </span>
-
-            <h2 className="text-4xl md:text-5xl font-bold mt-6">
-              Grow Deeper Within the Ecosystem
-            </h2>
-
-            <p className="text-zinc-400 text-lg leading-relaxed mt-8">
-              Whether you're exploring Kingdom business principles or leading
-              large-scale transformation initiatives, there is a pathway
-              designed to support your growth and impact.
-            </p>
-
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8 mt-20">
-
-            {/* Explorer */}
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
-
-              <span className="text-emerald-400 uppercase tracking-wider text-sm">
-                Explorer
-              </span>
-
-              <h3 className="text-3xl font-bold mt-4">
-                Start the Journey
-              </h3>
-
-              <p className="text-zinc-400 leading-relaxed mt-6">
-                Gain access to community resources, selected events,
-                introductory networking opportunities, and foundational
-                Kingdom business content.
-              </p>
-
-              <button className="mt-8 border border-zinc-700 hover:border-emerald-500 px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-                Learn More
-              </button>
-
-            </div>
-
-            {/* Certified Member */}
-            <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-3xl p-10 relative">
-
-              <div className="absolute top-4 right-4 bg-emerald-500 text-black text-xs font-bold px-3 py-1 rounded-full">
-                Recommended
-              </div>
-
-              <span className="text-emerald-400 uppercase tracking-wider text-sm">
-                Certified Member
-              </span>
-
-              <h3 className="text-3xl font-bold mt-4">
-                Demonstrate Alignment
-              </h3>
-
-              <p className="text-zinc-400 leading-relaxed mt-6">
-                Join a growing network of Kingdom-aligned leaders committed to
-                ethical leadership, stewardship, accountability, and business
-                excellence.
-              </p>
-
-              <button className="mt-8 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-                Become Certified
-              </button>
-
-            </div>
-
-            {/* Strategic Partner */}
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
-
-              <span className="text-emerald-400 uppercase tracking-wider text-sm">
-                Strategic Partner
-              </span>
-
-              <h3 className="text-3xl font-bold mt-4">
-                Expand Your Influence
-              </h3>
-
-              <p className="text-zinc-400 leading-relaxed mt-6">
-                Access advanced consulting opportunities, ecosystem visibility,
-                strategic collaborations, leadership initiatives, and
-                organizational partnerships.
-              </p>
-
-              <button className="mt-8 border border-zinc-700 hover:border-emerald-500 px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-                Become a Partner
-              </button>
 
             </div>
 

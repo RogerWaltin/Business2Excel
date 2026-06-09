@@ -41,17 +41,14 @@ const navSections = [
     label: "Community",
     to: "/community",
     dropdown: [
-      { label: "Community", to: "/community#community" },
-      { label: "Kingdom Business Network", to: "/community#kingdom-business-network" },
+      { label: "Community & Impact", to: "/community#community-impact" },
+      { label: "Networks, Projects & Stories", to: "/community#network-projects-stories" },
       { label: "Training & Events", to: "/community#training-events" },
       { label: "Workshops", to: "/community#workshops" },
       { label: "Conferences", to: "/community#conferences" },
       { label: "Webinars", to: "/community#webinars" },
       { label: "Mentorship", to: "/community#mentorship" },
       { label: "Member Directory", to: "/community#member-directory" },
-      { label: "Impact", to: "/community#impact" },
-      { label: "Mission Projects", to: "/community#mission-projects" },
-      { label: "Transformation Stories", to: "/community#transformation-stories" },
     ],
   },
 
@@ -64,7 +61,6 @@ const navSections = [
       { label: "Founder Story", to: "/about#founder-story" },
       { label: "Vision & Mission", to: "/about#vision-mission" },
       { label: "Kingdom Worldview", to: "/about#kingdom-worldview" },
-      { label: "Why Business2Excel Exists", to: "/about#why-business2excel-exists" },
       { label: "Case Studies", to: "/about#testimonials-case-studies" },
       { label: "FAQ", to: "/about#faq" },
     ],
@@ -326,27 +322,137 @@ export default function Navbar() {
                             </div>
 
                           </div>
-                          )
-                          : (
+                          ) : section.label === "Community" ?
+                            (
+                              <div className="grid grid-cols-2 gap-12">
 
-                            <div className="grid grid-cols-3 gap-3">
+                                <div>
 
-                              {section.dropdown.map((item) => (
+                                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                                    Community
+                                  </p>
 
-                                <HashLink
-                                  key={item.label}
-                                  smooth
-                                  to={item.to}
-                                  className="flex items-center rounded-2xl px-5 py-4 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                                >
-                                  {item.label}
-                                </HashLink>
+                                  <div className="mt-3 h-px bg-zinc-800" />
 
-                              ))}
+                                  <div className="mt-5 flex flex-col">
 
-                            </div>
+                                    {[
+                                      { label: "Community & Impact", to: "/community#community-impact" },
+                                      { label: "Networks, Projects & Stories", to: "/community#network-projects-stories" },
+                                      { label: "Training & Events", to: "/community#training-events" },
+                                      { label: "Member Directory", to: "/community#member-directory" },
+                                    ].map(({ label, to }) => (
+                                      <HashLink
+                                        key={to}
+                                        smooth
+                                        to={to}
+                                        className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                      >
+                                        {label}
+                                      </HashLink>
+                                    ))}
 
-                          )}
+                                  </div>
+
+                                </div>
+
+                                <div>
+
+                                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                                    Training & Events
+                                  </p>
+
+                                  <div className="mt-3 h-px bg-zinc-800" />
+
+                                  <div className="mt-5 flex flex-col">
+
+                                    {[
+                                      { label: "Workshops", to: "/community#workshops" },
+                                      { label: "Conferences", to: "/community#conferences" },
+                                      { label: "Webinars", to: "/community#webinars" },
+                                      { label: "Mentorship", to: "/community#mentorship" },
+                                    ].map(({ label, to }) => (
+                                      <HashLink
+                                        key={to}
+                                        smooth
+                                        to={to}
+                                        className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                      >
+                                        {label}
+                                      </HashLink>
+                                    ))}
+
+                                  </div>
+
+                                </div>
+
+                              </div>
+                            )
+                            :
+                            (
+                              <div className="grid grid-cols-2 gap-12">
+
+                                <div>
+
+                                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                                    About Us
+                                  </p>
+
+                                  <div className="mt-3 h-px bg-zinc-800" />
+
+                                  <div className="mt-5 flex flex-col">
+
+                                    {[
+                                      { label: "Our Story", to: "/about#our-story" },
+                                      { label: "Leadership", to: "/about#leadership" },
+                                      { label: "Founder Story", to: "/about#founder-story" },
+                                      { label: "FAQ", to: "/about#faq" },
+                                    ].map(({ label, to }) => (
+                                      <HashLink
+                                        key={to}
+                                        smooth
+                                        to={to}
+                                        className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                      >
+                                        {label}
+                                      </HashLink>
+                                    ))}
+
+                                  </div>
+
+                                </div>
+
+                                <div>
+
+                                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                                    Identity
+                                  </p>
+
+                                  <div className="mt-3 h-px bg-zinc-800" />
+
+                                  <div className="mt-5 flex flex-col">
+
+                                    {[
+                                      { label: "Vision & Mission", to: "/about#vision-mission" },
+                                      { label: "Kingdom Worldview", to: "/about#kingdom-worldview" },
+                                      { label: "Case Studies", to: "/about#testimonials-case-studies" },
+                                    ].map(({ label, to }) => (
+                                      <HashLink
+                                        key={to}
+                                        smooth
+                                        to={to}
+                                        className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                      >
+                                        {label}
+                                      </HashLink>
+                                    ))}
+
+                                  </div>
+
+                                </div>
+
+                              </div>
+                            )}
 
                       </div>
 

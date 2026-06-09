@@ -10,18 +10,14 @@ export default function ServicesHero() {
 
             <div className="absolute pointer-events-none inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_35%)]" />
 
-            <div className="mx-auto max-w-7xl px-6 py-28">
+            <div className="mx-auto max-w-7xl px-6">
 
                 <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
 
                     {/* Left Content */}
                     <div>
 
-                        <span className="inline-block rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm font-medium tracking-widest text-emerald-400">
-                            SERVICES
-                        </span>
-
-                        <h1 className="mt-8 text-5xl font-bold leading-tight tracking-tight text-white lg:text-7xl">
+                        <h1 className="mt-4 text-5xl font-bold leading-tight tracking-tight text-white lg:text-7xl">
                             Transforming Organizations
                             <span className="block text-emerald-400">
                                 For Lasting Kingdom Impact
