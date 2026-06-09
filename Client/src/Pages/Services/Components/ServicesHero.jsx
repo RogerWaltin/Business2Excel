@@ -8,8 +8,7 @@ export default function ServicesHero() {
     return (
         <section className="relative overflow-hidden bg-linear-to-b from-zinc-950 via-black to-black">
 
-            {/* Background Glow */}
-            <div className="absolute top-20 right-20 h-96 w-96 rounded-full bg-emerald-500/10 blur-3xl" />
+            <div className="absolute pointer-events-none inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_35%)]" />
 
             <div className="mx-auto max-w-7xl px-6">
 
