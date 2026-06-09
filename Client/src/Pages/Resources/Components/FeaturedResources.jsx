@@ -38,7 +38,7 @@ export default function FeaturedResources() {
               lens.
             </p>
 
-            <button className="mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
+            <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
               Download Resource
             </button>
 
@@ -62,7 +62,7 @@ export default function FeaturedResources() {
               Kingdom-centered stewardship.
             </p>
 
-            <button className="mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
+            <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
               Read Report
             </button>
 
@@ -86,7 +86,7 @@ export default function FeaturedResources() {
               Kingdom impact.
             </p>
 
-            <button className="mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
+            <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
               Download Blueprint
             </button>
 
@@ -110,7 +110,7 @@ export default function FeaturedResources() {
               increasingly complex marketplace.
             </p>
 
-            <button className="mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
+            <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
               Explore Guide
             </button>
 

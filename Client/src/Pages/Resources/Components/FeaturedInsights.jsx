@@ -43,11 +43,11 @@ export default function FeaturedInsights() {
 
                             <div className="mt-10 flex flex-wrap gap-4">
 
-                                <button className="rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-black transition-all duration-300 hover:bg-emerald-400">
+                                <button className="cursor-pointer rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-black transition-all duration-300 hover:bg-emerald-400">
                                     Read Full Report
                                 </button>
 
-                                <button className="rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
+                                <button className="cursor-pointer rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
                                     Download PDF
                                 </button>
 
