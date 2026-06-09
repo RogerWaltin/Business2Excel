@@ -1,6 +1,14 @@
 export default function Hero() {
+  const scrollToResources = () => {
+    document.getElementById("library")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
   return (
-    <section className="bg-black py-32">
+    <section className="relative overflow-hidden bg-black py-32">
+
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_45%)]" />
 
       <div className="mx-auto max-w-7xl px-6">
 
@@ -27,11 +35,11 @@ export default function Hero() {
 
         <div className="mt-12 flex flex-wrap gap-4">
 
-          <button className="rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-black transition-all duration-300 hover:bg-emerald-400">
+          <button className="cursor-pointer rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-black transition-all duration-300 hover:bg-emerald-400" onClick={scrollToResources}>
             Explore Resources
           </button>
 
-          <button className="rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
+          <button className="cursor-pointer rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
             Download Frameworks
           </button>
 

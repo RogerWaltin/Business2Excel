@@ -1,7 +1,5 @@
 import { useState } from "react"
 import { HashLink } from "react-router-hash-link"
-//BUG when clicking a page in navbar, it goes to the bottom of the page not top.
-// BUG when clicking on a page that you are currently on, it doesnt go back to top of page
 const navSections = [
 
   {
