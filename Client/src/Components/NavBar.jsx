@@ -1,71 +1,173 @@
 import { useState } from "react"
 import { HashLink } from "react-router-hash-link"
-const navSections = [
+//BUG fix hamburger menu of mobile (delay in closing is one problem)
+//BUG fix dropdown menus of mobile
 
+const navSections = [
   {
     label: "Home",
     to: "/"
   },
-
   {
-    label: "Services",
-    to: "/services",
-    dropdown: [
-      { label: "Consulting", to: "/services#consulting" },
-      { label: "Kingdom Certification", to: "/services#kingdom-certification" },
-      { label: "Business Transformation", to: "/services#business-transformation" },
-      { label: "Kingdom Leadership", to: "/services#kingdom-leadership" },
-      { label: "Stewardship & Wealth", to: "/services#stewardship-wealth" },
-      { label: "Business as Mission", to: "/services#business-as-mission" },
-      { label: "Strategic Consultation", to: "/services#strategic-consultation" },
+    label: "Services", to: "/services",
+    dropdownGroups: [
+      {
+        title: "Consulting",
+        links: [
+          {
+            label: "Business Transformation", to: "/services#business-transformation",
+          },
+
+          {
+            label: "Kingdom Leadership", to: "/services#kingdom-leadership",
+          },
+
+          {
+            label: "Stewardship & Wealth", to: "/services#stewardship-and-wealth",
+          },
+
+          {
+            label: "Business as Mission", to: "/services#business-as-mission",
+          }
+        ]
+      },
+      {
+        title: "Certification",
+        links: [
+          {
+            label: "Kingdom Certification", to: "/services#kingdom-certification",
+          }
+        ]
+      }
     ],
   },
-
   {
-    label: "Resources",
-    to: "/resources",
-    dropdown: [
-      { label: "Articles", to: "/resources/articles" },
-      { label: "Videos", to: "/resources/videos" },
-      { label: "Podcasts", to: "/resources/podcasts" },
-      { label: "Whitepapers", to: "/resources/whitepapers" },
-      { label: "AI + Ethics Reports", to: "/resources/ai-ethics-reports" },
-      { label: "Biblical Business Insights", to: "/resources/biblical-business-insights" },
-      { label: "Leadership Devotionals", to: "/resources/leadership-devotionals" },
-      { label: "Downloadable Frameworks", to: "/resources/frameworks" },
-      { label: "Case Studies", to: "/resources/case-studies" }
+    label: "Resources", to: "/resources",
+    dropdownGroups: [
+      {
+        title: "Featured",
+        links: [
+          {
+            label: "Featured Insight", to: "/resources#featured-insight",
+          },
+          {
+            label: "Featured Resources", to: "/resources#featured-resources",
+          },
+        ],
+      },
+      {
+        title: "Resource Library",
+        links: [
+          {
+            label: "Articles", to: "/resources/articles",
+          },
+          {
+            label: "Whitepapers", to: "/resources/whitepapers",
+          },
+          {
+            label: "Videos", to: "/resources/videos",
+          },
+          {
+            label: "Podcasts", to: "/resources/podcasts",
+          },
+          {
+            label: "AI + Ethics Reports", to: "/resources/ai-ethics-reports",
+          },
+          {
+            label: "Biblical Business Insights", to: "/resources/biblical-business-insights",
+          },
+          {
+            label: "Leadership Devotionals", to: "/resources/leadership-devotionals",
+          },
+          {
+            label: "Downloadable Frameworks", to: "/resources/frameworks",
+          },
+          {
+            label: "Case Studies", to: "/resources/case-studies",
+          },
+        ],
+      },
+    ]
+  },
+  {
+    label: "Community", to: "/community",
+    dropdownGroups: [
+      {
+        title: "Community",
+        links: [
+          {
+            label: "Community & Impact", to: "/community#community-impact",
+          },
+          {
+            label: "Networks, Projects & Stories", to: "/community#network-projects-stories",
+          },
+          {
+            label: "Training & Events", to: "/community#training-events",
+          },
+          {
+            label: "Member Directory", to: "/community#member-directory",
+          },
+        ],
+      },
+      {
+        title: "Training & Events",
+        links: [
+          {
+            label: "Workshops", to: "/community#workshops",
+          },
+          {
+            label: "Conferences", to: "/community#conferences",
+          },
+          {
+            label: "Webinars", to: "/community#webinars",
+          },
+          {
+            label: "Mentorship", to: "/community#mentorship",
+          },
+        ],
+      },
+
     ],
   },
-
   {
-    label: "Community",
-    to: "/community",
-    dropdown: [
-      { label: "Community & Impact", to: "/community#community-impact" },
-      { label: "Networks, Projects & Stories", to: "/community#network-projects-stories" },
-      { label: "Training & Events", to: "/community#training-events" },
-      { label: "Workshops", to: "/community#workshops" },
-      { label: "Conferences", to: "/community#conferences" },
-      { label: "Webinars", to: "/community#webinars" },
-      { label: "Mentorship", to: "/community#mentorship" },
-      { label: "Member Directory", to: "/community#member-directory" },
+    label: "About", to: "/about",
+
+    dropdownGroups: [
+      {
+        title: "About Us",
+
+        links: [
+          {
+            label: "Our Story", to: "/about#our-story",
+          },
+          {
+            label: "Leadership", to: "/about#leadership",
+          },
+          {
+            label: "Founder Story", to: "/about#founder-story",
+          },
+          {
+            label: "FAQ", to: "/about#faq",
+          },
+        ],
+      },
+      {
+        title: "Identity",
+
+        links: [
+          {
+            label: "Vision & Mission", to: "/about#vision-mission",
+          },
+          {
+            label: "Kingdom Worldview", to: "/about#kingdom-worldview",
+          },
+          {
+            label: "Case Studies", to: "/about#testimonials-case-studies",
+          },
+        ],
+      },
     ],
   },
-
-  {
-    label: "About",
-    to: "/about",
-    dropdown: [
-      { label: "Our Story", to: "/about#our-story" },
-      { label: "Leadership", to: "/about#leadership" },
-      { label: "Founder Story", to: "/about#founder-story" },
-      { label: "Vision & Mission", to: "/about#vision-mission" },
-      { label: "Kingdom Worldview", to: "/about#kingdom-worldview" },
-      { label: "Case Studies", to: "/about#testimonials-case-studies" },
-      { label: "FAQ", to: "/about#faq" },
-    ],
-  },
-
   {
     label: "Contact",
     to: "/contact"
@@ -131,7 +233,7 @@ export default function Navbar() {
                       {section.label}
                     </span>
 
-                    {section.dropdown && (
+                    {section.dropdownGroups && (
 
                       <svg
                         className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
@@ -154,305 +256,45 @@ export default function Navbar() {
                   </HashLink>
 
                   {/* Desktop Dropdown */}
-                  {section.dropdown && (
+                  {section.dropdownGroups && (
 
                     <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
 
-                      <div className={`${section.label === "Services" ? "w-187.5" : "w-225"} bg-zinc-900/95 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 shadow-2xl`}>
+                      <div className={`w-225 bg-zinc-900/95 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 shadow-2xl grid grid-cols-2 gap-12 `}>
 
-                        {section.label === "Services" ? (
+                        {section.dropdownGroups.map((group) => (
 
-                          <div className="grid grid-cols-2 gap-12">
+                          <div key={group.title}>
 
-                            {/* Consulting */}
+                            {/* Group Title */}
+                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                              {group.title}
+                            </p>
 
-                            <div>
+                            {/* Divider */}
+                            <div className="mt-3 h-px bg-zinc-800" />
 
-                              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
-                                Consulting
-                              </p>
+                            {/* Links */}
+                            <div className="mt-5 flex flex-col">
 
-                              <div className="mt-3 h-px bg-zinc-800" />
-
-                              <div className="mt-5 flex flex-col">
-
-                                <HashLink
-                                  smooth
-                                  to="/services#business-transformation"
-                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                                >
-                                  Business Transformation
-                                </HashLink>
+                              {group.links.map((link) => (
 
                                 <HashLink
+                                  key={link.label}
                                   smooth
-                                  to="/services#kingdom-leadership"
-                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
+                                  to={link.to}
+                                  className="rounded-xl px-4 py-3 text-zinc-300 transition-all duration-300 hover:bg-zinc-800 hover:text-emerald-400"
                                 >
-                                  Kingdom Leadership
+                                  {link.label}
                                 </HashLink>
 
-                                <HashLink
-                                  smooth
-                                  to="/services#stewardship-and-wealth"
-                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                                >
-                                  Stewardship & Wealth
-                                </HashLink>
-
-                                <HashLink
-                                  smooth
-                                  to="/services#business-as-mission"
-                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                                >
-                                  Business as Mission
-                                </HashLink>
-
-                              </div>
-
-                            </div>
-
-                            {/* Certification */}
-
-                            <div>
-
-                              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
-                                Certification
-                              </p>
-
-                              <div className="mt-3 h-px bg-zinc-800" />
-
-                              <div className="mt-5 flex flex-col">
-
-                                <HashLink
-                                  smooth
-                                  to="/services#kingdom-certification"
-                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                                >
-                                  Kingdom Certification
-                                </HashLink>
-
-                              </div>
+                              ))}
 
                             </div>
 
                           </div>
 
-                        ) : section.label === "Resources" ?
-                          (<div className="grid grid-cols-2 gap-12">
-
-                            <div>
-
-                              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
-                                Featured
-                              </p>
-
-                              <div className="mt-3 h-px bg-zinc-800" />
-
-                              <div className="mt-5 flex flex-col">
-
-                                <HashLink
-                                  smooth
-                                  to="/resources#featured-insight"
-                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                                >
-                                  Featured Insight
-                                </HashLink>
-
-                                <HashLink
-                                  smooth
-                                  to="/resources#featured-resources"
-                                  className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                                >
-                                  Featured Resources
-                                </HashLink>
-
-                              </div>
-
-                            </div>
-
-                            <div>
-
-                              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
-                                Resource Library
-                              </p>
-
-                              <div className="mt-3 h-px bg-zinc-800" />
-
-                              <div className="mt-5 grid grid-cols-2 gap-y-1">
-
-                                <HashLink smooth to="/resources/articles" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
-                                  Articles
-                                </HashLink>
-
-                                <HashLink smooth to="/resources/videos" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
-                                  Videos
-                                </HashLink>
-
-                                <HashLink smooth to="/resources/whitepapers" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
-                                  Whitepapers
-                                </HashLink>
-
-                                <HashLink smooth to="/resources/podcasts" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
-                                  Podcasts
-                                </HashLink>
-
-                                <HashLink smooth to="/resources/ai-ethics-reports" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
-                                  AI + Ethics Reports
-                                </HashLink>
-
-                                <HashLink smooth to="/resources/frameworks" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
-                                  Frameworks
-                                </HashLink>
-
-                                <HashLink smooth to="/resources/biblical-business-insights" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
-                                  Biblical Business Insights
-                                </HashLink>
-
-                                <HashLink smooth to="/resources/case-studies" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
-                                  Case Studies
-                                </HashLink>
-
-                                <HashLink smooth to="/resources/leadership-devotionals" className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300">
-                                  Leadership Devotionals
-                                </HashLink>
-
-                              </div>
-
-                            </div>
-
-                          </div>
-                          ) : section.label === "Community" ?
-                            (
-                              <div className="grid grid-cols-2 gap-12">
-
-                                <div>
-
-                                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
-                                    Community
-                                  </p>
-
-                                  <div className="mt-3 h-px bg-zinc-800" />
-
-                                  <div className="mt-5 flex flex-col">
-
-                                    {[
-                                      { label: "Community & Impact", to: "/community#community-impact" },
-                                      { label: "Networks, Projects & Stories", to: "/community#network-projects-stories" },
-                                      { label: "Training & Events", to: "/community#training-events" },
-                                      { label: "Member Directory", to: "/community#member-directory" },
-                                    ].map(({ label, to }) => (
-                                      <HashLink
-                                        key={to}
-                                        smooth
-                                        to={to}
-                                        className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                                      >
-                                        {label}
-                                      </HashLink>
-                                    ))}
-
-                                  </div>
-
-                                </div>
-
-                                <div>
-
-                                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
-                                    Training & Events
-                                  </p>
-
-                                  <div className="mt-3 h-px bg-zinc-800" />
-
-                                  <div className="mt-5 flex flex-col">
-
-                                    {[
-                                      { label: "Workshops", to: "/community#workshops" },
-                                      { label: "Conferences", to: "/community#conferences" },
-                                      { label: "Webinars", to: "/community#webinars" },
-                                      { label: "Mentorship", to: "/community#mentorship" },
-                                    ].map(({ label, to }) => (
-                                      <HashLink
-                                        key={to}
-                                        smooth
-                                        to={to}
-                                        className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                                      >
-                                        {label}
-                                      </HashLink>
-                                    ))}
-
-                                  </div>
-
-                                </div>
-
-                              </div>
-                            )
-                            :
-                            (
-                              <div className="grid grid-cols-2 gap-12">
-
-                                <div>
-
-                                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
-                                    About Us
-                                  </p>
-
-                                  <div className="mt-3 h-px bg-zinc-800" />
-
-                                  <div className="mt-5 flex flex-col">
-
-                                    {[
-                                      { label: "Our Story", to: "/about#our-story" },
-                                      { label: "Leadership", to: "/about#leadership" },
-                                      { label: "Founder Story", to: "/about#founder-story" },
-                                      { label: "FAQ", to: "/about#faq" },
-                                    ].map(({ label, to }) => (
-                                      <HashLink
-                                        key={to}
-                                        smooth
-                                        to={to}
-                                        className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                                      >
-                                        {label}
-                                      </HashLink>
-                                    ))}
-
-                                  </div>
-
-                                </div>
-
-                                <div>
-
-                                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
-                                    Identity
-                                  </p>
-
-                                  <div className="mt-3 h-px bg-zinc-800" />
-
-                                  <div className="mt-5 flex flex-col">
-
-                                    {[
-                                      { label: "Vision & Mission", to: "/about#vision-mission" },
-                                      { label: "Kingdom Worldview", to: "/about#kingdom-worldview" },
-                                      { label: "Case Studies", to: "/about#testimonials-case-studies" },
-                                    ].map(({ label, to }) => (
-                                      <HashLink
-                                        key={to}
-                                        smooth
-                                        to={to}
-                                        className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                                      >
-                                        {label}
-                                      </HashLink>
-                                    ))}
-
-                                  </div>
-
-                                </div>
-
-                              </div>
-                            )}
+                        ))}
 
                       </div>
 
