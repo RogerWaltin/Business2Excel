@@ -1,8 +1,8 @@
 import AppRouter from './Components/AppRouter'
-import Navbar from './Components/NavBar'
 import Footer from './Components/Footer'
 import ScrollToTop from './Components/ScrollToTop'
 import ResetSCroll from './Components/ResetScroll'
+import Navbar from './Components/NavBar'
 
 export default function App() {
     return (

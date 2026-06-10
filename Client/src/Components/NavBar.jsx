@@ -1,7 +1,5 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { HashLink } from "react-router-hash-link"
-//BUG fix hamburger menu of mobile (delay in closing is one problem)
-//BUG fix dropdown menus of mobile
 
 const navSections = [
   {
@@ -179,10 +177,42 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [openSection, setOpenSection] = useState(null)
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [menuOpen])
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)")
+
+    function handleResize(e) {
+      if (e.matches) {
+        setMenuOpen(false)
+        setOpenSection(null)
+      }
+    }
+
+    mediaQuery.addEventListener("change", handleResize)
+    return () => mediaQuery.removeEventListener("change", handleResize)
+  }, [])
+
+  function handleMenu() {
+    setMenuOpen((prev) => !prev)
+    if (menuOpen) {
+      setOpenSection(null)
+    }
+  }
+
   function toggleSection(label) {
-    setOpenSection((prev) =>
-      prev === label ? null : label
-    )
+    setOpenSection((prev) => (prev === label ? null : label))
   }
 
   return (
@@ -199,67 +229,31 @@ export default function Navbar() {
             <HashLink
               smooth
               to="/"
+              onClick={handleMenu}
               className="mr-auto text-2xl font-bold tracking-tight group text-white hover:text-emerald-400 transition-colors duration-300"
             >
-
               Business
               <span className="text-emerald-400 group-hover:text-white transition-colors duration-300">
                 2
               </span>
               Excel
-
             </HashLink>
 
             {/* Hamburger */}
             <button
-              onClick={() => {
-                setMenuOpen((prev) => !prev)
-
-                if (menuOpen) {
-                  setOpenSection(null)
-                }
-              }}
+              onClick={handleMenu}
               className="lg:hidden ml-auto text-white hover:text-emerald-400 transition-colors duration-300 cursor-pointer"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
-
               {menuOpen ? (
-
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
-
               ) : (
-
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-
+                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
-
               )}
-
             </button>
 
             {/* Desktop Nav */}
@@ -278,13 +272,9 @@ export default function Navbar() {
                     to={section.to}
                     className="h-fit w-fit flex items-center gap-2 mx-7 text-white hover:text-emerald-400 transition-all duration-300"
                   >
-
-                    <span className="font-medium">
-                      {section.label}
-                    </span>
+                    <span className="font-medium">{section.label}</span>
 
                     {section.dropdownGroups && (
-
                       <svg
                         className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
                         fill="none"
@@ -292,43 +282,23 @@ export default function Navbar() {
                         strokeWidth="2"
                         viewBox="0 0 24 24"
                       >
-
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19 9l-7 7-7-7"
-                        />
-
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                       </svg>
-
                     )}
-
                   </HashLink>
 
                   {/* Desktop Dropdown */}
                   {section.dropdownGroups && (
-
                     <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-
-                      <div className={`w-225 bg-zinc-900/95 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 shadow-2xl grid grid-cols-2 gap-12 `}>
-
+                      <div className="w-225 bg-zinc-900/95 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 shadow-2xl grid grid-cols-2 gap-12">
                         {section.dropdownGroups.map((group) => (
-
                           <div key={group.title}>
-
-                            {/* Group Title */}
                             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
                               {group.title}
                             </p>
-
-                            {/* Divider */}
                             <div className="mt-3 h-px bg-zinc-800" />
-
-                            {/* Links */}
                             <div className="mt-5 flex flex-col">
-
                               {group.links.map((link) => (
-
                                 <HashLink
                                   key={link.label}
                                   smooth
@@ -337,19 +307,12 @@ export default function Navbar() {
                                 >
                                   {link.label}
                                 </HashLink>
-
                               ))}
-
                             </div>
-
                           </div>
-
                         ))}
-
                       </div>
-
                     </div>
-
                   )}
 
                 </div>
@@ -362,138 +325,98 @@ export default function Navbar() {
 
         </nav>
 
-        {/* Mobile Menu */}
+        {/* ── Mobile Menu Overlay ── */}
         <div
-          className={`lg:hidden overflow-hidden bg-zinc-900 border-b border-zinc-800 transition-all duration-300 ${menuOpen ? "max-h-500" : "max-h-0"
-            }`}
+          className={`
+            lg:hidden fixed inset-x-0 top-18 bottom-0 z-40
+            bg-zinc-950/98 backdrop-blur-xl
+            overflow-y-auto overscroll-contain
+            transition-all duration-300 ease-in-out
+            ${menuOpen
+              ? "opacity-100 translate-y-0 pointer-events-auto"
+              : "opacity-0 -translate-y-4 pointer-events-none"
+            }
+          `}
         >
-
-          <div className="px-6 py-4 flex flex-col gap-2">
+          <div className="px-6 py-6 flex flex-col gap-1 pb-16">
 
             {navSections.map((section) => {
-
-              const hasDropdown = !!section.dropdownGroups
+              const hasDropdown = Boolean(section.dropdownGroups)
               const isOpen = openSection === section.label
 
               return (
+                <div key={section.label} className="border-b border-zinc-800/60 last:border-none">
 
-                <div
-                  key={section.label}
-                  className="rounded-2xl bg-zinc-950 overflow-hidden"
-                >
+                  {/* Section row */}
+                  <div className="flex items-center justify-between">
 
-                  {/* Main Row */}
-                  <div
-                    className={`flex items-center justify-between px-4 py-4 transition-colors duration-300 ${hasDropdown
-                      ? "cursor-pointer hover:bg-emerald-500/10"
-                      : ""
-                      }`}
-                    onClick={() => {
-                      if (hasDropdown) {
-                        toggleSection(section.label)
-                      }
-                    }}
-                  >
-
+                    {/* The section label navigates to the top-level page */}
                     <HashLink
                       smooth
                       to={section.to}
-                      onClick={(e) => {
-                        e.stopPropagation()
-
-                        setMenuOpen(false)
-                        setOpenSection(null)
-                      }}
-                      className="text-lg font-medium text-white hover:text-emerald-400 transition-colors duration-300"
+                      onClick={handleMenu}
+                      className="flex-1 py-4 text-lg font-medium text-white hover:text-emerald-400 transition-colors duration-200"
                     >
                       {section.label}
                     </HashLink>
 
+                    {/* Chevron button opens/closes the sub-links */}
                     {hasDropdown && (
-
-                      <svg
-                        className={`w-5 h-5 text-white transition-transform duration-300 ${isOpen ? "rotate-180" : ""
-                          }`}
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
+                      <button
+                        onClick={() => toggleSection(section.label)}
+                        className="p-2 -mr-2 text-zinc-400 hover:text-emerald-400 transition-colors duration-200 cursor-pointer"
+                        aria-label={isOpen ? `Collapse ${section.label}` : `Expand ${section.label}`}
                       >
-
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M19 9l-7 7-7-7"
-                        />
-
-                      </svg>
-
+                        <svg
+                          className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
                     )}
 
                   </div>
 
-                  {/* Accordion */}
-                  {hasDropdown && (
+                  {/* Accordion body — rendered when open */}
+                  {hasDropdown && isOpen && (
+                    <div className="pb-4 flex flex-col gap-6">
+                      {section.dropdownGroups.map((group) => (
+                        <div key={group.title}>
 
-                    <div
-                      className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-250" : "max-h-0"
-                        }`}
-                    >
+                          {/* Group title */}
+                          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400 px-2 mb-2">
+                            {group.title}
+                          </p>
 
-                      <div className="pb-4">
-
-                        {section.dropdownGroups.map((group) => (
-
-                          <div
-                            key={group.title}
-                            className="px-4 pt-4"
-                          >
-
-                            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
-                              {group.title}
-                            </p>
-
-                            <div className="space-y-1">
-
-                              {group.links.map((link) => (
-
-                                <HashLink
-                                  key={link.label}
-                                  smooth
-                                  to={link.to}
-                                  onClick={() => {
-                                    setMenuOpen(false)
-                                    setOpenSection(null)
-                                  }}
-                                  className="block rounded-xl px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-emerald-400 transition-all duration-300"
-                                >
-
-                                  {link.label}
-
-                                </HashLink>
-
-                              ))}
-
-                            </div>
-
+                          {/* Links */}
+                          <div className="flex flex-col">
+                            {group.links.map((link) => (
+                              <HashLink
+                                key={link.label}
+                                smooth
+                                to={link.to}
+                                onClick={handleMenu}
+                                className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-200"
+                              >
+                                {link.label}
+                              </HashLink>
+                            ))}
                           </div>
 
-                        ))}
-
-                      </div>
-
+                        </div>
+                      ))}
                     </div>
-
                   )}
 
                 </div>
-
               )
-
             })}
 
           </div>
-
         </div>
 
       </div>
