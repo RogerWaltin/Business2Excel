@@ -348,38 +348,42 @@ export default function Navbar() {
                 <div key={section.label} className="border-b border-zinc-800/60 last:border-none">
 
                   {/* Section row */}
-                  <div className="flex items-center justify-between">
+                  {hasDropdown ? (
 
-                    {/* The section label navigates to the top-level page */}
+                    <button
+                      onClick={() => toggleSection(section.label)}
+                      className="w-full flex items-center justify-between py-4 text-lg font-medium text-white hover:text-emerald-400 transition-colors duration-200 cursor-pointer"
+                      aria-label={isOpen ? `Collapse ${section.label}` : `Expand ${section.label}`}
+                    >
+
+                      <span>
+                        {section.label}
+                      </span>
+
+                      <svg
+                        className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+
+                    </button>
+
+                  ) : (
+
                     <HashLink
                       smooth
                       to={section.to}
                       onClick={handleMenu}
-                      className="flex-1 py-4 text-lg font-medium text-white hover:text-emerald-400 transition-colors duration-200"
+                      className="block py-4 text-lg font-medium text-white hover:text-emerald-400 transition-colors duration-200"
                     >
                       {section.label}
                     </HashLink>
 
-                    {/* Chevron button opens/closes the sub-links */}
-                    {hasDropdown && (
-                      <button
-                        onClick={() => toggleSection(section.label)}
-                        className="p-2 -mr-2 text-zinc-400 hover:text-emerald-400 transition-colors duration-200 cursor-pointer"
-                        aria-label={isOpen ? `Collapse ${section.label}` : `Expand ${section.label}`}
-                      >
-                        <svg
-                          className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </button>
-                    )}
-
-                  </div>
+                  )}
 
                   {/* Accordion body — rendered when open */}
                   {hasDropdown && isOpen && (
