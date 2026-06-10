@@ -90,8 +90,6 @@ export default function Community() {
             {/* Left Side */}
             <div>
 
-
-
               <h2 className="text-4xl md:text-5xl font-bold mt-6">
                 Connection That Leads to Transformation
               </h2>
