@@ -176,15 +176,13 @@ const navSections = [
 ]
 
 export default function Navbar() {
-
   const [menuOpen, setMenuOpen] = useState(false)
-  const [mobileDropdowns, setMobileDropdowns] = useState({})
+  const [openSection, setOpenSection] = useState(null)
 
-  function toggleDropdown(label) {
-    setMobileDropdowns((prev) => ({
-      ...prev,
-      [label]: !prev[label],
-    }))
+  function toggleSection(label) {
+    setOpenSection((prev) =>
+      prev === label ? null : label
+    )
   }
 
   return (
@@ -211,6 +209,58 @@ export default function Navbar() {
               Excel
 
             </HashLink>
+
+            {/* Hamburger */}
+            <button
+              onClick={() => {
+                setMenuOpen((prev) => !prev)
+
+                if (menuOpen) {
+                  setOpenSection(null)
+                }
+              }}
+              className="lg:hidden ml-auto text-white hover:text-emerald-400 transition-colors duration-300 cursor-pointer"
+            >
+
+              {menuOpen ? (
+
+                <svg
+                  className="w-7 h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+
+                </svg>
+
+              ) : (
+
+                <svg
+                  className="w-7 h-7"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+
+                </svg>
+
+              )}
+
+            </button>
 
             {/* Desktop Nav */}
             <div className="hidden lg:flex items-center justify-center flex-1 h-full">
@@ -308,142 +358,139 @@ export default function Navbar() {
 
             </div>
 
-            {/* Hamburger */}
-            <button
-              className="lg:hidden text-white hover:text-emerald-400 transition-colors duration-300 cursor-pointer"
-              onClick={() => setMenuOpen((prev) => !prev)}
-            >
-
-              {menuOpen ? (
-
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-
-                </svg>
-
-              ) : (
-
-                <svg
-                  className="w-7 h-7"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                >
-
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-
-                </svg>
-
-              )}
-
-            </button>
-
           </div>
 
         </nav>
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden bg-zinc-950 border-b border-zinc-800 overflow-hidden transition-[max-height] duration-300 ease-in-out ${menuOpen ? "max-h-500" : "max-h-0"}`}
+          className={`lg:hidden overflow-hidden bg-zinc-900 border-b border-zinc-800 transition-all duration-300 ${menuOpen ? "max-h-500" : "max-h-0"
+            }`}
         >
 
           <div className="px-6 py-4 flex flex-col gap-2">
 
-            {navSections.map((section) => (
+            {navSections.map((section) => {
 
-              <div
-                key={section.label}
-                className="bg-zinc-900 rounded-2xl overflow-hidden"
-              >
+              const hasDropdown = !!section.dropdownGroups
+              const isOpen = openSection === section.label
 
-                {/* Mobile Main Button */}
-                <button
-                  onClick={() => toggleDropdown(section.label)}
-                  className="w-full flex items-center justify-between px-4 py-4 text-white hover:text-emerald-400 transition-all duration-300 cursor-pointer"
+              return (
+
+                <div
+                  key={section.label}
+                  className="rounded-2xl bg-zinc-950 overflow-hidden"
                 >
 
-                  <HashLink
-                    smooth
-                    to={section.to}
-                    onClick={(e) => e.stopPropagation()}
-                    className="text-lg font-medium"
-                  >
-
-                    {section.label}
-
-                  </HashLink>
-
-                  <svg
-                    className={`w-5 h-5 transition-transform duration-300 ${mobileDropdowns[section.label] ? "rotate-180" : ""}`}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                  >
-
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19 9l-7 7-7-7"
-                    />
-
-                  </svg>
-
-                </button>
-
-                {/* Mobile Dropdown */}
-                {section.dropdown && (
-
+                  {/* Main Row */}
                   <div
-                    className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${mobileDropdowns[section.label] ? "max-h-250" : "max-h-0"}`}
+                    className={`flex items-center justify-between px-4 py-4 transition-colors duration-300 ${hasDropdown
+                      ? "cursor-pointer hover:bg-emerald-500/10"
+                      : ""
+                      }`}
+                    onClick={() => {
+                      if (hasDropdown) {
+                        toggleSection(section.label)
+                      }
+                    }}
                   >
 
-                    <div className="pb-3">
+                    <HashLink
+                      smooth
+                      to={section.to}
+                      onClick={(e) => {
+                        e.stopPropagation()
 
-                      {section.dropdown.map((item) => (
+                        setMenuOpen(false)
+                        setOpenSection(null)
+                      }}
+                      className="text-lg font-medium text-white hover:text-emerald-400 transition-colors duration-300"
+                    >
+                      {section.label}
+                    </HashLink>
 
-                        <HashLink
-                          key={item.label}
-                          smooth
-                          to={item.to}
-                          onClick={() => {
-                            setMenuOpen(false)
-                            setMobileDropdowns({})
-                          }}
-                          className="block mx-3 px-4 py-3 rounded-xl text-zinc-400 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-300"
-                        >
+                    {hasDropdown && (
 
-                          {item.label}
+                      <svg
+                        className={`w-5 h-5 text-white transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                          }`}
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
 
-                        </HashLink>
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
 
-                      ))}
+                      </svg>
 
-                    </div>
+                    )}
 
                   </div>
 
-                )}
+                  {/* Accordion */}
+                  {hasDropdown && (
 
-              </div>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-250" : "max-h-0"
+                        }`}
+                    >
 
-            ))}
+                      <div className="pb-4">
+
+                        {section.dropdownGroups.map((group) => (
+
+                          <div
+                            key={group.title}
+                            className="px-4 pt-4"
+                          >
+
+                            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                              {group.title}
+                            </p>
+
+                            <div className="space-y-1">
+
+                              {group.links.map((link) => (
+
+                                <HashLink
+                                  key={link.label}
+                                  smooth
+                                  to={link.to}
+                                  onClick={() => {
+                                    setMenuOpen(false)
+                                    setOpenSection(null)
+                                  }}
+                                  className="block rounded-xl px-4 py-3 text-zinc-400 hover:bg-zinc-900 hover:text-emerald-400 transition-all duration-300"
+                                >
+
+                                  {link.label}
+
+                                </HashLink>
+
+                              ))}
+
+                            </div>
+
+                          </div>
+
+                        ))}
+
+                      </div>
+
+                    </div>
+
+                  )}
+
+                </div>
+
+              )
+
+            })}
 
           </div>
 
