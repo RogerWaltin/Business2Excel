@@ -6,7 +6,7 @@ import KingdomCertification from "./Components/KingdomCertification.jsx"
 import CommunityImpact from "./Components/CommunityImpact.jsx"
 import Resources from "./Components/Resources.jsx"
 import FounderStory from "./Components/FounderStory.jsx"
-import FinalCta from "./Components/FinalCta.jsx"
+import FinalCTA from "./Components/FinalCTA.jsx"
 
 export default function Home() {
   return (
@@ -19,7 +19,7 @@ export default function Home() {
       <CommunityImpact />
       <Resources />
       <FounderStory />
-      <FinalCta />
+      <FinalCTA />
     </div>
   )
 }
