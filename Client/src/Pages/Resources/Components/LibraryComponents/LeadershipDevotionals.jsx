@@ -8,8 +8,8 @@ export default function LeadershipDevotionals() {
                     Leadership Devotionals
                 </h1>
 
-                <p className="mt-6 text-zinc-400">
-                    Leadership Devotionals coming soon.
+                <p className="mt-6 text-3xl font-bold text-zinc-400">
+                    Coming soon
                 </p>
 
             </div>
