@@ -6,13 +6,17 @@ export default function FounderStory() {
 
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          {/* Placeholder Image */}
+          {/* Founder Image */}
 
-          <div className="m-25 border border-zinc-800 rounded-3xl aspect-square flex items-center justify-center">
+          <div className="border border-zinc-800 rounded-3xl overflow-hidden max-w-md mx-auto w-full">
 
-            <img className="rounded-3xl" src={founder} alt="Founder" />
+            <img
+              className="w-full h-full object-cover"
+              src={founder}
+              alt="Founder"
+            />
 
           </div>
 
@@ -24,18 +28,18 @@ export default function FounderStory() {
               Founder Story
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-bold mt-6">
+            <h2 className="text-3xl md:text-5xl font-bold mt-6">
               Why Business2Excel Exists
             </h2>
 
-            <p className="text-zinc-400 text-lg leading-relaxed mt-8">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed mt-8">
               Business2Excel was founded from a conviction that business
               can be a force for transformation. Organizations should not
               have to choose between purpose and performance, faith and
               excellence, or impact and profitability.
             </p>
 
-            <p className="text-zinc-400 text-lg leading-relaxed mt-6">
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed mt-6">
               By integrating Kingdom principles with strategic leadership,
               innovation, and stewardship, organizations can create lasting
               value, meaningful impact, and enduring legacy.

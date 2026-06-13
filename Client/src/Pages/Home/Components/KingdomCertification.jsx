@@ -24,11 +24,11 @@ export default function KingdomCertification() {
 
         <div className="max-w-4xl mx-auto text-center">
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-6">
+          <h2 className="text-3xl md:text-5xl font-bold">
             The Kingdom Certification Framework
           </h2>
 
-          <p className="text-zinc-400 text-lg leading-relaxed mt-8">
+          <p className="text-zinc-400 text-base md:text-lg leading-relaxed mt-8">
             More than a credential, Kingdom Certification provides a pathway
             toward ethical excellence, leadership accountability,
             organizational trust, and Kingdom-centered impact.
@@ -36,7 +36,9 @@ export default function KingdomCertification() {
 
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mt-16 px-50">
+        {/* Benefits & Journey */}
+
+        <div className="grid lg:grid-cols-2 gap-8 mt-16 max-w-5xl mx-auto">
 
           {/* What You Gain */}
           <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
@@ -104,11 +106,11 @@ export default function KingdomCertification() {
 
         </div>
 
-        {/* Premium CTA */}
+        {/* CTA */}
 
-        <div className="mt-12 bg-zinc-900 border border-zinc-800 rounded-3xl p-8 mx-50 text-center">
+        <div className="mt-12 bg-zinc-900 border border-zinc-800 rounded-3xl p-8 max-w-5xl mx-auto text-center">
 
-          <h3 className="text-2xl font-bold">
+          <h3 className="text-xl md:text-2xl font-bold">
             Ready To Pursue Kingdom Certification?
           </h3>
 
