@@ -356,9 +356,16 @@ export default function Navbar() {
                       aria-label={isOpen ? `Collapse ${section.label}` : `Expand ${section.label}`}
                     >
 
-                      <span>
+                      <HashLink
+                        smooth
+                        to={section.to}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleMenu()
+                        }}
+                      >
                         {section.label}
-                      </span>
+                      </HashLink>
 
                       <svg
                         className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
