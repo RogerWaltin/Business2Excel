@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function FinalCTA() {
   return (
     <section id="final-cta" className="py-24">
@@ -19,21 +21,23 @@ export default function FinalCTA() {
 
         <div className="flex flex-wrap justify-center gap-4 mt-10">
 
-          <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-            Book Consultation
-          </button>
+          <Link to="/consultation">
+            <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+              Book Consultation
+            </button>
+          </Link>
 
-          <button className="border border-zinc-700 hover:border-emerald-500 px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-            Join The Community
-          </button>
+          <Link to="community#training-events">
+            <button className="border border-zinc-700 hover:border-emerald-500 px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+              Trainings & Events
+            </button>
+          </Link>
 
-          <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-            Explore Certifications
-          </button>
-
-          <button className="border border-zinc-700 hover:border-emerald-500 px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-            Trainings & Events
-          </button>
+          <Link to="certification">
+            <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+              Explore Certifications
+            </button>
+          </Link>          
 
         </div>
 

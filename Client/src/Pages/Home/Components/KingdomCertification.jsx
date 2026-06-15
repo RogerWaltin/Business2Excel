@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const certificationBenefit = [
   "Build Customer Trust",
   "Leadership Accountability",
@@ -119,9 +121,11 @@ export default function KingdomCertification() {
             accountability, organizational trust, and lasting Kingdom impact.
           </p>
 
-          <button className="mt-6 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-            Start Certification
-          </button>
+          <Link to="/certification">
+            <button className="mt-6 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+              Start Certification
+            </button>
+          </Link>
 
         </div>
 

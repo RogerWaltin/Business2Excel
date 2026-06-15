@@ -3,10 +3,11 @@ import TrustBar from "./Components/TrustBar.jsx"
 import Challenge from "./Components/Challenge.jsx"
 import KingdomTransformationFramework from "./Components/KingdomTransformationFramework.jsx"
 import KingdomCertification from "./Components/KingdomCertification.jsx"
-import CommunityImpact from "./Components/CommunityImpact.jsx"
-import Resources from "./Components/Resources.jsx"
+import Events from "./Components/Events.jsx"
+import ResourcesPreview from "./Components/ResourcesPreview.jsx"
 import FounderStory from "./Components/FounderStory.jsx"
 import FinalCTA from "./Components/FinalCTA.jsx"
+import ServicesPreview from "./Components/ServicesPreview.jsx"
 
 export default function Home() {
   return (
@@ -16,8 +17,9 @@ export default function Home() {
       <Challenge />
       <KingdomTransformationFramework />
       <KingdomCertification />
-      <CommunityImpact />
-      <Resources />
+      <Events />
+      <ServicesPreview />
+      <ResourcesPreview />
       <FounderStory />
       <FinalCTA />
     </div>

@@ -17,7 +17,7 @@ export default function KingdomTransformationFramework() {
             </h2>
 
             <p className="text-zinc-400 text-lg leading-relaxed mt-8">
-              Our framework integrates biblical wisdom, ethical leadership,
+              Our framework integrates wisdom, ethical leadership,
               strategic consulting, organizational transformation, and Kingdom
               impact into a practical pathway for leaders and organizations
               navigating modern challenges.
@@ -29,9 +29,9 @@ export default function KingdomTransformationFramework() {
               unified transformation model designed for long-term influence.
             </p>
 
-            <button className="mt-10 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+            {/* <button className="mt-10 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
               Explore Framework
-            </button>
+            </button> */}
 
           </div>
 
