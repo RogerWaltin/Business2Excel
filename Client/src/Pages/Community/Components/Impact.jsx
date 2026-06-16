@@ -20,23 +20,19 @@ const impactStats = [
 export default function CommunityImpact() {
   return (
     <section
-      id="community-impact"
+      id="impact"
       className="scroll-mt-24 py-28 border-b border-zinc-900"
     >
 
       <div className="max-w-7xl mx-auto px-6">
 
-        <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm tracking-widest uppercase text-emerald-400">
-          Community & Impact
-        </span>
-
-        <div className="grid lg:grid-cols-2 gap-16 items-start mt-12">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
 
           {/* Left Side */}
           <div>
 
             <h2 className="text-4xl md:text-5xl font-bold mt-6">
-              Connection That Leads to Transformation
+              Connection That Leads to <span className="text-emerald-400">Impact</span> & Transformation
             </h2>
 
             <p className="text-zinc-400 text-lg leading-relaxed mt-8">

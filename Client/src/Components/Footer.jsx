@@ -2,13 +2,19 @@ import { HashLink } from "react-router-hash-link"
 
 export default function Footer() {
 
-    const navLinks = [
+    const quickLinks = [
         { label: "Home", to: "/" },
         { label: "Training & Events", to: "/community#training-events" },
         { label: "Services", to: "/services" },
         { label: "Community", to: "/community" },
         { label: "About", to: "/about" },
         { label: "Kingdom Certification", to: "/services#kingdom-certification" },
+    ]
+
+    const mainLinks = [
+        { label: "Book Consultation", to: "/" },
+        { label: "Explore Certifications", to: "/certification" },
+        { label: "Contact", to: "/contact" },
     ]
 
     return (
@@ -51,7 +57,7 @@ export default function Footer() {
 
                         <div className="grid grid-cols-2 gap-y-4">
 
-                            {navLinks.map((link) => (
+                            {quickLinks.map((link) => (
 
                                 <HashLink
                                     key={link.label}
@@ -71,21 +77,25 @@ export default function Footer() {
 
                     <div>
 
-                        <h3 className="text-white font-semibold text-lg mb-5.5">
-                            Contact Us
+                        <h3 className="text-white font-semibold text-lg mb-6">
+                            Reach Out To Us
                         </h3>
 
-                        <HashLink to={"/contact"}>
-                            <p className="text-zinc-400 leading-relaxed mb-4">
-                                Book Consultation
-                            </p>
-                        </HashLink>
+                        <div className="flex flex-col gap-y-4">
 
-                        <HashLink to={"/contact"}>
-                            <p className="text-zinc-400 leading-relaxed mb-4">
-                                Reach Out To Us
-                            </p>
-                        </HashLink>
+                            {mainLinks.map((link) => (
+
+                                <HashLink
+                                    key={link.label}
+                                    to={link.to}
+                                    className="text-zinc-400 hover:text-emerald-400 transition-colors duration-300"
+                                >
+                                    {link.label}
+                                </HashLink>
+
+                            ))}
+
+                        </div>
 
                     </div>
 

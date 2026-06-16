@@ -14,6 +14,8 @@ import Videos from "../Pages/Resources/Components/LibraryComponents/Videos.jsx"
 import Podcasts from "../Pages/Resources/Components/LibraryComponents/Podcasts.jsx"
 import Frameworks from "../Pages/Resources/Components/LibraryComponents/Frameworks.jsx"
 import CaseStudies from "../Pages/Resources/Components/LibraryComponents/CaseStudies.jsx"
+import Consultation from "../Pages/Consultation.jsx"
+import Certification from "../Pages/Certification.jsx"
 
 export default function AppRouter() {
 
@@ -26,6 +28,9 @@ export default function AppRouter() {
         <Route path="/Services" element={<Services />} />
         <Route path="/Resources" element={<Resources />} />
         <Route path="/Community" element={<Community />} />
+
+        <Route path="/consultation" element={<Consultation />} />
+        <Route path="/certification" element={<Certification />} />
 
         <Route path="/resources/articles" element={<Articles />} />
         <Route path="/resources/whitepapers" element={<Whitepapers />} />

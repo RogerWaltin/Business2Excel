@@ -94,11 +94,11 @@ const navSections = [
         title: "Community",
         links: [
           {
-            label: "Community & Impact", to: "/community#community-impact",
+            label: "Impact", to: "/community#impact",
           },
-          {
-            label: "Networks, Projects & Stories", to: "/community#network-projects-stories",
-          },
+          // {
+          //   label: "Networks, Projects & Stories", to: "/community#network-projects-stories",
+          // },
           {
             label: "Training & Events", to: "/community#training-events",
           },

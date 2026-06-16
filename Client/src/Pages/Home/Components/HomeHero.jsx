@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const heroPillar = [
   {
     title: "Kingdom Certification",
@@ -49,13 +51,17 @@ export default function HomeHero() {
 
           <div className="flex flex-wrap gap-4 mt-8">
 
-            <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              Book Consultation
-            </button>
+            <Link to="/consultation">
+              <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+                Book Consultation
+              </button>
+            </Link>
 
-            <button className="border border-zinc-700 hover:border-emerald-500 px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              Explore Certification
-            </button>
+            <Link to="/certification">
+              <button className="border border-zinc-700 hover:border-emerald-500 px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+                Apply For Certification
+              </button>
+            </Link>
 
           </div>
 
