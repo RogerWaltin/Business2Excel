@@ -1,3 +1,5 @@
+import { HashLink } from "react-router-hash-link";
+
 export default function ServicesCTA() {
   return (
     <section className="bg-black py-20">
@@ -28,15 +30,17 @@ export default function ServicesCTA() {
         {/* CTA Buttons */}
         <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
 
-          <button className="cursor-pointer rounded-xl bg-emerald-500 px-8 py-4 font-semibold text-black transition-all duration-300 hover:bg-emerald-400">
-            Book Consultation
-          </button>
+          <HashLink to="/consultation">
+            <button className="cursor-pointer rounded-xl bg-emerald-500 px-8 py-4 font-semibold text-black transition-all duration-300 hover:bg-emerald-400">
+              Book Consultation
+            </button>
+          </HashLink>
           
-          <button className="rounded-xl border border-zinc-700 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-emerald-500 hover:text-emerald-400 cursor-pointer">
-            Apply For Certification
-          </button> 
-          
-          {/*TODO figure out what to do with these two button*/}
+          <HashLink to="/certification">
+            <button className="rounded-xl border border-zinc-700 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-emerald-500 hover:text-emerald-400 cursor-pointer">
+              Apply For Certification
+            </button>
+          </HashLink> 
 
         </div>
     

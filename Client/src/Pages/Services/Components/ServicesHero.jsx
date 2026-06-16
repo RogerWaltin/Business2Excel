@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function ServicesHero() {
     const scrollToServices = () => {
         document.getElementById("kingdom-certification")?.scrollIntoView({
@@ -34,12 +36,14 @@ export default function ServicesHero() {
 
                         <div className="mt-10 flex flex-wrap gap-4">
 
-                            <button className="rounded-xl bg-emerald-500 px-6 py-4 font-semibold text-black transition-all duration-300 hover:bg-emerald-400 cursor-pointer">
-                                Book Consultation
-                            </button> {/*TODO this button goes to consultation page*/}
+                            <Link to="/consultation">
+                                <button className="rounded-xl bg-emerald-500 px-6 py-4 font-semibold text-black transition-all duration-300 hover:bg-emerald-400 cursor-pointer">
+                                    Book Consultation
+                                </button>
+                            </Link>
 
                             <button onClick={scrollToServices} className="rounded-xl border border-zinc-700 px-6 py-4 font-semibold text-white transition-all duration-300 hover:border-emerald-500 hover:text-emerald-400 cursor-pointer">
-                                Explore Certification
+                                Explore Certifications
                             </button>
 
                         </div>

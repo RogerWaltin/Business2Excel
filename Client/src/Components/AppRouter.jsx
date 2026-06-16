@@ -16,6 +16,8 @@ import Frameworks from "../Pages/Resources/Components/LibraryComponents/Framewor
 import CaseStudies from "../Pages/Resources/Components/LibraryComponents/CaseStudies.jsx"
 import Consultation from "../Pages/Consultation.jsx"
 import Certification from "../Pages/Certification.jsx"
+import Network from "../Pages/Network.jsx"
+import TrainingEventsHub from "../Pages/TrainingEventsHub.jsx"
 
 export default function AppRouter() {
 
@@ -31,6 +33,8 @@ export default function AppRouter() {
 
         <Route path="/consultation" element={<Consultation />} />
         <Route path="/certification" element={<Certification />} />
+        <Route path="/network" element={<Network />} />
+        <Route path="/training-events" element={<TrainingEventsHub />} />
 
         <Route path="/resources/articles" element={<Articles />} />
         <Route path="/resources/whitepapers" element={<Whitepapers />} />
