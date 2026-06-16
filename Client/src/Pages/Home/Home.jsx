@@ -5,7 +5,7 @@ import KingdomTransformationFramework from "./Components/KingdomTransformationFr
 import KingdomCertification from "./Components/KingdomCertification.jsx"
 import Events from "./Components/Events.jsx"
 import ResourcesPreview from "./Components/ResourcesPreview.jsx"
-import FounderStory from "./Components/FounderStory.jsx"
+import WhoAreWe from "./Components/WhoAreWe.jsx"
 import FinalCTA from "./Components/FinalCTA.jsx"
 import ServicesPreview from "./Components/ServicesPreview.jsx"
 
@@ -20,7 +20,7 @@ export default function Home() {
       <Events />
       <ServicesPreview />
       <ResourcesPreview />
-      <FounderStory />
+      <WhoAreWe />
       <FinalCTA />
     </div>
   )

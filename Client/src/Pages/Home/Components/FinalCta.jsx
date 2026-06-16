@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 export default function FinalCTA() {
   return (
@@ -27,17 +28,17 @@ export default function FinalCTA() {
             </button>
           </Link>
 
-          <Link to="community#training-events">
+          <HashLink to="community#training-events">
             <button className="border border-zinc-700 hover:border-emerald-500 px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
               Trainings & Events
             </button>
-          </Link>
+          </HashLink>
 
           <Link to="certification">
             <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
               Explore Certifications
             </button>
-          </Link>          
+          </Link>
 
         </div>
 
