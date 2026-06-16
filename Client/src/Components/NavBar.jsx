@@ -102,9 +102,9 @@ const navSections = [
           {
             label: "Training & Events", to: "/community#training-events",
           },
-          {
-            label: "Member Directory", to: "/community#member-directory",
-          },
+          // {
+          //   label: "Member Directory", to: "/community#member-directory",
+          // },
         ],
       },
       {

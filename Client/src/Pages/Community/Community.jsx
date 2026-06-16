@@ -12,7 +12,7 @@ export default function Community() {
       <Impact />
       {/* <NetworkProjectsStories /> */}
       <TrainingEvents />
-      <MemberDirectory />
+      {/* <MemberDirectory /> */}
       <FinalCTA />
     </div>
   )
