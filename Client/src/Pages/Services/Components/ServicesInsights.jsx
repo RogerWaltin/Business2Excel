@@ -33,7 +33,7 @@ export default function ServicesInsights() {
     ]
 
     return (
-        <section className="bg-black py-32">
+        <section className="bg-black pt-20">
 
             <div className="mx-auto max-w-7xl px-6">
 

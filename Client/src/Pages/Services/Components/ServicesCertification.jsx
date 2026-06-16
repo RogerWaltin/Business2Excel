@@ -47,7 +47,7 @@ export default function ServicesCertification() {
     return (
         <section
             id="kingdom-certification"
-            className="bg-zinc-950 py-32"
+            className="bg-black pt-20"
         >
 
             <div className="mx-auto max-w-7xl px-6">

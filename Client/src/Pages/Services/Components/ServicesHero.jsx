@@ -6,7 +6,7 @@ export default function ServicesHero() {
     }
 
     return (
-        <section className="relative overflow-hidden bg-linear-to-b from-zinc-950 via-black to-black">
+        <section className="relative overflow-hidden bg-linear-to-b from-zinc-950 via-black to-black pt-20">
 
             <div className="absolute pointer-events-none inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_35%)]" />
 
@@ -16,8 +16,10 @@ export default function ServicesHero() {
 
                     {/* Left Content */}
                     <div>
-
-                        <h1 className="mt-4 text-5xl font-bold leading-tight tracking-tight text-white lg:text-7xl">
+                        <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm tracking-widest uppercase text-emerald-400">
+                            Services
+                        </span>
+                        <h1 className="mt-4 text-5xl font-bold leading-tight tracking-tight text-white lg:text-5xl">
                             Transforming Organizations
                             <span className="block text-emerald-400">
                                 For Lasting Kingdom Impact
