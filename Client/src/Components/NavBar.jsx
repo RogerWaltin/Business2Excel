@@ -229,7 +229,6 @@ export default function Navbar() {
             <HashLink
               smooth
               to="/"
-              onClick={handleMenu}
               className="mr-auto text-2xl font-bold tracking-tight group text-white hover:text-emerald-400 transition-colors duration-300"
             >
               Business
@@ -239,7 +238,7 @@ export default function Navbar() {
               Excel
             </HashLink>
 
-            {/* Hamburger */}
+            {/* Hamburger */} {/* BUG rapidly clicking hamburger menu causes the logo to not switch and the dropdown menu stuck in current state */}
             <button
               onClick={handleMenu}
               className="lg:hidden ml-auto text-white hover:text-emerald-400 transition-colors duration-300 cursor-pointer"

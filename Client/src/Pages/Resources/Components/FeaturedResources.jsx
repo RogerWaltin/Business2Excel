@@ -1,6 +1,8 @@
+// NOTE due to lack of content, i've temporarily disabled the buttons   
+
 export default function FeaturedResources() {
   return (
-    <section id="featured-resources" className="bg-black py-32">
+    <section id="featured-resources" className="bg-black pt-20">
 
       <div className="mx-auto max-w-7xl px-6">
 
@@ -37,10 +39,10 @@ export default function FeaturedResources() {
               strategy, and organizational purpose through a Kingdom-centered
               lens.
             </p>
-
-            <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
+            
+            {/* <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
               Download Resource
-            </button>
+            </button> */}
 
           </div>
 
@@ -62,9 +64,9 @@ export default function FeaturedResources() {
               Kingdom-centered stewardship.
             </p>
 
-            <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
+            {/* <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
               Read Report
-            </button>
+            </button> */}
 
           </div>
 
@@ -86,9 +88,9 @@ export default function FeaturedResources() {
               Kingdom impact.
             </p>
 
-            <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
+            {/* <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
               Download Blueprint
-            </button>
+            </button> */}
 
           </div>
 
@@ -110,9 +112,9 @@ export default function FeaturedResources() {
               increasingly complex marketplace.
             </p>
 
-            <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
+            {/* <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
               Explore Guide
-            </button>
+            </button> */}
 
           </div>
 

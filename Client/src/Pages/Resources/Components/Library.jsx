@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 export default function Library() {
   return (
-    <section id="library" className="bg-zinc-950 py-32">
+    <section id="library" className="bg-black py-20">
 
       <div className="mx-auto max-w-7xl px-6">
 

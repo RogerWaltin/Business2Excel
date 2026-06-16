@@ -1,6 +1,6 @@
 export default function ServicesCTA() {
   return (
-    <section className="bg-black py-32">
+    <section className="bg-black py-20">
 
       <div className="mx-auto max-w-5xl px-6 text-center">
 

@@ -1,6 +1,6 @@
 export default function FeaturedInsights() {
     return (
-        <section id="featured-insight" className="bg-zinc-950 py-32">
+        <section id="featured-insight" className="bg-black pt-20">
 
             <div className="mx-auto max-w-7xl px-6">
 
@@ -40,8 +40,8 @@ export default function FeaturedInsights() {
                                 challenges, and strategic considerations for leaders
                                 operating in an increasingly AI-driven world.
                             </p>
-
-                            <div className="mt-10 flex flex-wrap gap-4">
+                            {/* NOTE due to lack of content, i've temporarily disabled these two buttons */}    
+                            {/* <div className="mt-10 flex flex-wrap gap-4">
 
                                 <button className="cursor-pointer rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-black transition-all duration-300 hover:bg-emerald-400">
                                     Read Full Report
@@ -51,7 +51,7 @@ export default function FeaturedInsights() {
                                     Download PDF
                                 </button>
 
-                            </div>
+                            </div> */}
 
                         </div>
 
