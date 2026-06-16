@@ -37,10 +37,6 @@ export default function Hero() {
             Explore Resources
           </button>
 
-          <button className="cursor-pointer rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
-            Download Frameworks
-          </button>
-
         </div>
 
       </div>

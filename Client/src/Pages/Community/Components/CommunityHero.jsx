@@ -1,4 +1,12 @@
+import { Link } from "react-router-dom";
+
 export default function CommunityHero() {
+  const scrollToEvents = () => {
+    document.getElementById("training-events")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+
   return (
     <section id="hero" className="relative overflow-hidden border-b border-zinc-900">
 
@@ -27,12 +35,14 @@ export default function CommunityHero() {
 
           <div className="flex flex-wrap gap-4 mt-10">
 
-            <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
-              Join the Network
-            </button>
+            <Link to="/network">
+              <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
+                Join the Network
+              </button>
+            </Link>
 
-            <button className="border border-zinc-700 hover:border-emerald-500 text-white px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
-              Explore Opportunities
+            <button onClick={scrollToEvents} className="border border-zinc-700 hover:border-emerald-500 text-white px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
+              Explore All Events
             </button>
 
           </div>

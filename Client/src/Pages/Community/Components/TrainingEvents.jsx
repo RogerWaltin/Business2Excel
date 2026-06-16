@@ -1,22 +1,57 @@
-const workshopTopics = [
-  "Ethical Leadership",
-  "AI & Faith",
-  "Kingdom Stewardship",
-  "Innovation",
-]
+import { Link } from "react-router-dom"
 
-const webinarTopics = [
-  "Leadership",
-  "Transformation",
-  "Certification",
-  "Future Trends",
-]
-
-const mentorshipTopics = [
-  "Leadership Development",
-  "Entrepreneurship",
-  "Strategic Planning",
-  "Stewardship",
+const trainingEvents = [
+  {
+    id: "workshops",
+    category: "Workshops",
+    title: "Practical Kingdom Leadership Training",
+    description:
+      "Interactive learning experiences focused on implementation, helping leaders apply biblical principles and strategic frameworks inside their organizations.",
+    topics: [
+      "Ethical Leadership",
+      "AI & Faith",
+      "Kingdom Stewardship",
+      "Innovation",
+    ],
+    buttonText: "Register For Workshops",
+  },
+  {
+    id: "conferences",
+    category: "Conferences",
+    title: "Gather with Kingdom Innovators",
+    description:
+      "Annual flagship events that bring together entrepreneurs, executives, consultants, investors, and marketplace leaders around strategy, innovation, and Kingdom impact.",
+    topics: [],
+    buttonText: "Register For Conferences",
+  },
+  {
+    id: "webinars",
+    category: "Webinars",
+    title: "Learn from Anywhere",
+    description:
+      "Monthly online learning sessions that provide practical insights into leadership, business transformation, Kingdom certification, and emerging trends.",
+    topics: [
+      "Leadership",
+      "Transformation",
+      "Certification",
+      "Future Trends",
+    ],
+    buttonText: "Register For Webinars",
+  },
+  {
+    id: "mentorship",
+    category: "Mentorship",
+    title: "Grow with Experienced Leaders",
+    description:
+      "Receive guidance, accountability, and strategic insight from experienced Kingdom practitioners who have navigated growth, leadership, and organizational transformation.",
+    topics: [
+      "Leadership Development",
+      "Entrepreneurship",
+      "Strategic Planning",
+      "Stewardship",
+    ],
+    buttonText: "Register For Mentorship",
+  },
 ]
 
 export default function TrainingEvents() {
@@ -48,148 +83,54 @@ export default function TrainingEvents() {
 
         <div className="grid lg:grid-cols-2 gap-8 mt-20">
 
-          {/* Workshops */}
-          <div id="workshops" className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300">
+          {trainingEvents.map((item) => (
 
-            <span className="text-emerald-400 uppercase tracking-wider text-sm">
-              Workshops
-            </span>
+            <div
+              key={item.id}
+              id={item.id}
+              className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300"
+            >
 
-            <h3 className="text-3xl font-bold mt-4">
-              Practical Kingdom Leadership Training
-            </h3>
+              <span className="text-emerald-400 uppercase tracking-wider text-sm">
+                {item.category}
+              </span>
 
-            <p className="text-zinc-400 leading-relaxed mt-6">
-              Interactive learning experiences focused on implementation,
-              helping leaders apply biblical principles and strategic
-              frameworks inside their organizations.
-            </p>
+              <h3 className="text-3xl font-bold mt-4">
+                {item.title}
+              </h3>
 
-            <div className="flex flex-wrap gap-3 mt-8">
+              <p className="text-zinc-400 leading-relaxed mt-6">
+                {item.description}
+              </p>
 
-              {workshopTopics.map((item) => (
+              {item.topics.length > 0 && (
 
-                <span
-                  key={item}
-                  className="bg-zinc-950 border border-zinc-800 rounded-full px-4 py-2 text-sm"
-                >
+                <div className="flex flex-wrap gap-3 mt-8">
 
-                  {item}
+                  {item.topics.map((topic) => (
 
-                </span>
+                    <span
+                      key={topic}
+                      className="bg-zinc-950 border border-zinc-800 rounded-full px-4 py-2 text-sm"
+                    >
+                      {topic}
+                    </span>
 
-              ))}
+                  ))}
 
-            </div>
+                </div>
 
-            <button className="mt-8 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              View Workshops
-            </button>
+              )}
 
-          </div>
-
-          {/* Conferences */}
-          <div id="conferences" className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300">
-
-            <span className="text-emerald-400 uppercase tracking-wider text-sm">
-              Conferences
-            </span>
-
-            <h3 className="text-3xl font-bold mt-4">
-              Gather with Kingdom Innovators
-            </h3>
-
-            <p className="text-zinc-400 leading-relaxed mt-6">
-              Annual flagship events that bring together entrepreneurs,
-              executives, consultants, investors, and marketplace leaders
-              around strategy, innovation, and Kingdom impact.
-            </p>
-
-            <button className="mt-8 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              View Conferences
-            </button>
-
-          </div>
-
-          {/* Webinars */}
-          <div id="webinars" className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300">
-
-            <span className="text-emerald-400 uppercase tracking-wider text-sm">
-              Webinars
-            </span>
-
-            <h3 className="text-3xl font-bold mt-4">
-              Learn from Anywhere
-            </h3>
-
-            <p className="text-zinc-400 leading-relaxed mt-6">
-              Monthly online learning sessions that provide practical
-              insights into leadership, business transformation, Kingdom
-              certification, and emerging trends.
-            </p>
-
-            <div className="flex flex-wrap gap-3 mt-8">
-
-              {webinarTopics.map((item) => (
-
-                <span
-                  key={item}
-                  className="bg-zinc-950 border border-zinc-800 rounded-full px-4 py-2 text-sm"
-                >
-
-                  {item}
-
-                </span>
-
-              ))}
+              <Link to="/training-events">
+                <button className="mt-8 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+                  {item.buttonText}
+                </button>
+              </Link>
 
             </div>
 
-            <button className="mt-8 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              View Webinars
-            </button>
-
-          </div>
-
-          {/* Mentorship */}
-          <div id="mentorship" className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300">
-
-            <span className="text-emerald-400 uppercase tracking-wider text-sm">
-              Mentorship
-            </span>
-
-            <h3 className="text-3xl font-bold mt-4">
-              Grow with Experienced Leaders
-            </h3>
-
-            <p className="text-zinc-400 leading-relaxed mt-6">
-              Receive guidance, accountability, and strategic insight from
-              experienced Kingdom practitioners who have navigated growth,
-              leadership, and organizational transformation.
-            </p>
-
-            <div className="flex flex-wrap gap-3 mt-8">
-
-              {mentorshipTopics.map((item) => (
-
-                <span
-                  key={item}
-                  className="bg-zinc-950 border border-zinc-800 rounded-full px-4 py-2 text-sm"
-                >
-
-                  {item}
-
-                </span>
-
-              ))}
-
-            </div>
-
-            <button className="mt-8 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              Apply for Mentorship
-            </button>
-
-          </div>
+          ))}
 
         </div>
 

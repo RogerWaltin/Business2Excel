@@ -12,9 +12,10 @@ export default function Footer() {
     ]
 
     const mainLinks = [
-        { label: "Book Consultation", to: "/" },
-        { label: "Explore Certifications", to: "/certification" },
         { label: "Contact", to: "/contact" },
+        { label: "Book Consultation", to: "/consultation" },
+        { label: "Apply For Certifications", to: "/certification" },
+
     ]
 
     return (

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function FinalCTA() {
   return (
     <section id="final-cta" className="py-32">
@@ -22,13 +24,17 @@ export default function FinalCTA() {
 
           <div className="flex flex-wrap justify-center gap-4 mt-10">
 
-            <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
-              Join the Network
-            </button>
+            <Link to="/network">
+              <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
+                Join the Network
+              </button>
+            </Link>
 
-            <button className="border border-zinc-700 hover:border-emerald-500 px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
-              Book a Consultation
-            </button>
+            <Link to="/consultation">
+              <button className="border border-zinc-700 hover:border-emerald-500 px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
+                Book a Consultation
+              </button>
+            </Link>
 
           </div>
 
