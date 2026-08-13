@@ -4,18 +4,22 @@ const service = [
     {
         title: "Business Transformation",
         desc: "Navigate change, growth, and organizational reinvention.",
+        image: "/media/transformation.jpg"
     },
     {
         title: "Kingdom Leadership",
         desc: "Develop leaders grounded in stewardship and purpose.",
+        image: "/media/leadership.jpg"
     },
     {
         title: "Stewardship & Wealth",
         desc: "Align resources, influence, and impact with Kingdom values.",
+        image: "/media/wealth.jpg"
     },
     {
         title: "Business as Mission",
         desc: "Advance Kingdom influence through enterprise and innovation.",
+        image: "/media/mission.jpg"
     },
 ]
 
@@ -52,14 +56,23 @@ export default function ServicesPreview({ color1, color2 }) {
                         {service.map((item) => (
                             <div
                                 key={item.title}
-                                className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8"
+                                className="relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-3xl p-8"
                             >
-                                <h3 className="text-xl font-bold">
-                                    {item.title}
-                                </h3>
-                                <p className="text-zinc-400 mt-4 leading-relaxed">
-                                    {item.desc}
-                                </p>
+                                <img
+                                    src={item.image}
+                                    alt=""
+                                    className="absolute inset-0 w-full h-full object-cover"
+                                />
+                                <div className="absolute inset-0 bg-black/70" />
+
+                                <div className="relative z-10">
+                                    <h3 className="text-xl font-bold">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-zinc-200 mt-4 leading-relaxed">
+                                        {item.desc}
+                                    </p>
+                                </div>
                             </div>
                         ))}
                     </div>
