@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom"
+import { motion } from "motion/react"
+import { TypeAnimation } from 'react-type-animation';
 
 const heroPillar = [
   {
@@ -21,11 +23,11 @@ const heroPillar = [
 
 export default function HomeHero({color1, color2}) {
   return (
-    <section id="hero" className="relative overflow-hidden border-b border-zinc-900">
+    <section id="hero" className="relative overflow-hidden border-b border-zinc-900 ">
 
       {/* <div id="right-corner-glow" className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.12),transparent_40%)]" /> */}
 
-      <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6 pt-20 pb-29 relative z-10">
+      <div className="grid lg:grid-cols-2 gap-12 items-center max-w-360 mx-auto px-6 pt-20 pb-29 relative z-10">
 
         {/* Left */}
         <div>
@@ -34,9 +36,21 @@ export default function HomeHero({color1, color2}) {
 
             Transforming Organizations
 
-            <span className={`block text-${color1}`}>
-              For Lasting Kingdom Impact
-            </span>
+            <TypeAnimation
+              sequence={[
+                // Same substring at the start will only be typed out once, initially
+                'For Lasting Kingdom Impact',
+                1000, 
+                'For Kingdom Leadership',
+                1000,
+                'For Generational Influence',
+                1000
+              ]}
+              wrapper="span"
+              speed={50}
+              className={`block text-${color1}`}
+              repeat={Infinity}
+            />
 
           </h1>
 
