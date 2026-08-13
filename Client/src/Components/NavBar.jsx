@@ -173,7 +173,7 @@ const navSections = [
 
 ]
 
-export default function Navbar() {
+export default function Navbar({ color1, color2 }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [openSection, setOpenSection] = useState(null)
 
@@ -229,10 +229,10 @@ export default function Navbar() {
             <HashLink
               smooth
               to="/"
-              className="mr-auto text-2xl font-bold tracking-tight group text-white hover:text-emerald-400 transition-colors duration-300"
+              className={`mr-auto text-2xl font-bold tracking-tight group text-white hover:text-${color1} transition-colors duration-300`}
             >
               Business
-              <span className="text-emerald-400 group-hover:text-white transition-colors duration-300">
+              <span className={`text-${color1} group-hover:text-white transition-colors duration-300`}>
                 2
               </span>
               Excel
@@ -241,7 +241,7 @@ export default function Navbar() {
             {/* Hamburger */} {/* BUG rapidly clicking hamburger menu causes the logo to not switch and the dropdown menu stuck in current state */}
             <button
               onClick={handleMenu}
-              className="lg:hidden ml-auto text-white hover:text-emerald-400 transition-colors duration-300 cursor-pointer"
+              className={`lg:hidden ml-auto text-white hover:text-${color1} transition-colors duration-300 cursor-pointer`}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
               {menuOpen ? (
@@ -269,7 +269,7 @@ export default function Navbar() {
                   <HashLink
                     smooth
                     to={section.to}
-                    className="h-fit w-fit flex items-center gap-2 mx-7 text-white hover:text-emerald-400 transition-all duration-300"
+                    className={`h-fit w-fit flex items-center gap-2 mx-7 text-white hover:text-${color1} transition-all duration-300`}
                   >
                     <span className="font-medium">{section.label}</span>
 
@@ -292,7 +292,7 @@ export default function Navbar() {
                       <div className="w-225 bg-zinc-900/95 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 shadow-2xl grid grid-cols-2 gap-12">
                         {section.dropdownGroups.map((group) => (
                           <div key={group.title}>
-                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                            <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-${color1}`}>
                               {group.title}
                             </p>
                             <div className="mt-3 h-px bg-zinc-800" />
@@ -302,7 +302,7 @@ export default function Navbar() {
                                   key={link.label}
                                   smooth
                                   to={link.to}
-                                  className="rounded-xl px-4 py-3 text-zinc-300 transition-all duration-300 hover:bg-zinc-800 hover:text-emerald-400"
+                                  className={`rounded-xl px-4 py-3 text-zinc-300 transition-all duration-300 hover:bg-zinc-800 hover:text-${color1}`}
                                 >
                                   {link.label}
                                 </HashLink>
@@ -351,7 +351,7 @@ export default function Navbar() {
 
                     <button
                       onClick={() => toggleSection(section.label)}
-                      className="w-full flex items-center justify-between py-4 text-lg font-medium text-white hover:text-emerald-400 transition-colors duration-200 cursor-pointer"
+                      className={`w-full flex items-center justify-between py-4 text-lg font-medium text-white hover:text-${color1} transition-colors duration-200 cursor-pointer`}
                       aria-label={isOpen ? `Collapse ${section.label}` : `Expand ${section.label}`}
                     >
 
@@ -384,7 +384,7 @@ export default function Navbar() {
                       smooth
                       to={section.to}
                       onClick={handleMenu}
-                      className="block py-4 text-lg font-medium text-white hover:text-emerald-400 transition-colors duration-200"
+                      className={`block py-4 text-lg font-medium text-white hover:text-${color1} transition-colors duration-200`}
                     >
                       {section.label}
                     </HashLink>
@@ -398,7 +398,7 @@ export default function Navbar() {
                         <div key={group.title}>
 
                           {/* Group title */}
-                          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-400 px-2 mb-2">
+                          <p className={`text-xs font-semibold uppercase tracking-[0.2em] text-${color1} px-2 mb-2`}>
                             {group.title}
                           </p>
 
@@ -410,7 +410,7 @@ export default function Navbar() {
                                 smooth
                                 to={link.to}
                                 onClick={handleMenu}
-                                className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-emerald-400 transition-all duration-200"
+                                className={`rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-${color1} transition-all duration-200`}
                               >
                                 {link.label}
                               </HashLink>

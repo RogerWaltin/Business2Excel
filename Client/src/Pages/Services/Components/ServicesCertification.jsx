@@ -1,4 +1,4 @@
-export default function ServicesCertification() {
+export default function ServicesCertification({ color1, color2 }) {
     const benefits = [
         {
             title: "Credibility & Trust",
@@ -52,7 +52,7 @@ export default function ServicesCertification() {
 
             <div className="mx-auto max-w-7xl px-6">
 
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                <p className={`text-sm font-semibold uppercase tracking-[0.2em] text-${color1}`}>
                     Kingdom Certification
                 </p>
 
@@ -124,7 +124,7 @@ export default function ServicesCertification() {
                                 className="rounded-3xl border border-zinc-800 bg-black p-8"
                             >
 
-                                <p className="text-5xl font-bold text-emerald-400">
+                                <p className={`text-5xl font-bold text-${color1}`}>
                                     {item.step}
                                 </p>
 

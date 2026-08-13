@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-export default function FinalCTA() {
+export default function FinalCTA({ color1, color2 }) {
   return (
     <section id="final-cta" className="py-24">
 
@@ -9,7 +9,7 @@ export default function FinalCTA() {
 
         <h2 className="text-4xl md:text-6xl font-bold">
           Build a Business That Creates
-          <span className="text-emerald-400 block">
+          <span className={`text-${color1} block`}>
             Lasting Kingdom Impact
           </span>
         </h2>
@@ -23,19 +23,19 @@ export default function FinalCTA() {
         <div className="flex flex-wrap justify-center gap-4 mt-10">
 
           <Link to="/consultation">
-            <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+            <button className={`bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
               Book Consultation
             </button>
           </Link>
 
           <HashLink to="community#training-events">
-            <button className="border border-zinc-700 hover:border-emerald-500 px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+            <button className={`border border-zinc-700 hover:border-${color1} px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
               Trainings & Events
             </button>
           </HashLink>
 
           <Link to="certification">
-            <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+            <button className={`bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
               Explore Certifications
             </button>
           </Link>
@@ -47,3 +47,4 @@ export default function FinalCTA() {
     </section>
   )
 }
+

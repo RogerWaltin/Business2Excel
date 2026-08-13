@@ -1,10 +1,10 @@
-export default function ServicesFramework() {
+export default function ServicesFramework({ color1, color2 }) {
   return (
     <section className="bg-black pt-20">
 
       <div className="mx-auto max-w-7xl px-6">
 
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+        <p className={`text-sm font-semibold uppercase tracking-[0.2em] text-${color1}`}>
           Strategic Framework
         </p>
 
@@ -83,7 +83,7 @@ export default function ServicesFramework() {
               and long-term Kingdom impact.
             </p>
 
-            <div className="mt-8 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8">
+            <div className="mt-8 rounded-2xl border border-zinc-800 p-8">
 
               <p className="text-lg font-semibold text-white">
                 The Flagship Differentiator

@@ -17,7 +17,7 @@ const impactStats = [
   },
 ]
 
-export default function CommunityImpact() {
+export default function CommunityImpact({ color1, color2 }) {
   return (
     <section
       id="impact"
@@ -32,7 +32,7 @@ export default function CommunityImpact() {
           <div>
 
             <h2 className="text-4xl md:text-5xl font-bold mt-6">
-              Connection That Leads to <span className="text-emerald-400">Impact</span> & Transformation
+              Connection That Leads to <span className={`text-${color1}`}>Impact</span> & Transformation
             </h2>
 
             <p className="text-zinc-400 text-lg leading-relaxed mt-8">
@@ -62,7 +62,7 @@ export default function CommunityImpact() {
                 className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 text-center"
               >
 
-                <h3 className="text-5xl font-bold text-emerald-400">
+                <h3 className={`text-5xl font-bold text-${color1}`}>
                   {stat.number}
                 </h3>
 
@@ -83,3 +83,4 @@ export default function CommunityImpact() {
     </section>
   )
 }
+

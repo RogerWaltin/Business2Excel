@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function Events() {
+export default function Events({ color1, color2 }) {
   return (
     <section id="events" className="py-16 border-b border-zinc-900">
 
@@ -12,13 +12,13 @@ export default function Events() {
 
           <div>
 
-            <span className="text-emerald-400 uppercase tracking-widest text-sm">
+            <span className={`text-${color1} uppercase tracking-widest text-sm`}>
               Training & Events
             </span>
 
             <h2 className="text-4xl md:text-5xl font-bold mt-6">
               Equipping Leaders
-              <span className="text-emerald-400 block">
+              <span className={`text-${color1} block`}>
                 For The Future
               </span>
             </h2>
@@ -31,7 +31,7 @@ export default function Events() {
             </p>
 
             <Link to="/community">
-              <button className="mt-10 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+              <button className={`mt-10 bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
                 Explore Community
               </button>
             </Link>
@@ -42,9 +42,9 @@ export default function Events() {
 
           <div className="grid md:grid-cols-2 gap-6">
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-emerald-500/30 transition-all duration-300">
+            <div className={`bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-${color2}/30 transition-all duration-300`}>
 
-              <span className="text-emerald-400 uppercase tracking-wider text-sm">
+              <span className={`text-${color1} uppercase tracking-wider text-sm`}>
                 Workshops
               </span>
 
@@ -59,9 +59,9 @@ export default function Events() {
 
             </div>
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-emerald-500/30 transition-all duration-300">
+            <div className={`bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-${color2}/30 transition-all duration-300`}>
 
-              <span className="text-emerald-400 uppercase tracking-wider text-sm">
+              <span className={`text-${color1} uppercase tracking-wider text-sm`}>
                 Conferences
               </span>
 
@@ -76,9 +76,9 @@ export default function Events() {
 
             </div>
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-emerald-500/30 transition-all duration-300">
+            <div className={`bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-${color2}/30 transition-all duration-300`}>
 
-              <span className="text-emerald-400 uppercase tracking-wider text-sm">
+              <span className={`text-${color1} uppercase tracking-wider text-sm`}>
                 Webinars
               </span>
 
@@ -93,9 +93,9 @@ export default function Events() {
 
             </div>
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-emerald-500/30 transition-all duration-300">
+            <div className={`bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-${color2}/30 transition-all duration-300`}>
 
-              <span className="text-emerald-400 uppercase tracking-wider text-sm">
+              <span className={`text-${color1} uppercase tracking-wider text-sm`}>
                 Mentorship
               </span>
 

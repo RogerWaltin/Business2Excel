@@ -1,4 +1,4 @@
-export default function KingdomWorldview() {
+export default function KingdomWorldview({ color1, color2 }) {
     const worldviewPrinciples = [
         "integrity",
         "accountability",
@@ -17,7 +17,7 @@ export default function KingdomWorldview() {
 
                 <div className="max-w-3xl">
 
-                    <span className="text-emerald-400 uppercase tracking-widest text-sm">
+                    <span className={`text-${color1} uppercase tracking-widest text-sm`}>
                         Kingdom Worldview
                     </span>
 
