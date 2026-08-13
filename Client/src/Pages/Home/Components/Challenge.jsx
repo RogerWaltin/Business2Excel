@@ -1,3 +1,5 @@
+import citySkyline from "../../../Assets/city-skyline.mp4"
+
 const businessChallenge = [
   "Ethical Confusion",
   "AI Disruption",
@@ -9,9 +11,15 @@ const businessChallenge = [
 
 export default function Challenge({ color1, color2 }) {
   return (
-    <section id="challenge" className="py-16 border-b border-zinc-900">
+    <section id="challenge" className="py-16 border-b border-zinc-900 relative overflow-hidden">
 
-      <div className="max-w-7xl mx-auto px-6">
+      <video muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
+        <source src={citySkyline} type="video/mp4" />
+      </video>
+
+      <div className="absolute inset-0 bg-black/75" />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         <div className="max-w-3xl mx-auto text-center">
 
