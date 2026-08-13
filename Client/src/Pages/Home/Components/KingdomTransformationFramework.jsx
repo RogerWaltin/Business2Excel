@@ -1,4 +1,4 @@
-export default function KingdomTransformationFramework() {
+export default function KingdomTransformationFramework({ color1, color2 }) {
   return (
     <section id="kingdom-transformation-framework" className="py-20 border-b border-zinc-900">
 
@@ -99,3 +99,4 @@ export default function KingdomTransformationFramework() {
     </section>
   )
 }
+

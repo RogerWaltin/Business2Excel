@@ -18,6 +18,7 @@ import Consultation from "../Pages/Consultation.jsx"
 import Certification from "../Pages/Certification.jsx"
 import Network from "../Pages/Network.jsx"
 import TrainingEventsHub from "../Pages/TrainingEventsHub.jsx"
+import { color1, color2 } from "../Data/colors.js"
 
 export default function AppRouter() {
 
@@ -26,15 +27,15 @@ export default function AppRouter() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
-        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Contact" element={<Contact color1={color1} color2={color2} />} />
         <Route path="/Services" element={<Services />} />
         <Route path="/Resources" element={<Resources />} />
         <Route path="/Community" element={<Community />} />
 
-        <Route path="/consultation" element={<Consultation />} />
-        <Route path="/certification" element={<Certification />} />
-        <Route path="/network" element={<Network />} />
-        <Route path="/training-events" element={<TrainingEventsHub />} />
+        <Route path="/consultation" element={<Consultation color1={color1} color2={color2} />} />
+        <Route path="/certification" element={<Certification color1={color1} color2={color2} />} />
+        <Route path="/network" element={<Network color1={color1} color2={color2} />} />
+        <Route path="/training-events" element={<TrainingEventsHub color1={color1} color2={color2} />} />
 
         <Route path="/resources/articles" element={<Articles />} />
         <Route path="/resources/whitepapers" element={<Whitepapers />} />

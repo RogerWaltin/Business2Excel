@@ -1,6 +1,33 @@
 import { Link } from "react-router-dom"
 
-export default function Events() {
+export default function Events({ color1, color2 }) {
+  const eventCards = [
+    {
+      label: "Workshops",
+      title: "Practical Training",
+      description: "Interactive sessions focused on implementation, stewardship, leadership, and innovation.",
+      image: "/media/workshop.jpg",
+    },
+    {
+      label: "Conferences",
+      title: "Kingdom Gatherings",
+      description: "Connect with entrepreneurs, executives, consultants, investors, and innovators.",
+      image: "/media/conference.jpg",
+    },
+    {
+      label: "Webinars",
+      title: "Learn Anywhere",
+      description: "Online learning sessions covering certification, leadership, transformation, and future trends.",
+      image: "/media/webinar.jpg",
+    },
+    {
+      label: "Mentorship",
+      title: "Guided Growth",
+      description: "Receive strategic guidance from experienced Kingdom leaders and practitioners.",
+      image: "/media/mentorship.jpg",
+    },
+  ]
+
   return (
     <section id="events" className="py-16 border-b border-zinc-900">
 
@@ -42,73 +69,46 @@ export default function Events() {
 
           <div className="grid md:grid-cols-2 gap-6">
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300">
+            {eventCards.map((card) => (
 
-              <span className="text-primary uppercase tracking-wider text-sm">
-                Workshops
-              </span>
+              <div
+                key={card.label}
+                className={"relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300"}
+              >
 
-              <h3 className="text-2xl font-bold mt-4">
-                Practical Training
-              </h3>
+                {/* Background Image */}
 
-              <p className="text-zinc-400 leading-relaxed mt-4">
-                Interactive sessions focused on implementation,
-                stewardship, leadership, and innovation.
-              </p>
+                <img
+                  src={card.image}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
 
-            </div>
+                {/* Dark Overlay */}
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300">
+                <div className="absolute inset-0 bg-black/70" />
 
-              <span className="text-primary uppercase tracking-wider text-sm">
-                Conferences
-              </span>
+                {/* Content */}
 
-              <h3 className="text-2xl font-bold mt-4">
-                Kingdom Gatherings
-              </h3>
+                <div className="relative z-10">
 
-              <p className="text-zinc-400 leading-relaxed mt-4">
-                Connect with entrepreneurs, executives,
-                consultants, investors, and innovators.
-              </p>
+                  <span className={"text-primary uppercase tracking-wider text-sm"}>
+                    {card.label}
+                  </span>
 
-            </div>
+                  <h3 className="text-2xl font-bold mt-4">
+                    {card.title}
+                  </h3>
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300">
+                  <p className="text-zinc-200 leading-relaxed mt-4">
+                    {card.description}
+                  </p>
 
-              <span className="text-primary uppercase tracking-wider text-sm">
-                Webinars
-              </span>
+                </div>
 
-              <h3 className="text-2xl font-bold mt-4">
-                Learn Anywhere
-              </h3>
+              </div>
 
-              <p className="text-zinc-400 leading-relaxed mt-4">
-                Online learning sessions covering certification,
-                leadership, transformation, and future trends.
-              </p>
-
-            </div>
-
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300">
-
-              <span className="text-primary uppercase tracking-wider text-sm">
-                Mentorship
-              </span>
-
-              <h3 className="text-2xl font-bold mt-4">
-                Guided Growth
-              </h3>
-
-              <p className="text-zinc-400 leading-relaxed mt-4">
-                Receive strategic guidance from experienced
-                Kingdom leaders and practitioners.
-              </p>
-
-            </div>
+            ))}
 
           </div>
 

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { TypeAnimation } from 'react-type-animation';
+import conference from "../../../Assets/Conference.mp4"
 
 const heroPillar = [
   {
@@ -20,11 +21,17 @@ const heroPillar = [
   },
 ]
 
-export default function HomeHero() {
+export default function HomeHero({ color1, color2 }) {
   return (
-    <section id="hero" className="relative overflow-hidden border-b border-zinc-900 ">
+    <section id="hero" className="relative overflow-hidden border-b border-zinc-900">
 
       {/* <div id="right-corner-glow" className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.12),transparent_40%)]" /> */}
+
+      <div className="absolute inset-y-0 right-0 w-full">
+        <video src={conference} className="h-full w-full object-cover" autoPlay muted loop playsInline></video>
+    </div>
+
+    <div className="absolute inset-0 bg-linear-to-r from-zinc-950 via-zinc-950/90 to-zinc-950/30" />
 
       <div className="grid lg:grid-cols-2 gap-12 items-center max-w-360 mx-auto px-6 pt-20 pb-29 relative z-10">
 
@@ -39,7 +46,7 @@ export default function HomeHero() {
               sequence={[
                 // Same substring at the start will only be typed out once, initially
                 'For Lasting Kingdom Impact',
-                1000, 
+                1000,
                 'For Kingdom Leadership',
                 1000,
                 'For Generational Influence',
@@ -125,3 +132,4 @@ export default function HomeHero() {
     </section>
   )
 }
+
