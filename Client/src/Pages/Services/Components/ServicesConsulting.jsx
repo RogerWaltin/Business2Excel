@@ -9,7 +9,7 @@ export default function ServicesConsulting() {
 
                 {/* Section Intro */}
 
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
                     Consulting
                 </p>
 
@@ -31,7 +31,7 @@ export default function ServicesConsulting() {
                     className="mt-24 rounded-3xl border border-zinc-800 bg-zinc-950 p-12"
                 >
 
-                    <p className="text-sm font-semibold uppercase tracking-[0.15em] text-emerald-400">
+                    <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
                         Consulting Area
                     </p>
 
@@ -83,7 +83,7 @@ export default function ServicesConsulting() {
                     className="mt-16 rounded-3xl border border-zinc-800 bg-zinc-950 p-12"
                 >
 
-                    <p className="text-sm font-semibold uppercase tracking-[0.15em] text-emerald-400">
+                    <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
                         Consulting Area
                     </p>
 
@@ -132,7 +132,7 @@ export default function ServicesConsulting() {
                     className="mt-16 rounded-3xl border border-zinc-800 bg-zinc-950 p-12"
                 >
 
-                    <p className="text-sm font-semibold uppercase tracking-[0.15em] text-emerald-400">
+                    <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
                         Consulting Area
                     </p>
 
@@ -181,7 +181,7 @@ export default function ServicesConsulting() {
                     className="mt-16 rounded-3xl border border-zinc-800 bg-zinc-950 p-12"
                 >
 
-                    <p className="text-sm font-semibold uppercase tracking-[0.15em] text-emerald-400">
+                    <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
                         Consulting Area
                     </p>
 

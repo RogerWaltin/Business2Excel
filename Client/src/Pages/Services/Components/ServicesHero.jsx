@@ -10,7 +10,7 @@ export default function ServicesHero() {
     return (
         <section className="relative overflow-hidden bg-linear-to-b from-zinc-950 via-black to-black pt-20">
 
-            <div className="absolute pointer-events-none inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_35%)]" />
+            {/* <div className="absolute pointer-events-none inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_35%)]" /> */}
 
             <div className="mx-auto max-w-7xl px-6">
 
@@ -18,12 +18,12 @@ export default function ServicesHero() {
 
                     {/* Left Content */}
                     <div>
-                        <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm tracking-widest uppercase text-emerald-400">
+                        <span className="inline-flex items-center rounded-full border border-secondary/75 px-4 py-2 text-sm tracking-widest uppercase text-primary">
                             Services
                         </span>
                         <h1 className="mt-4 text-5xl font-bold leading-tight tracking-tight text-white lg:text-5xl">
                             Transforming Organizations
-                            <span className="block text-emerald-400">
+                            <span className="block text-primary">
                                 For Lasting Kingdom Impact
                             </span>
                         </h1>
@@ -37,12 +37,12 @@ export default function ServicesHero() {
                         <div className="mt-10 flex flex-wrap gap-4">
 
                             <Link to="/consultation">
-                                <button className="rounded-xl bg-emerald-500 px-6 py-4 font-semibold text-black transition-all duration-300 hover:bg-emerald-400 cursor-pointer">
+                                <button className="rounded-xl bg-secondary px-6 py-4 font-semibold text-black transition-all duration-300 hover:bg-primary cursor-pointer">
                                     Book Consultation
                                 </button>
                             </Link>
 
-                            <button onClick={scrollToServices} className="rounded-xl border border-zinc-700 px-6 py-4 font-semibold text-white transition-all duration-300 hover:border-emerald-500 hover:text-emerald-400 cursor-pointer">
+                            <button onClick={scrollToServices} className="rounded-xl border border-zinc-700 px-6 py-4 font-semibold text-white transition-all duration-300 hover:border-secondary hover:text-primary cursor-pointer">
                                 Explore Certifications
                             </button>
 
@@ -58,7 +58,7 @@ export default function ServicesHero() {
                             <div className="grid gap-6 sm:grid-cols-2">
 
                                 <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
-                                    <p className="text-4xl font-bold text-emerald-400">
+                                    <p className="text-4xl font-bold text-primary">
                                         12+
                                     </p>
                                     <p className="mt-2 text-zinc-400">
@@ -67,7 +67,7 @@ export default function ServicesHero() {
                                 </div>
 
                                 <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
-                                    <p className="text-4xl font-bold text-emerald-400">
+                                    <p className="text-4xl font-bold text-primary">
                                         AI
                                     </p>
                                     <p className="mt-2 text-zinc-400">
@@ -76,7 +76,7 @@ export default function ServicesHero() {
                                 </div>
 
                                 <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
-                                    <p className="text-4xl font-bold text-emerald-400">
+                                    <p className="text-4xl font-bold text-primary">
                                         4
                                     </p>
                                     <p className="mt-2 text-zinc-400">
@@ -85,7 +85,7 @@ export default function ServicesHero() {
                                 </div>
 
                                 <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
-                                    <p className="text-4xl font-bold text-emerald-400">
+                                    <p className="text-4xl font-bold text-primary">
                                         ✓
                                     </p>
                                     <p className="mt-2 text-zinc-400">
@@ -95,7 +95,7 @@ export default function ServicesHero() {
 
                             </div>
 
-                            <div className="mt-8 rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-6">
+                            <div className="mt-8 rounded-2xl border border-zinc-800 p-6">
 
                                 <h3 className="text-lg font-semibold text-white">
                                     Kingdom Business Transformation

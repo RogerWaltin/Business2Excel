@@ -27,7 +27,7 @@ export default function FAQ() {
 
             <div className="max-w-5xl mx-auto px-6">
 
-                <span className="text-emerald-400 uppercase tracking-widest text-sm">
+                <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
                     FAQ
                 </span>
 

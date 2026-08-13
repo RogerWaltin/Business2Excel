@@ -8,7 +8,7 @@ export default function Resources() {
 
           <div className="max-w-4xl mx-auto text-center">
 
-            <span className="text-emerald-400 uppercase tracking-widest text-sm">
+            <span className="text-primary uppercase tracking-widest text-sm">
               Resources
             </span>
 
@@ -67,7 +67,7 @@ export default function Resources() {
           <div className="text-center mt-12">
 
             <HashLink to="/resources#library">
-              <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+              <button className="bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
                 Explore Resource Library
               </button>
             </HashLink>

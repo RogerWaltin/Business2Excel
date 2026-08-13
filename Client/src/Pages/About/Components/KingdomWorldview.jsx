@@ -17,7 +17,7 @@ export default function KingdomWorldview() {
 
                 <div className="max-w-3xl">
 
-                    <span className="text-emerald-400 uppercase tracking-widest text-sm">
+                    <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
                         Kingdom Worldview
                     </span>
 

@@ -4,7 +4,7 @@ export default function ServicesFramework() {
 
       <div className="mx-auto max-w-7xl px-6">
 
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
           Strategic Framework
         </p>
 
@@ -20,7 +20,7 @@ export default function ServicesFramework() {
           rapidly changing world.
         </p>
 
-        <div className="mt-20 grid gap-12 lg:grid-cols-[1fr_auto_1fr]">
+        <div className="mt-20 grid gap-8 lg:grid-cols-[1fr_auto_1fr]">
 
           {/* Consulting Side */} {/*TODO Use framer motion or something to make an animation that breaks the consultation box into 4 small boxes*/}
 
@@ -67,7 +67,7 @@ export default function ServicesFramework() {
 
           {/* Divider */}
 
-          <div className="hidden lg:block w-px bg-zinc-800" />
+          <div className="hidden lg:block w-px bg-black" />
 
           {/* Certification Side */}
 
@@ -83,7 +83,7 @@ export default function ServicesFramework() {
               and long-term Kingdom impact.
             </p>
 
-            <div className="mt-8 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-8">
+            <div className="mt-8 rounded-2xl border border-zinc-800 p-8">
 
               <p className="text-lg font-semibold text-white">
                 The Flagship Differentiator

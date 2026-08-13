@@ -45,7 +45,7 @@ export default function KingdomCertification() {
           {/* What You Gain */}
           <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
 
-            <span className="text-emerald-400 uppercase tracking-wider text-sm">
+            <span className="text-primary uppercase tracking-wider text-sm">
               What You Gain
             </span>
 
@@ -58,7 +58,7 @@ export default function KingdomCertification() {
                   className="flex items-center gap-4 border-b border-zinc-800 pb-4 last:border-0 last:pb-0"
                 >
 
-                  <span className="text-emerald-400 font-bold min-w-6">
+                  <span className="text-primary font-bold min-w-6">
                     ✓
                   </span>
 
@@ -77,7 +77,7 @@ export default function KingdomCertification() {
           {/* Certification Journey */}
           <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
 
-            <span className="text-emerald-400 uppercase tracking-wider text-sm">
+            <span className="text-primary uppercase tracking-wider text-sm">
               Certification Journey
             </span>
 
@@ -90,7 +90,7 @@ export default function KingdomCertification() {
                   className="flex items-center gap-4 border-b border-zinc-800 pb-4 last:border-0 last:pb-0"
                 >
 
-                  <span className="text-emerald-400 font-bold min-w-6">
+                  <span className="text-primary font-bold min-w-6">
                     {(index + 1).toString().padStart(2, "0")}
                   </span>
 
@@ -122,7 +122,7 @@ export default function KingdomCertification() {
           </p>
 
           <Link to="/certification">
-            <button className="mt-6 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+            <button className="mt-6 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
               Start Certification
             </button>
           </Link>
