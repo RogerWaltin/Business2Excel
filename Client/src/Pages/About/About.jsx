@@ -6,9 +6,7 @@ import Leadership from "./Components/Leadership"
 import OurStory from "./Components/OurStory"
 import Testimonials from "./Components/Testimonials"
 import VisionMission from "./Components/VisionMission"
-
-const color1 = "[#ebb318]"
-const color2 = "[#CB9604]"
+import { color1, color2 } from "../../Data/colors.js"
 
 export default function About() {
 

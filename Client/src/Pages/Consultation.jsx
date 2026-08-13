@@ -8,13 +8,13 @@ export default function Consultation({ color1, color2 }) {
 
                 <div className="max-w-5xl mx-auto px-6 text-center">
 
-                    <span className="text-emerald-400 uppercase tracking-widest text-sm">
+                    <span className={`text-${color1} uppercase tracking-widest text-sm`}>
                         Consultation
                     </span>
 
                     <h1 className="text-4xl md:text-6xl font-bold mt-6">
                         Begin Your
-                        <span className="text-emerald-400 block">
+                        <span className={`text-${color1} block`}>
                             Transformation Journey
                         </span>
                     </h1>
@@ -47,30 +47,30 @@ export default function Consultation({ color1, color2 }) {
                             <input
                                 type="text"
                                 placeholder="Full Name"
-                                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-emerald-500"
+                                className={`w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-${color2}`}
                             />
 
                             <input
                                 type="email"
                                 placeholder="Email Address"
-                                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-emerald-500"
+                                className={`w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-${color2}`}
                             />
 
                             <input
                                 type="text"
                                 placeholder="Organization"
-                                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-emerald-500"
+                                className={`w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-${color2}`}
                             />
 
                             <textarea
                                 rows="6"
                                 placeholder="Tell us about your goals and challenges..."
-                                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-emerald-500 resize-none"
+                                className={`w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-${color2} resize-none`}
                             />
 
                             <button
                                 type="submit"
-                                className="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-semibold py-4 rounded-xl transition-all duration-300 cursor-pointer"
+                                className={`w-full bg-${color2} hover:bg-${color1} text-black font-semibold py-4 rounded-xl transition-all duration-300 cursor-pointer`}
                             >
                                 Submit Consultation Request
                             </button>
@@ -145,7 +145,7 @@ export default function Consultation({ color1, color2 }) {
 
                     <h2 className="text-3xl md:text-5xl font-bold">
                         Build A Business That Creates
-                        <span className="text-emerald-400 block">
+                        <span className={`text-${color1} block`}>
                             Lasting Kingdom Impact
                         </span>
                     </h2>

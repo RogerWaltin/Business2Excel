@@ -1,10 +1,10 @@
-export default function Testimonials() {
+export default function Testimonials({ color1, color2 }) {
   return (
     <section id="testimonials-case-studies" className="py-28 border-b border-zinc-900">
 
       <div className="max-w-7xl mx-auto px-6">
 
-        <span className="text-emerald-400 uppercase tracking-widest text-sm">
+        <span className={`text-${color1} uppercase tracking-widest text-sm`}>
           Case Studies
         </span>
 

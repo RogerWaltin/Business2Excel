@@ -2,9 +2,7 @@ import FeaturedInsights from "./Components/FeaturedInsights";
 import FeaturedResources from "./Components/FeaturedResources";
 import Hero from "./Components/Hero";
 import Library from "./Components/Library";
-
-const color1 = "#ebb318";
-const color2 = "#CB9604";
+import { color1, color2 } from "../../Data/colors.js";
 
 export default function Resources() {
   return (

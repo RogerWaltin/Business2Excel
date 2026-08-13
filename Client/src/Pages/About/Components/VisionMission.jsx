@@ -1,4 +1,4 @@
-export default function VisionMission() {
+export default function VisionMission({ color1, color2 }) {
   return (
     <section id="vision-mission" className="py-28 border-b border-zinc-900">
 
@@ -6,7 +6,7 @@ export default function VisionMission() {
 
         <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
 
-          <span className="text-emerald-400 uppercase tracking-widest text-sm">
+          <span className={`text-${color1} uppercase tracking-widest text-sm`}>
             Our Vision
           </span>
 
@@ -20,7 +20,7 @@ export default function VisionMission() {
 
         <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
 
-          <span className="text-emerald-400 uppercase tracking-widest text-sm">
+          <span className={`text-${color1} uppercase tracking-widest text-sm`}>
             Our Mission
           </span>
 

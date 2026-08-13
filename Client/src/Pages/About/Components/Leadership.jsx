@@ -1,4 +1,4 @@
-export default function Leadership() {
+export default function Leadership({ color1, color2 }) {
     const leadershipAreas = [
         "business transformation",
         "leadership development",
@@ -26,7 +26,7 @@ export default function Leadership() {
 
                 <div className="max-w-3xl">
 
-                    <span className="text-emerald-400 uppercase tracking-widest text-sm">
+                    <span className={`text-${color1} uppercase tracking-widest text-sm`}>
                         Leadership
                     </span>
 
@@ -47,7 +47,7 @@ export default function Leadership() {
 
                         <div
                             key={item}
-                            className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-emerald-500/30 transition-all duration-300"
+                            className={`bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-${color2}/30 transition-all duration-300`}
                         >
 
                             <h3 className="text-lg font-semibold capitalize text-center">
@@ -66,10 +66,10 @@ export default function Leadership() {
 
                         <div
                             key={item}
-                            className="bg-emerald-500/5 border border-emerald-500/20 rounded-2xl p-6 text-center"
+                            className={`border border-${color2}/50 rounded-2xl p-6 text-center`}
                         >
 
-                            <span className="capitalize text-emerald-400 font-medium">
+                            <span className={`capitalize text-${color1} font-medium`}>
                                 {item}
                             </span>
 

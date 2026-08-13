@@ -1,10 +1,10 @@
-export default function FounderStory() {
+export default function FounderStory({ color1, color2 }) {
   return (
     <section id="founder-story" className="py-28 border-b border-zinc-900">
 
       <div className="max-w-5xl mx-auto px-6">
 
-        <span className="text-emerald-400 uppercase tracking-widest text-sm">
+        <span className={`text-${color1} uppercase tracking-widest text-sm`}>
           Founder Story
         </span>
 

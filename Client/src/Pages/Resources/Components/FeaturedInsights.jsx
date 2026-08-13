@@ -1,10 +1,10 @@
-export default function FeaturedInsights() {
+export default function FeaturedInsights({ color1, color2 }) {
     return (
         <section id="featured-insight" className="bg-black pt-20">
 
             <div className="mx-auto max-w-7xl px-6">
 
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                <p className={`text-sm font-semibold uppercase tracking-[0.2em] text-${color1}`}>
                     Featured Insight
                 </p>
 
@@ -43,11 +43,11 @@ export default function FeaturedInsights() {
                             {/* NOTE due to lack of content, i've temporarily disabled these two buttons */}
                             {/* <div className="mt-10 flex flex-wrap gap-4">
 
-                                <button className="cursor-pointer rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-black transition-all duration-300 hover:bg-emerald-400">
+                                <button className={`cursor-pointer rounded-xl bg-${color2} px-6 py-3 font-semibold text-black transition-all duration-300 hover:bg-${color1}`}>
                                     Read Full Report
                                 </button>
 
-                                <button className="cursor-pointer rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
+                                <button className={`cursor-pointer rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-${color1} hover:text-${color1}`}>
                                     Download PDF
                                 </button>
 
@@ -61,7 +61,7 @@ export default function FeaturedInsights() {
 
                             <div className="w-full max-w-md rounded-3xl border border-zinc-800 bg-zinc-950 p-8">
 
-                                <p className="text-sm uppercase tracking-[0.15em] text-emerald-400">
+                                <p className={`text-sm uppercase tracking-[0.15em] text-${color1}`}>
                                     Research Report
                                 </p>
 

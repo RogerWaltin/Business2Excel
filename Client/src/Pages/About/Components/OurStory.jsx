@@ -1,4 +1,4 @@
-export default function OurStory() {
+export default function OurStory({ color1, color2 }) {
   //  TODO make props for all headings and subheadings that can be change from About.jsx itself
   return (
 
@@ -8,7 +8,7 @@ export default function OurStory() {
 
         <div>
 
-          <span className="text-emerald-400 uppercase tracking-widest text-sm">
+          <span className={`text-${color1} uppercase tracking-widest text-sm`}>
             Our Story
           </span>
 
