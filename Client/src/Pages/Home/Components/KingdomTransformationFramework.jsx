@@ -1,4 +1,27 @@
 export default function KingdomTransformationFramework({ color1, color2 }) {
+  const serviceCards = [
+    {
+      title: "Kingdom Certification",
+      description: "Ethical validation and accountability for Kingdom-centered organizations.",
+      image: "/media/certificate.jpg"
+    },
+    {
+      title: "Strategic Consulting",
+      description: "Navigate disruption, innovation, growth, and AI-age transformation.",
+      image: "/media/consulting.jpg"
+    },
+    {
+      title: "Leadership Transformation",
+      description: "Develop culture, governance, mission clarity, stewardship, and influence.",
+      image: "/media/leadership.jpg"
+    },
+    {
+      title: "Business as Mission",
+      description: "Advance Kingdom impact through purpose-driven enterprise and marketplace ministry.",
+      image: "/media/mission.jpg"
+    },
+  ]
+
   return (
     <section id="kingdom-transformation-framework" className="py-20 border-b border-zinc-900">
 
@@ -38,57 +61,37 @@ export default function KingdomTransformationFramework({ color1, color2 }) {
           {/* Right Side */}
           <div className="grid md:grid-cols-2 gap-6">
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300">
+            {serviceCards.map((card) => (
 
-              <h3 className="text-2xl font-bold">
-                Kingdom Certification
-              </h3>
+              <div
+                key={card.title}
+                className="relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300"
+              >
 
-              <p className="text-zinc-400 mt-4 leading-relaxed">
-                Ethical validation and accountability for Kingdom-centered
-                organizations.
-              </p>
+                {/* Background Image */}
 
-            </div>
+                <img
+                  src={card.image}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300">
+                {/* Dark Overlay */}
 
-              <h3 className="text-2xl font-bold">
-                Strategic Consulting
-              </h3>
+                <div className="absolute inset-0 bg-black/70" />
 
-              <p className="text-zinc-400 mt-4 leading-relaxed">
-                Navigate disruption, innovation, growth, and AI-age
-                transformation.
-              </p>
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold">
+                    {card.title}
+                  </h3>
+                  <p className="text-zinc-200 mt-4 leading-relaxed">
+                    {card.description}
+                  </p>
+                </div>
 
-            </div>
+              </div>
 
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300">
-
-              <h3 className="text-2xl font-bold">
-                Leadership Transformation
-              </h3>
-
-              <p className="text-zinc-400 mt-4 leading-relaxed">
-                Develop culture, governance, mission clarity, stewardship,
-                and influence.
-              </p>
-
-            </div>
-
-            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300">
-
-              <h3 className="text-2xl font-bold">
-                Business as Mission
-              </h3>
-
-              <p className="text-zinc-400 mt-4 leading-relaxed">
-                Advance Kingdom impact through purpose-driven enterprise and
-                marketplace ministry.
-              </p>
-
-            </div>
+            ))}
 
           </div>
 
