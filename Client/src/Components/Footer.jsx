@@ -31,10 +31,10 @@ export default function Footer() {
 
                         <HashLink
                             to="/"
-                            className="text-3xl font-bold tracking-tight group text-white hover:text-emerald-400 transition-colors duration-300"
+                            className="text-3xl font-bold tracking-tight group text-white hover:text-primary transition-colors duration-300"
                         >
                             Business
-                            <span className="text-emerald-400 group-hover:text-white transition-colors duration-300">
+                            <span className="text-primary group-hover:text-white transition-colors duration-300">
                                 2
                             </span>
                             Excel
@@ -63,7 +63,7 @@ export default function Footer() {
                                 <HashLink
                                     key={link.label}
                                     to={link.to}
-                                    className="text-zinc-400 hover:text-emerald-400 transition-colors duration-300"
+                                    className="text-zinc-400 hover:text-primary transition-colors duration-300"
                                 >
                                     {link.label}
                                 </HashLink>
@@ -89,7 +89,7 @@ export default function Footer() {
                                 <HashLink
                                     key={link.label}
                                     to={link.to}
-                                    className="text-zinc-400 hover:text-emerald-400 transition-colors duration-300"
+                                    className="text-zinc-400 hover:text-primary transition-colors duration-300"
                                 >
                                     {link.label}
                                 </HashLink>

@@ -8,7 +8,7 @@ export default function FinalCTA() {
 
         <div className="bg-zinc-900 border border-zinc-800 rounded-4xl p-12 md:p-16">
 
-          <span className="text-emerald-400 uppercase tracking-widest text-sm">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
             Join the Movement
           </span>
 
@@ -25,13 +25,13 @@ export default function FinalCTA() {
           <div className="flex flex-wrap justify-center gap-4 mt-10">
 
             <Link to="/network">
-              <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
+              <button className="bg-secondary hover:bg-primary text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
                 Join the Network
               </button>
             </Link>
 
             <Link to="/consultation">
-              <button className="border border-zinc-700 hover:border-emerald-500 px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
+              <button className="border border-zinc-700 hover:border-secondary px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
                 Book a Consultation
               </button>
             </Link>

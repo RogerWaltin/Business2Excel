@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import { motion } from "motion/react"
 import { TypeAnimation } from 'react-type-animation';
 
 const heroPillar = [
@@ -25,7 +24,7 @@ export default function HomeHero() {
   return (
     <section id="hero" className="relative overflow-hidden border-b border-zinc-900 ">
 
-      <div id="right-corner-glow" className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.12),transparent_40%)]" />
+      {/* <div id="right-corner-glow" className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.12),transparent_40%)]" /> */}
 
       <div className="grid lg:grid-cols-2 gap-12 items-center max-w-360 mx-auto px-6 pt-20 pb-29 relative z-10">
 
@@ -48,7 +47,7 @@ export default function HomeHero() {
               ]}
               wrapper="span"
               speed={50}
-              className="block text-emerald-400"
+              className="block text-primary"
               repeat={Infinity}
             />
 
@@ -66,13 +65,13 @@ export default function HomeHero() {
           <div className="flex flex-wrap gap-4 mt-8">
 
             <Link to="/consultation">
-              <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+              <button className="bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
                 Book Consultation
               </button>
             </Link>
 
             <Link to="/certification">
-              <button className="border border-zinc-700 hover:border-emerald-500 px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+              <button className="border border-zinc-700 hover:border-secondary px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
                 Apply For Certification
               </button>
             </Link>
@@ -97,7 +96,7 @@ export default function HomeHero() {
                   {item.title}
                 </h3>
 
-                <p className="text-emerald-400 text-sm mt-2">
+                <p className="text-primary text-sm mt-2">
                   {item.subtitle}
                 </p>
 

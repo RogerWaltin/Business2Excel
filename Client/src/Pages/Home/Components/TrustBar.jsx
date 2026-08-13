@@ -21,7 +21,7 @@ export default function TrustBar() {
               className="text-center"
             >
 
-              <div className="text-3xl font-bold text-emerald-400">
+              <div className="text-3xl font-bold text-primary">
                 {item.value}
               </div>
 

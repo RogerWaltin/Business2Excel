@@ -20,7 +20,7 @@ export default function MemberDirectory() {
 
           <div>
 
-            <span className="text-emerald-400 uppercase tracking-widest text-sm">
+            <span className="text-primary uppercase tracking-widest text-sm">
               Member Directory
             </span>
 
@@ -40,7 +40,7 @@ export default function MemberDirectory() {
               members identify trusted professionals within the ecosystem.
             </p>
 
-            <button className="mt-10 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
+            <button className="mt-10 bg-secondary hover:bg-primary text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
               Browse Directory
             </button>
 

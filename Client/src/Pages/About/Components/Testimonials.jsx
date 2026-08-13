@@ -4,7 +4,7 @@ export default function Testimonials() {
 
         <div className="max-w-7xl mx-auto px-6">
 
-          <span className="text-emerald-400 uppercase tracking-widest text-sm">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
             Case Studies
           </span>
 

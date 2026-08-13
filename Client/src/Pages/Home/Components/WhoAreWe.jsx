@@ -7,7 +7,7 @@ export default function WhoAreWe() {
 
       <div className="max-w-5xl mx-auto px-6 text-center">
 
-        <span className="text-emerald-400 uppercase tracking-widest text-sm">
+        <span className="text-primary uppercase tracking-widest text-sm">
           Who Are We?
         </span>
 
@@ -30,7 +30,7 @@ export default function WhoAreWe() {
 
         <HashLink
           to="/about#our-story"
-          className="inline-block mt-10 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300"
+          className="inline-block mt-10 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300"
         >
           Read Our Story
         </HashLink>

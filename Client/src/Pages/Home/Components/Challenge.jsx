@@ -53,7 +53,7 @@ export default function Challenge() {
 
             The future belongs to organizations rooted in
 
-            <span className="text-emerald-400">
+            <span className="text-primary">
               {" "}truth, stewardship, integrity, and purpose.
             </span>
 

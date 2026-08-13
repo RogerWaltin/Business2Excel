@@ -6,11 +6,11 @@ export default function VisionMission() {
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
 
-            <span className="text-emerald-400 uppercase tracking-widest text-sm">
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
               Our Vision
             </span>
 
-            <p className="text-2xl leading-relaxed mt-6">
+            <p className="text-zinc-400 leading-relaxed text-lg mt-6">
               To see businesses, leaders, and organizations transformed through
               Kingdom principles, ethical leadership, strategic innovation, and
               biblical stewardship.
@@ -20,7 +20,7 @@ export default function VisionMission() {
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
 
-            <span className="text-emerald-400 uppercase tracking-widest text-sm">
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
               Our Mission
             </span>
 

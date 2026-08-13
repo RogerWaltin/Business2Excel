@@ -38,7 +38,7 @@ export default function ServicesInsights() {
             <div className="mx-auto max-w-7xl px-6">
 
                 {/* Section Label */}
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
                     Industry Insights
                 </p>
 
@@ -61,7 +61,7 @@ export default function ServicesInsights() {
 
                         <div
                             key={insight.title}
-                            className="group min-h-64 rounded-3xl border border-zinc-800 bg-zinc-950 p-10 transition-all duration-300 hover:border-emerald-500/40"
+                            className="group min-h-64 rounded-3xl border border-zinc-800 bg-zinc-950 p-10 transition-all duration-300 hover:border-secondary/40"
                         >
 
                             <h3 className="text-2xl font-semibold text-white">
