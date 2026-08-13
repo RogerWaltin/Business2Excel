@@ -1,6 +1,6 @@
 import { HashLink } from "react-router-hash-link"
 
-export default function Footer() {
+export default function Footer({ color1, color2 }) {
 
     const quickLinks = [
         { label: "Home", to: "/" },

@@ -7,9 +7,9 @@ export default function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-black pt-20">
-      
+
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_45%)]" />
-      
+
       <div className="mx-auto max-w-7xl px-6">
         <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm tracking-widest uppercase text-emerald-400">
           Resources

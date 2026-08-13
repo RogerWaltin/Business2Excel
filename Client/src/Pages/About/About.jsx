@@ -7,18 +7,21 @@ import OurStory from "./Components/OurStory"
 import Testimonials from "./Components/Testimonials"
 import VisionMission from "./Components/VisionMission"
 
+const color1 = "[#ebb318]"
+const color2 = "[#CB9604]"
+
 export default function About() {
 
   return (
     <div id="about" className="bg-zinc-950 text-white">
-      <AbourHero />
-      <OurStory />
-      <Leadership />
-      <FounderStory />
-      <VisionMission />
-      <KingdomWorldview />
-      <Testimonials />
-      <FAQ />
+      <AbourHero color1={color1} color2={color2} />
+      <OurStory color1={color1} color2={color2} />
+      <Leadership color1={color1} color2={color2} />
+      <FounderStory color1={color1} color2={color2} />
+      <VisionMission color1={color1} color2={color2} />
+      <KingdomWorldview color1={color1} color2={color2} />
+      <Testimonials color1={color1} color2={color2} />
+      <FAQ color1={color1} color2={color2} />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-export default function Certification() {
+export default function Certification({ color1, color2 }) {
   return (
     <div className="bg-zinc-950 text-white">
 

@@ -173,7 +173,7 @@ const navSections = [
 
 ]
 
-export default function Navbar() {
+export default function Navbar({ color1, color2 }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [openSection, setOpenSection] = useState(null)
 

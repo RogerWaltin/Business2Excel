@@ -1,13 +1,13 @@
 import { HashLink } from "react-router-hash-link";
 
-export default function ServicesCTA() {
+export default function ServicesCTA({ color1, color2 }) {
   return (
     <section className="bg-black py-20">
 
       <div className="mx-auto max-w-5xl px-6 text-center">
 
         {/* Section Label */}
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+        <p className={`text-sm font-semibold uppercase tracking-[0.2em] text-${color1}`}>
           Take The Next Step
         </p>
 
@@ -31,22 +31,22 @@ export default function ServicesCTA() {
         <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
 
           <HashLink to="/consultation">
-            <button className="cursor-pointer rounded-xl bg-emerald-500 px-8 py-4 font-semibold text-black transition-all duration-300 hover:bg-emerald-400">
+            <button className={`cursor-pointer rounded-xl bg-${color2} px-8 py-4 font-semibold text-black transition-all duration-300 hover:bg-${color1}`}>
               Book Consultation
             </button>
           </HashLink>
-          
+
           <HashLink to="/certification">
-            <button className="rounded-xl border border-zinc-700 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-emerald-500 hover:text-emerald-400 cursor-pointer">
+            <button className={`rounded-xl border border-zinc-700 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-${color1} hover:text-${color1} cursor-pointer`}>
               Apply For Certification
             </button>
-          </HashLink> 
+          </HashLink>
 
         </div>
-    
+
       </div>
 
-      
+
     </section>
   )
 }

@@ -7,7 +7,7 @@ const memberTypes = [
   "Marketplace Leaders",
 ]
 
-export default function MemberDirectory() {
+export default function MemberDirectory({ color1, color2 }) {
   return (
     <section
       id="member-directory"
@@ -20,7 +20,7 @@ export default function MemberDirectory() {
 
           <div>
 
-            <span className="text-emerald-400 uppercase tracking-widest text-sm">
+            <span className={`text-${color1} uppercase tracking-widest text-sm`}>
               Member Directory
             </span>
 
@@ -40,7 +40,7 @@ export default function MemberDirectory() {
               members identify trusted professionals within the ecosystem.
             </p>
 
-            <button className="mt-10 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
+            <button className={`mt-10 bg-${color2} hover:bg-${color1} text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer`}>
               Browse Directory
             </button>
 
@@ -72,3 +72,4 @@ export default function MemberDirectory() {
     </section>
   )
 }
+

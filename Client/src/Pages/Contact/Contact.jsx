@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function Contact() {
+export default function Contact({ color1, color2 }) {
 
   const [formData, setFormData] = useState({
     firstName: "",

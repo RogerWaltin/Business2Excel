@@ -19,11 +19,11 @@ const heroPillar = [
   },
 ]
 
-export default function HomeHero() {
+export default function HomeHero({color1, color2}) {
   return (
     <section id="hero" className="relative overflow-hidden border-b border-zinc-900">
 
-      <div id="right-corner-glow" className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.12),transparent_40%)]" />
+      {/* <div id="right-corner-glow" className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.12),transparent_40%)]" /> */}
 
       <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6 pt-20 pb-29 relative z-10">
 
@@ -34,7 +34,7 @@ export default function HomeHero() {
 
             Transforming Organizations
 
-            <span className="block text-emerald-400">
+            <span className={`block text-${color1}`}>
               For Lasting Kingdom Impact
             </span>
 
@@ -52,13 +52,13 @@ export default function HomeHero() {
           <div className="flex flex-wrap gap-4 mt-8">
 
             <Link to="/consultation">
-              <button className="bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+              <button className={`bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
                 Book Consultation
               </button>
             </Link>
 
             <Link to="/certification">
-              <button className="border border-zinc-700 hover:border-emerald-500 px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+              <button className={`border border-zinc-700 hover:border-${color1} px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
                 Apply For Certification
               </button>
             </Link>
@@ -83,7 +83,7 @@ export default function HomeHero() {
                   {item.title}
                 </h3>
 
-                <p className="text-emerald-400 text-sm mt-2">
+                <p className={`text-${color1} text-sm mt-2`}>
                   {item.subtitle}
                 </p>
 
@@ -112,3 +112,4 @@ export default function HomeHero() {
     </section>
   )
 }
+

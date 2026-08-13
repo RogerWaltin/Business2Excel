@@ -40,7 +40,7 @@ export default function FeaturedInsights() {
                                 challenges, and strategic considerations for leaders
                                 operating in an increasingly AI-driven world.
                             </p>
-                            {/* NOTE due to lack of content, i've temporarily disabled these two buttons */}    
+                            {/* NOTE due to lack of content, i've temporarily disabled these two buttons */}
                             {/* <div className="mt-10 flex flex-wrap gap-4">
 
                                 <button className="cursor-pointer rounded-xl bg-emerald-500 px-6 py-3 font-semibold text-black transition-all duration-300 hover:bg-emerald-400">

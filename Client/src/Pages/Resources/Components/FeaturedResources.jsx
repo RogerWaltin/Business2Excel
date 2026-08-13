@@ -39,7 +39,7 @@ export default function FeaturedResources() {
               strategy, and organizational purpose through a Kingdom-centered
               lens.
             </p>
-            
+
             {/* <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-emerald-400 hover:text-emerald-400">
               Download Resource
             </button> */}

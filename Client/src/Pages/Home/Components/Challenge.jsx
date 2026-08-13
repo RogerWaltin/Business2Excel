@@ -7,7 +7,7 @@ const businessChallenge = [
   "Cultural Fragmentation",
 ]
 
-export default function Challenge() {
+export default function Challenge({ color1, color2 }) {
   return (
     <section id="challenge" className="py-16 border-b border-zinc-900">
 
@@ -53,7 +53,7 @@ export default function Challenge() {
 
             The future belongs to organizations rooted in
 
-            <span className="text-emerald-400">
+            <span className={`text-${color1}`}>
               {" "}truth, stewardship, integrity, and purpose.
             </span>
 
@@ -66,3 +66,4 @@ export default function Challenge() {
     </section>
   )
 }
+

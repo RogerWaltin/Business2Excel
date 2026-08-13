@@ -54,7 +54,7 @@ const trainingEvents = [
   },
 ]
 
-export default function TrainingEvents() {
+export default function TrainingEvents({ color1, color2 }) {
   return (
     <section
       id="training-events"
@@ -65,7 +65,7 @@ export default function TrainingEvents() {
 
         <div className="max-w-4xl">
 
-          <span className="text-emerald-400 uppercase tracking-widest text-sm">
+          <span className={`text-${color1} uppercase tracking-widest text-sm`}>
             Training & Events
           </span>
 
@@ -88,10 +88,10 @@ export default function TrainingEvents() {
             <div
               key={item.id}
               id={item.id}
-              className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-emerald-500/30 transition-all duration-300"
+              className={`scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-${color2}/30 transition-all duration-300`}
             >
 
-              <span className="text-emerald-400 uppercase tracking-wider text-sm">
+              <span className={`text-${color1} uppercase tracking-wider text-sm`}>
                 {item.category}
               </span>
 
@@ -123,7 +123,7 @@ export default function TrainingEvents() {
               )}
 
               <Link to="/training-events">
-                <button className="mt-8 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+                <button className={`mt-8 bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
                   {item.buttonText}
                 </button>
               </Link>
@@ -139,3 +139,4 @@ export default function TrainingEvents() {
     </section>
   )
 }
+

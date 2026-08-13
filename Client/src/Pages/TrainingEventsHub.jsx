@@ -25,7 +25,7 @@ const opportunities = [
     },
 ]
 
-export default function TrainingEventsHub() {
+export default function TrainingEventsHub({ color1, color2 }) {
     return (
         <div className="bg-zinc-950 text-white">
 
