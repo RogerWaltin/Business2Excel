@@ -1,4 +1,4 @@
-export default function FAQ({ color1, color2 }) {
+export default function FAQ() {
     const faqItems = [
         {
             question: "What is Business2Excel?",
@@ -27,7 +27,7 @@ export default function FAQ({ color1, color2 }) {
 
             <div className="max-w-5xl mx-auto px-6">
 
-                <span className={`text-${color1} uppercase tracking-widest text-sm`}>
+                <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
                     FAQ
                 </span>
 

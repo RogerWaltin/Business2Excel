@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link"
 
-export default function WhoAreWe({ color1, color2 }) {
+export default function WhoAreWe() {
   return (
     <section id="who-are-we" className="py-16 border-b border-zinc-900">
 
       <div className="max-w-5xl mx-auto px-6 text-center">
 
-        <span className={`text-${color1} uppercase tracking-widest text-sm`}>
+        <span className="text-primary uppercase tracking-widest text-sm">
           Who Are We?
         </span>
 
@@ -30,7 +30,7 @@ export default function WhoAreWe({ color1, color2 }) {
 
         <HashLink
           to="/about#our-story"
-          className={`inline-block mt-10 bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300`}
+          className="inline-block mt-10 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300"
         >
           Read Our Story
         </HashLink>

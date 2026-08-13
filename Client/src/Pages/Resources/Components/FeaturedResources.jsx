@@ -1,12 +1,12 @@
 // NOTE due to lack of content, i've temporarily disabled the buttons   
 
-export default function FeaturedResources({ color1, color2 }) {
+export default function FeaturedResources() {
   return (
     <section id="featured-resources" className="bg-black pt-20">
 
       <div className="mx-auto max-w-7xl px-6">
 
-        <p className={`text-sm font-semibold uppercase tracking-[0.2em] text-${color1}`}>
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
           Featured Resources
         </p>
 
@@ -26,7 +26,7 @@ export default function FeaturedResources({ color1, color2 }) {
 
           <div className="rounded-3xl border border-zinc-800 bg-zinc-950 p-10">
 
-            <p className={`text-sm uppercase tracking-[0.15em] text-${color1}`}>
+            <p className="text-sm uppercase tracking-[0.15em] text-primary">
               Guide
             </p>
 
@@ -39,8 +39,8 @@ export default function FeaturedResources({ color1, color2 }) {
               strategy, and organizational purpose through a Kingdom-centered
               lens.
             </p>
-
-            {/* <button className={`cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-${color1} hover:text-${color1}`}>
+            
+            {/* <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-primary hover:text-primary">
               Download Resource
             </button> */}
 
@@ -50,7 +50,7 @@ export default function FeaturedResources({ color1, color2 }) {
 
           <div className="rounded-3xl border border-zinc-800 bg-zinc-950 p-10">
 
-            <p className={`text-sm uppercase tracking-[0.15em] text-${color1}`}>
+            <p className="text-sm uppercase tracking-[0.15em] text-primary">
               Report
             </p>
 
@@ -64,7 +64,7 @@ export default function FeaturedResources({ color1, color2 }) {
               Kingdom-centered stewardship.
             </p>
 
-            {/* <button className={`cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-${color1} hover:text-${color1}`}>
+            {/* <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-primary hover:text-primary">
               Read Report
             </button> */}
 
@@ -74,7 +74,7 @@ export default function FeaturedResources({ color1, color2 }) {
 
           <div className="rounded-3xl border border-zinc-800 bg-zinc-950 p-10">
 
-            <p className={`text-sm uppercase tracking-[0.15em] text-${color1}`}>
+            <p className="text-sm uppercase tracking-[0.15em] text-primary">
               Framework
             </p>
 
@@ -88,7 +88,7 @@ export default function FeaturedResources({ color1, color2 }) {
               Kingdom impact.
             </p>
 
-            {/* <button className={`cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-${color1} hover:text-${color1}`}>
+            {/* <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-primary hover:text-primary">
               Download Blueprint
             </button> */}
 
@@ -98,7 +98,7 @@ export default function FeaturedResources({ color1, color2 }) {
 
           <div className="rounded-3xl border border-zinc-800 bg-zinc-950 p-10">
 
-            <p className={`text-sm uppercase tracking-[0.15em] text-${color1}`}>
+            <p className="text-sm uppercase tracking-[0.15em] text-primary">
               Guide
             </p>
 
@@ -112,7 +112,7 @@ export default function FeaturedResources({ color1, color2 }) {
               increasingly complex marketplace.
             </p>
 
-            {/* <button className={`cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-${color1} hover:text-${color1}`}>
+            {/* <button className="cursor-pointer mt-8 rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-white transition-all duration-300 hover:border-primary hover:text-primary">
               Explore Guide
             </button> */}
 

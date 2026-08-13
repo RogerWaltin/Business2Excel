@@ -11,7 +11,7 @@ export default function KingdomTransformationFramework({ color1, color2 }) {
 
             <h2 className="text-4xl md:text-5xl font-bold mt-6">
               A Kingdom Blueprint For
-              <span className={`text-${color1} block`}>
+              <span className="text-primary block">
                 Business Transformation
               </span>
             </h2>
@@ -29,7 +29,7 @@ export default function KingdomTransformationFramework({ color1, color2 }) {
               unified transformation model designed for long-term influence.
             </p>
 
-            {/* <button className="mt-10 bg-[#CB9604] hover:bg-[#ebb318] text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+            {/* <button className="mt-10 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
               Explore Framework
             </button> */}
 
@@ -38,7 +38,7 @@ export default function KingdomTransformationFramework({ color1, color2 }) {
           {/* Right Side */}
           <div className="grid md:grid-cols-2 gap-6">
 
-            <div className={`bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-${color2}/30 transition-all duration-300`}>
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300">
 
               <h3 className="text-2xl font-bold">
                 Kingdom Certification
@@ -51,7 +51,7 @@ export default function KingdomTransformationFramework({ color1, color2 }) {
 
             </div>
 
-            <div className={`bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-${color2}/30 transition-all duration-300`}>
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300">
 
               <h3 className="text-2xl font-bold">
                 Strategic Consulting
@@ -64,7 +64,7 @@ export default function KingdomTransformationFramework({ color1, color2 }) {
 
             </div>
 
-            <div className={`bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-${color2}/30 transition-all duration-300`}>
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300">
 
               <h3 className="text-2xl font-bold">
                 Leadership Transformation
@@ -77,7 +77,7 @@ export default function KingdomTransformationFramework({ color1, color2 }) {
 
             </div>
 
-            <div className={`bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-${color2}/30 transition-all duration-300`}>
+            <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300">
 
               <h3 className="text-2xl font-bold">
                 Business as Mission

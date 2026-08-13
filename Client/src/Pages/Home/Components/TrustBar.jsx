@@ -6,7 +6,7 @@ const trustItem = [
   { value: "Global", label: "Community" },
 ]
 
-export default function TrustBar({ color1, color2 }) {
+export default function TrustBar() {
   return (
     <section id="trust-bar" className="border-b border-zinc-900">
 
@@ -21,7 +21,7 @@ export default function TrustBar({ color1, color2 }) {
               className="text-center"
             >
 
-              <div className={`text-3xl font-bold text-${color1}`}>
+              <div className="text-3xl font-bold text-primary">
                 {item.value}
               </div>
 
@@ -40,4 +40,3 @@ export default function TrustBar({ color1, color2 }) {
     </section>
   )
 }
-

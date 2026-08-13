@@ -1,10 +1,10 @@
-export default function FeaturedInsights({ color1, color2 }) {
+export default function FeaturedInsights() {
     return (
         <section id="featured-insight" className="bg-black pt-20">
 
             <div className="mx-auto max-w-7xl px-6">
 
-                <p className={`text-sm font-semibold uppercase tracking-[0.2em] text-${color1}`}>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
                     Featured Insight
                 </p>
 
@@ -16,7 +16,7 @@ export default function FeaturedInsights({ color1, color2 }) {
 
                         <div className="p-10 md:p-14">
 
-                            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-zinc-500">
+                            <p className="text-sm uppercase tracking-[0.15em] text-zinc-300">
                                 Featured Report
                             </p>
 
@@ -36,18 +36,16 @@ export default function FeaturedInsights({ color1, color2 }) {
                                 This report explores how Kingdom-centered leadership can
                                 navigate technological disruption without sacrificing
                                 ethical clarity, organizational trust, or meaningful
-                                human impact. Discover practical principles, emerging
-                                challenges, and strategic considerations for leaders
-                                operating in an increasingly AI-driven world.
+                                human impact.
                             </p>
-                            {/* NOTE due to lack of content, i've temporarily disabled these two buttons */}
+                            {/* NOTE due to lack of content, i've temporarily disabled these two buttons */}    
                             {/* <div className="mt-10 flex flex-wrap gap-4">
 
-                                <button className={`cursor-pointer rounded-xl bg-${color2} px-6 py-3 font-semibold text-black transition-all duration-300 hover:bg-${color1}`}>
+                                <button className="cursor-pointer rounded-xl bg-secondary px-6 py-3 font-semibold text-black transition-all duration-300 hover:bg-primary">
                                     Read Full Report
                                 </button>
 
-                                <button className={`cursor-pointer rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-${color1} hover:text-${color1}`}>
+                                <button className="cursor-pointer rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition-all duration-300 hover:border-primary hover:text-primary">
                                     Download PDF
                                 </button>
 
@@ -61,7 +59,7 @@ export default function FeaturedInsights({ color1, color2 }) {
 
                             <div className="w-full max-w-md rounded-3xl border border-zinc-800 bg-zinc-950 p-8">
 
-                                <p className={`text-sm uppercase tracking-[0.15em] text-${color1}`}>
+                                <p className="text-sm uppercase tracking-[0.15em] text-primary">
                                     Research Report
                                 </p>
 

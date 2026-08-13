@@ -8,9 +8,9 @@ export default function Resources({ color1, color2 }) {
 
         <div className="max-w-4xl mx-auto text-center">
 
-          <span className={`text-${color1} uppercase tracking-widest text-sm`}>
-            Resources
-          </span>
+            <span className="text-primary uppercase tracking-widest text-sm">
+              Resources
+            </span>
 
           <h2 className="text-4xl md:text-5xl font-bold mt-6">
             Insights For Kingdom Leaders
@@ -66,11 +66,11 @@ export default function Resources({ color1, color2 }) {
 
         <div className="text-center mt-12">
 
-          <HashLink to="/resources#library">
-            <button className={`bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
-              Explore Resource Library
-            </button>
-          </HashLink>
+            <HashLink to="/resources#library">
+              <button className="bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+                Explore Resource Library
+              </button>
+            </HashLink>
 
         </div>
 

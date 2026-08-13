@@ -1,4 +1,4 @@
-export default function AbourHero({ color1, color2 }) {
+export default function AbourHero() {
     return (
         <section className="relative overflow-hidden pb-16 border-b border-zinc-900">
 
@@ -7,12 +7,12 @@ export default function AbourHero({ color1, color2 }) {
             <div className="max-w-7xl mx-auto px-6 py-17 relative z-10">
 
                 <div className="max-w-4xl">
-                    <span className={`inline-flex items-center rounded-full border border-${color2} px-4 py-2 text-sm tracking-widest uppercase text-${color1}`}>
+                    <span className="inline-flex items-center rounded-full border border-secondary/75 px-4 py-2 text-sm tracking-widest uppercase text-primary">
                         About
                     </span>
                     <h1 className="text-5xl md:text-5xl font-bold leading-tight mt-8">
                         Building a Global
-                        <span className={`text-${color1} block`}>
+                        <span className="text-primary block">
                             Kingdom Business
                         </span>
                         Transformation Ecosystem

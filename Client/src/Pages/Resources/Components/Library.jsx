@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
 
-export default function Library({ color1, color2 }) {
+export default function Library() {
   return (
     <section id="library" className="bg-black py-20">
 
       <div className="mx-auto max-w-7xl px-6">
 
-        <p className={`text-sm font-semibold uppercase tracking-[0.2em] text-${color1}`}>
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
           Resource Library
         </p>
 
@@ -26,7 +26,7 @@ export default function Library({ color1, color2 }) {
 
           <div className="rounded-3xl border border-zinc-800 bg-black p-10">
 
-            <p className={`text-sm font-semibold uppercase tracking-[0.15em] text-${color1}`}>
+            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
               Read
             </p>
 
@@ -36,7 +36,7 @@ export default function Library({ color1, color2 }) {
                 to="/resources/articles"
                 className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
               >
-                <h3 className={`font-semibold text-white transition-colors duration-300 group-hover:text-${color1}`}>
+                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
                   Articles →
                 </h3>
 
@@ -49,7 +49,7 @@ export default function Library({ color1, color2 }) {
                 to="/resources/whitepapers"
                 className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
               >
-                <h3 className={`font-semibold text-white transition-colors duration-300 group-hover:text-${color1}`}>
+                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
                   Whitepapers →
                 </h3>
 
@@ -62,7 +62,7 @@ export default function Library({ color1, color2 }) {
                 to="/resources/ai-ethics-reports"
                 className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
               >
-                <h3 className={`font-semibold text-white transition-colors duration-300 group-hover:text-${color1}`}>
+                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
                   AI & Ethics Reports →
                 </h3>
 
@@ -75,7 +75,7 @@ export default function Library({ color1, color2 }) {
                 to="/resources/biblical-business-insights"
                 className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
               >
-                <h3 className={`font-semibold text-white transition-colors duration-300 group-hover:text-${color1}`}>
+                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
                   Biblical Business Insights →
                 </h3>
 
@@ -88,7 +88,7 @@ export default function Library({ color1, color2 }) {
                 to="/resources/leadership-devotionals"
                 className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
               >
-                <h3 className={`font-semibold text-white transition-colors duration-300 group-hover:text-${color1}`}>
+                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
                   Leadership Devotionals →
                 </h3>
 
@@ -105,7 +105,7 @@ export default function Library({ color1, color2 }) {
 
           <div className="rounded-3xl border border-zinc-800 bg-black p-10">
 
-            <p className={`text-sm font-semibold uppercase tracking-[0.15em] text-${color1}`}>
+            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
               Watch & Listen
             </p>
 
@@ -115,7 +115,7 @@ export default function Library({ color1, color2 }) {
                 to="/resources/videos"
                 className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
               >
-                <h3 className={`font-semibold text-white transition-colors duration-300 group-hover:text-${color1}`}>
+                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
                   Videos →
                 </h3>
 
@@ -128,7 +128,7 @@ export default function Library({ color1, color2 }) {
                 to="/resources/podcasts"
                 className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
               >
-                <h3 className={`font-semibold text-white transition-colors duration-300 group-hover:text-${color1}`}>
+                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
                   Podcasts →
                 </h3>
 
@@ -145,7 +145,7 @@ export default function Library({ color1, color2 }) {
 
           <div className="rounded-3xl border border-zinc-800 bg-black p-10">
 
-            <p className={`text-sm font-semibold uppercase tracking-[0.15em] text-${color1}`}>
+            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
               Download
             </p>
 
@@ -155,7 +155,7 @@ export default function Library({ color1, color2 }) {
                 to="/resources/frameworks"
                 className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
               >
-                <h3 className={`font-semibold text-white transition-colors duration-300 group-hover:text-${color1}`}>
+                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
                   Frameworks →
                 </h3>
 
@@ -168,7 +168,7 @@ export default function Library({ color1, color2 }) {
                 to="/resources/case-studies"
                 className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
               >
-                <h3 className={`font-semibold text-white transition-colors duration-300 group-hover:text-${color1}`}>
+                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
                   Case Studies →
                 </h3>
 

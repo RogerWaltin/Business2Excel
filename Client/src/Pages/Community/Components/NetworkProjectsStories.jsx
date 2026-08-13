@@ -1,4 +1,4 @@
-export default function NetworkProjectsStories({ color1, color2 }) {
+export default function NetworkProjectsStories() {
   return (
     <section
       id="network-projects-stories"
@@ -7,7 +7,7 @@ export default function NetworkProjectsStories({ color1, color2 }) {
 
       <div className="max-w-7xl mx-auto px-6">
 
-        <span className={`inline-flex items-center rounded-full border border-${color2}/30 bg-${color2}/10 px-4 py-2 text-sm tracking-widest uppercase text-${color1}`}>
+        <span className="inline-flex items-center rounded-full border border-secondary/30 bg-secondary/10 px-4 py-2 text-sm tracking-widest uppercase text-primary">
           Networks, Projects & Stories
         </span>
 
@@ -15,7 +15,7 @@ export default function NetworkProjectsStories({ color1, color2 }) {
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
 
-            <span className={`text-${color1} uppercase tracking-wider text-sm`}>
+            <span className="text-primary uppercase tracking-wider text-sm">
               Kingdom Business Network
             </span>
 
@@ -28,7 +28,7 @@ export default function NetworkProjectsStories({ color1, color2 }) {
               and Kingdom-minded leaders who share your vision for impact.
             </p>
 
-            <button className={`mt-8 bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
+            <button className="mt-8 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
               Join Network
             </button>
 
@@ -36,7 +36,7 @@ export default function NetworkProjectsStories({ color1, color2 }) {
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
 
-            <span className={`text-${color1} uppercase tracking-wider text-sm`}>
+            <span className="text-primary uppercase tracking-wider text-sm">
               Mission Projects
             </span>
 
@@ -49,7 +49,7 @@ export default function NetworkProjectsStories({ color1, color2 }) {
               economic empowerment, leadership formation, and Kingdom impact.
             </p>
 
-            <button className={`mt-8 bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
+            <button className="mt-8 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
               Explore Projects
             </button>
 
@@ -57,7 +57,7 @@ export default function NetworkProjectsStories({ color1, color2 }) {
 
           <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
 
-            <span className={`text-${color1} uppercase tracking-wider text-sm`}>
+            <span className="text-primary uppercase tracking-wider text-sm">
               Transformation Stories
             </span>
 
@@ -70,7 +70,7 @@ export default function NetworkProjectsStories({ color1, color2 }) {
               experiencing transformation through Kingdom-centered leadership.
             </p>
 
-            <button className={`mt-8 bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
+            <button className="mt-8 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
               Read Stories
             </button>
 
@@ -82,4 +82,3 @@ export default function NetworkProjectsStories({ color1, color2 }) {
     </section>
   )
 }
-

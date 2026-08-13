@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function FinalCTA({ color1, color2 }) {
+export default function FinalCTA() {
   return (
     <section id="final-cta" className="py-32">
 
@@ -8,7 +8,7 @@ export default function FinalCTA({ color1, color2 }) {
 
         <div className="bg-zinc-900 border border-zinc-800 rounded-4xl p-12 md:p-16">
 
-          <span className={`text-${color1} uppercase tracking-widest text-sm`}>
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
             Join the Movement
           </span>
 
@@ -25,13 +25,13 @@ export default function FinalCTA({ color1, color2 }) {
           <div className="flex flex-wrap justify-center gap-4 mt-10">
 
             <Link to="/network">
-              <button className={`bg-${color2} hover:bg-${color1} text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer`}>
+              <button className="bg-secondary hover:bg-primary text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
                 Join the Network
               </button>
             </Link>
 
             <Link to="/consultation">
-              <button className={`border border-zinc-700 hover:border-${color1} px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer`}>
+              <button className="border border-zinc-700 hover:border-secondary px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
                 Book a Consultation
               </button>
             </Link>
@@ -45,4 +45,3 @@ export default function FinalCTA({ color1, color2 }) {
     </section>
   )
 }
-

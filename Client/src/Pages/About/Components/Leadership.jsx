@@ -1,4 +1,4 @@
-export default function Leadership({ color1, color2 }) {
+export default function Leadership() {
     const leadershipAreas = [
         "business transformation",
         "leadership development",
@@ -13,9 +13,7 @@ export default function Leadership({ color1, color2 }) {
     const kingdomValues = [
         "integrity",
         "wisdom",
-        "excellence",
         "Accountability",
-        "servant leadership",
         "Kingdom centered",
     ]
 
@@ -26,7 +24,7 @@ export default function Leadership({ color1, color2 }) {
 
                 <div className="max-w-3xl">
 
-                    <span className={`text-${color1} uppercase tracking-widest text-sm`}>
+                    <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
                         Leadership
                     </span>
 
@@ -47,7 +45,7 @@ export default function Leadership({ color1, color2 }) {
 
                         <div
                             key={item}
-                            className={`bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-${color2}/30 transition-all duration-300`}
+                            className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300"
                         >
 
                             <h3 className="text-lg font-semibold capitalize text-center">
@@ -60,16 +58,16 @@ export default function Leadership({ color1, color2 }) {
 
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 mt-10">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
 
                     {kingdomValues.map((item) => (
 
                         <div
                             key={item}
-                            className={`border border-${color2}/50 rounded-2xl p-6 text-center`}
+                            className="border border-secondary/20 rounded-2xl p-6 text-center"
                         >
 
-                            <span className={`capitalize text-${color1} font-medium`}>
+                            <span className="capitalize text-primary font-medium">
                                 {item}
                             </span>
 

@@ -1,4 +1,4 @@
-export default function Certification({ color1, color2 }) {
+export default function Certification() {
   return (
     <div className="bg-zinc-950 text-white">
 
@@ -8,13 +8,13 @@ export default function Certification({ color1, color2 }) {
 
         <div className="max-w-5xl mx-auto px-6 text-center">
 
-          <span className={`text-${color1} uppercase tracking-widest text-sm`}>
+          <span className="text-primary uppercase tracking-widest text-sm">
             Kingdom Certification
           </span>
 
           <h1 className="text-4xl md:text-6xl font-bold mt-6">
             Apply For
-            <span className={`text-${color1} block`}>
+            <span className="text-primary block">
               Kingdom Certification
             </span>
           </h1>
@@ -59,7 +59,7 @@ export default function Certification({ color1, color2 }) {
                 className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex items-center gap-4"
               >
 
-                <span className={`text-${color1} font-bold`}>
+                <span className="text-primary font-bold">
                   ✓
                 </span>
 
@@ -92,29 +92,29 @@ export default function Certification({ color1, color2 }) {
               <input
                 type="text"
                 placeholder="Organization Name"
-                className={`w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-${color2}`}
+                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
               />
 
               <input
                 type="text"
                 placeholder="Primary Contact Name"
-                className={`w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-${color2}`}
+                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
               />
 
               <input
                 type="email"
                 placeholder="Email Address"
-                className={`w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-${color2}`}
+                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
               />
 
               <input
                 type="text"
                 placeholder="Industry / Sector"
-                className={`w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-${color2}`}
+                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
               />
 
               <select
-                className={`w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-${color2}`}
+                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
               >
                 <option>Organization Size</option>
                 <option>1 - 10 Employees</option>
@@ -126,12 +126,12 @@ export default function Certification({ color1, color2 }) {
               <textarea
                 rows="6"
                 placeholder="Tell us about your organization, mission, and why you are seeking certification..."
-                className={`w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-${color2} resize-none`}
+                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary resize-none"
               />
 
               <button
                 type="submit"
-                className={`w-full bg-${color2} hover:bg-${color1} text-black font-semibold py-4 rounded-xl transition-all duration-300 cursor-pointer`}
+                className="w-full bg-secondary hover:bg-primary text-black font-semibold py-4 rounded-xl transition-all duration-300 cursor-pointer"
               >
                 Submit Application
               </button>
@@ -152,7 +152,7 @@ export default function Certification({ color1, color2 }) {
 
           <h2 className="text-3xl md:text-5xl font-bold">
             Pursue Excellence.
-            <span className={`text-${color1} block`}>
+            <span className="text-primary block">
               Create Lasting Impact.
             </span>
           </h2>

@@ -1,4 +1,4 @@
-export default function ServicesInsights({ color1, color2 }) {
+export default function ServicesInsights() {
     const insights = [
         {
             title: "Ethical Confusion",
@@ -38,7 +38,7 @@ export default function ServicesInsights({ color1, color2 }) {
             <div className="mx-auto max-w-7xl px-6">
 
                 {/* Section Label */}
-                <p className={`text-sm font-semibold uppercase tracking-[0.2em] text-${color1}`}>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
                     Industry Insights
                 </p>
 
@@ -61,7 +61,7 @@ export default function ServicesInsights({ color1, color2 }) {
 
                         <div
                             key={insight.title}
-                            className={`group min-h-64 rounded-3xl border border-zinc-800 bg-zinc-950 p-10 transition-all duration-300 hover:border-${color2}/40`}
+                            className="group min-h-64 rounded-3xl border border-zinc-800 bg-zinc-950 p-10 transition-all duration-300 hover:border-secondary/40"
                         >
 
                             <h3 className="text-2xl font-semibold text-white">

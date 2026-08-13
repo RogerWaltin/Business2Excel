@@ -39,13 +39,13 @@ export default function Events({ color1, color2 }) {
 
           <div>
 
-            <span className={`text-${color1} uppercase tracking-widest text-sm`}>
+            <span className="text-primary uppercase tracking-widest text-sm">
               Training & Events
             </span>
 
             <h2 className="text-4xl md:text-5xl font-bold mt-6">
               Equipping Leaders
-              <span className={`text-${color1} block`}>
+              <span className="text-primary block">
                 For The Future
               </span>
             </h2>
@@ -58,7 +58,7 @@ export default function Events({ color1, color2 }) {
             </p>
 
             <Link to="/community">
-              <button className={`mt-10 bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
+              <button className="mt-10 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
                 Explore Community
               </button>
             </Link>
@@ -73,7 +73,7 @@ export default function Events({ color1, color2 }) {
 
               <div
                 key={card.label}
-                className={`relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-${color2}/30 transition-all duration-300`}
+                className={"relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300"}
               >
 
                 {/* Background Image */}
@@ -92,7 +92,7 @@ export default function Events({ color1, color2 }) {
 
                 <div className="relative z-10">
 
-                  <span className={`text-${color1} uppercase tracking-wider text-sm`}>
+                  <span className={"text-primary uppercase tracking-wider text-sm"}>
                     {card.label}
                   </span>
 

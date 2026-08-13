@@ -54,18 +54,15 @@ const trainingEvents = [
   },
 ]
 
-export default function TrainingEvents({ color1, color2 }) {
+export default function TrainingEvents() {
   return (
-    <section
-      id="training-events"
-      className="scroll-mt-24 py-28 border-b border-zinc-900"
-    >
+    <section id="training-events" className="scroll-mt-24 py-28 border-b border-zinc-900">
 
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="max-w-4xl">
 
-          <span className={`text-${color1} uppercase tracking-widest text-sm`}>
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
             Training & Events
           </span>
 
@@ -88,10 +85,10 @@ export default function TrainingEvents({ color1, color2 }) {
             <div
               key={item.id}
               id={item.id}
-              className={`scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-${color2}/30 transition-all duration-300`}
+              className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-secondary/30 transition-all duration-300"
             >
 
-              <span className={`text-${color1} uppercase tracking-wider text-sm`}>
+              <span className="text-sm uppercase tracking-[0.2em] text-primary">
                 {item.category}
               </span>
 
@@ -123,7 +120,7 @@ export default function TrainingEvents({ color1, color2 }) {
               )}
 
               <Link to="/training-events">
-                <button className={`mt-8 bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
+                <button className="mt-8 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
                   {item.buttonText}
                 </button>
               </Link>
@@ -139,4 +136,3 @@ export default function TrainingEvents({ color1, color2 }) {
     </section>
   )
 }
-

@@ -54,7 +54,7 @@ export default function HomeHero({ color1, color2 }) {
               ]}
               wrapper="span"
               speed={50}
-              className={`block text-${color1}`}
+              className="block text-primary"
               repeat={Infinity}
             />
 
@@ -72,13 +72,13 @@ export default function HomeHero({ color1, color2 }) {
           <div className="flex flex-wrap gap-4 mt-8">
 
             <Link to="/consultation">
-              <button className={`bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
+              <button className="bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
                 Book Consultation
               </button>
             </Link>
 
             <Link to="/certification">
-              <button className={`border border-zinc-700 hover:border-${color1} px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
+              <button className="border border-zinc-700 hover:border-secondary px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
                 Apply For Certification
               </button>
             </Link>
@@ -103,7 +103,7 @@ export default function HomeHero({ color1, color2 }) {
                   {item.title}
                 </h3>
 
-                <p className={`text-${color1} text-sm mt-2`}>
+                <p className="text-primary text-sm mt-2">
                   {item.subtitle}
                 </p>
 

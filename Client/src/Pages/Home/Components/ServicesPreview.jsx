@@ -27,12 +27,12 @@ export default function ServicesPreview({ color1, color2 }) {
                 <div className="grid lg:grid-cols-2 gap-16 items-start">
                     {/* Left Side */}
                     <div>
-                        <span className={`text-${color1} uppercase tracking-widest text-sm`}>
+                        <span className="text-primary uppercase tracking-widest text-sm">
                             Services
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold mt-6">
                             Consulting For
-                            <span className={`text-${color1} block`}>
+                            <span className="text-primary block">
                                 Sustainable Transformation
                             </span>
                         </h2>
@@ -42,7 +42,7 @@ export default function ServicesPreview({ color1, color2 }) {
                             leadership, and build long-term Kingdom impact.
                         </p>
                         <Link to="/services">
-                            <button className={`mt-10 bg-${color2} hover:bg-${color1} text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer`}>
+                            <button className="mt-10 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
                                 View All Services
                             </button>
                         </Link>

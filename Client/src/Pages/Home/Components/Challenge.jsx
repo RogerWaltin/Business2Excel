@@ -61,7 +61,7 @@ export default function Challenge({ color1, color2 }) {
 
             The future belongs to organizations rooted in
 
-            <span className={`text-${color1}`}>
+            <span className="text-primary">
               {" "}truth, stewardship, integrity, and purpose.
             </span>
 
