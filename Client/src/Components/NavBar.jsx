@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { HashLink } from "react-router-hash-link"
+import logo from "../Assets/B2E_Logo.png"
 
 const navSections = [
   {
@@ -226,16 +227,8 @@ export default function Navbar() {
           <div className="max-w-7xl mx-auto px-6 h-18 flex items-center">
 
             {/* Logo */}
-            <HashLink
-              smooth
-              to="/"
-              className="mr-auto text-2xl font-bold tracking-tight group text-white hover:text-primary transition-colors duration-300"
-            >
-              Business
-              <span className="text-primary group-hover:text-white transition-colors duration-300">
-                2
-              </span>
-              Excel
+            <HashLink smooth to="/" className="mr-auto">
+              <img src={logo} alt="logo" className="w-28 lg:w-32 h-auto" />
             </HashLink>
 
             {/* Hamburger */} {/* BUG rapidly clicking hamburger menu causes the logo to not switch and the dropdown menu stuck in current state */}

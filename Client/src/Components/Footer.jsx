@@ -1,4 +1,5 @@
 import { HashLink } from "react-router-hash-link"
+import logo from "../Assets/B2E_Logo.png"
 
 export default function Footer() {
 
@@ -28,24 +29,15 @@ export default function Footer() {
                     {/* Brand */}
 
                     <div>
-
-                        <HashLink
-                            to="/"
-                            className="text-3xl font-bold tracking-tight group text-white hover:text-primary transition-colors duration-300"
-                        >
-                            Business
-                            <span className="text-primary group-hover:text-white transition-colors duration-300">
-                                2
-                            </span>
-                            Excel
+                        <HashLink smooth to="/">
+                            <img src={logo} alt="logo" className="w-28 lg:w-32 h-auto" />
                         </HashLink>
-
-                        <p className="text-zinc-400 leading-relaxed mt-6 max-w-md">
+                        
+                        <p className="text-zinc-400 leading-relaxed mt-2 max-w-md">
                             Business2Excel equips leaders, entrepreneurs, and organizations
                             to integrate Kingdom principles, ethical leadership,
                             innovation, and AI-age transformation into modern business.
                         </p>
-
                     </div>
 
                     {/* Quick Links */}
