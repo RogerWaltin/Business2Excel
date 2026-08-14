@@ -14,7 +14,7 @@ export default function Library() {
           Browse By Format
         </h2>
 
-        <p className="mt-8 max-w-4xl text-lg leading-relaxed text-zinc-400">
+        <p className="mt-8 max-w-4xl text-lg leading-relaxed text-zinc-200">
           Whether you prefer reading, listening, watching, or downloading,
           explore resources designed to help leaders navigate complexity,
           strengthen stewardship, and create lasting Kingdom impact.
@@ -24,159 +24,170 @@ export default function Library() {
 
           {/* READ */}
 
-          <div className="rounded-3xl border border-zinc-800 bg-black p-10">
+          <div className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-black p-10">
 
-            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
-              Read
-            </p>
+            <img src="/media/books.jpg" alt="hero" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black/70" />
 
-            <div className="mt-6 space-y-2">
+            <div className="relative z-10">
 
-              <Link
-                to="/resources/articles"
-                className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-              >
-                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                  Articles →
-                </h3>
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
+                Read
+              </p>
 
-                <p className="mt-1 text-sm text-zinc-400">
-                  Strategic insights and practical business guidance.
-                </p>
-              </Link>
+              <div className="mt-6 space-y-2">
 
-              <Link
-                to="/resources/whitepapers"
-                className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-              >
-                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                  Whitepapers →
-                </h3>
+                <Link
+                  to="/resources/articles"
+                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
+                >
+                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
+                    Articles →
+                  </h3>
 
-                <p className="mt-1 text-sm text-zinc-400">
-                  Research and analysis on emerging marketplace trends.
-                </p>
-              </Link>
+                  <p className="mt-1 text-sm text-zinc-200">
+                    Strategic insights and practical business guidance.
+                  </p>
+                </Link>
 
-              <Link
-                to="/resources/ai-ethics-reports"
-                className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-              >
-                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                  AI & Ethics Reports →
-                </h3>
+                <Link
+                  to="/resources/whitepapers"
+                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
+                >
+                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
+                    Whitepapers →
+                  </h3>
 
-                <p className="mt-1 text-sm text-zinc-400">
-                  Exploring technology, innovation, and ethical leadership.
-                </p>
-              </Link>
+                  <p className="mt-1 text-sm text-zinc-200">
+                    Research and analysis on emerging marketplace trends.
+                  </p>
+                </Link>
 
-              <Link
-                to="/resources/biblical-business-insights"
-                className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-              >
-                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                  Biblical Business Insights →
-                </h3>
+                <Link
+                  to="/resources/ai-ethics-reports"
+                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
+                >
+                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
+                    AI & Ethics Reports →
+                  </h3>
 
-                <p className="mt-1 text-sm text-zinc-400">
-                  Applying biblical wisdom to modern business challenges.
-                </p>
-              </Link>
+                  <p className="mt-1 text-sm text-zinc-200">
+                    Exploring technology, innovation, and ethical leadership.
+                  </p>
+                </Link>
 
-              <Link
-                to="/resources/leadership-devotionals"
-                className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-              >
-                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                  Leadership Devotionals →
-                </h3>
+                <Link
+                  to="/resources/biblical-business-insights"
+                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
+                >
+                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
+                    Biblical Business Insights →
+                  </h3>
 
-                <p className="mt-1 text-sm text-zinc-400">
-                  Encouragement for leaders seeking Kingdom impact.
-                </p>
-              </Link>
+                  <p className="mt-1 text-sm text-zinc-200">
+                    Applying biblical wisdom to modern business challenges.
+                  </p>
+                </Link>
 
+                <Link
+                  to="/resources/leadership-devotionals"
+                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
+                >
+                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
+                    Leadership Devotionals →
+                  </h3>
+
+                  <p className="mt-1 text-sm text-zinc-200">
+                    Encouragement for leaders seeking Kingdom impact.
+                  </p>
+                </Link>
+
+              </div>
             </div>
 
           </div>
 
           {/* WATCH & LISTEN */}
 
-          <div className="rounded-3xl border border-zinc-800 bg-black p-10">
+          <div className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-black p-10">
 
-            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
-              Watch & Listen
-            </p>
+            <img src="/media/podcast.jpeg" alt="hero" className="absolute inset-0 w-full h-full object-cover right-30" />
+            <div className="absolute inset-0 bg-black/70" />
 
-            <div className="mt-6 space-y-2">
+            <div className="relative z-10">
 
-              <Link
-                to="/resources/videos"
-                className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-              >
-                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                  Videos →
-                </h3>
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
+                Watch & Listen
+              </p>
 
-                <p className="mt-1 text-sm text-zinc-400">
-                  Interviews, training sessions, and keynote presentations.
-                </p>
-              </Link>
+              <div className="mt-6 space-y-2">
 
-              <Link
-                to="/resources/podcasts"
-                className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-              >
-                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                  Podcasts →
-                </h3>
+                <Link
+                  to="/resources/videos"
+                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
+                >
+                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
+                    Videos →
+                  </h3>
 
-                <p className="mt-1 text-sm text-zinc-400">
-                  Conversations with leaders, entrepreneurs, and practitioners.
-                </p>
-              </Link>
+                  <p className="mt-1 text-sm text-zinc-200">
+                    Interviews, training sessions, and keynote presentations.
+                  </p>
+                </Link>
 
+                <Link
+                  to="/resources/podcasts"
+                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
+                >
+                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
+                    Podcasts →
+                  </h3>
+
+                  <p className="mt-1 text-sm text-zinc-200">
+                    Conversations with leaders, entrepreneurs, and practitioners.
+                  </p>
+                </Link>
+
+              </div>
             </div>
 
           </div>
 
           {/* DOWNLOAD */}
 
-          <div className="rounded-3xl border border-zinc-800 bg-black p-10">
+          <div className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-black p-10">
 
-            <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
-              Download
-            </p>
+            <img src="/media/downloads.jpg" alt="hero" className="absolute inset-0 w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-black/70" />
 
-            <div className="mt-6 space-y-2">
-
-              <Link
-                to="/resources/frameworks"
-                className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-              >
-                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                  Frameworks →
-                </h3>
-
-                <p className="mt-1 text-sm text-zinc-400">
-                  Practical tools and implementation guides.
-                </p>
-              </Link>
-
-              <Link
-                to="/resources/case-studies"
-                className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-              >
-                <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                  Case Studies →
-                </h3>
-
-                <p className="mt-1 text-sm text-zinc-400">
-                  Real-world examples of transformation and impact.
-                </p>
-              </Link>
-
+            <div className="relative z-10">
+              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
+                Download
+              </p>
+              <div className="mt-6 space-y-2">
+                <Link
+                  to="/resources/frameworks"
+                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
+                >
+                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
+                    Frameworks →
+                  </h3>
+                  <p className="mt-1 text-sm text-zinc-200">
+                    Practical tools and implementation guides.
+                  </p>
+                </Link>
+                <Link
+                  to="/resources/case-studies"
+                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
+                >
+                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
+                    Case Studies →
+                  </h3>
+                  <p className="mt-1 text-sm text-zinc-200">
+                    Real-world examples of transformation and impact.
+                  </p>
+                </Link>
+              </div>
             </div>
 
           </div>
