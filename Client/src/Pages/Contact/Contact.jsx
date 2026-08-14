@@ -27,9 +27,13 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-[calc(100vh-64px)] bg-zinc-950 px-6 py-14">
+    <div className="min-h-[calc(100vh-64px)] bg-zinc-950 px-6 py-14 relative overflow-hidden">
 
-      <div className="max-w-6xl mx-auto">
+      <img src="/media/contact.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+
+      <div className="absolute inset-0 bg-black/70" />
+
+      <div className="max-w-6xl mx-auto relative z-10">
 
         <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 md:p-10 shadow-2xl">
 

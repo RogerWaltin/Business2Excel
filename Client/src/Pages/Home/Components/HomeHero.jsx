@@ -29,11 +29,11 @@ export default function HomeHero({ color1, color2 }) {
 
       <div className="absolute inset-y-0 right-0 w-full">
         <video src={conference} className="h-full w-full object-cover" autoPlay muted loop playsInline></video>
-    </div>
+      </div>
 
-    <div className="absolute inset-0 bg-linear-to-r from-zinc-950 via-zinc-950/90 to-zinc-950/30" />
+      <div className="absolute inset-0 bg-linear-to-r from-zinc-950 via-zinc-950/50 to-zinc-950/20" />
 
-      <div className="grid lg:grid-cols-2 gap-12 items-center max-w-360 mx-auto px-6 pt-20 pb-29 relative z-10">
+      <div className="grid lg:grid-cols-2 gap-12 items-center max-w-360 mx-auto px-6 pt-20 pb-40 relative z-10">
 
         {/* Left */}
         <div>
@@ -78,7 +78,7 @@ export default function HomeHero({ color1, color2 }) {
             </Link>
 
             <Link to="/certification">
-              <button className="border border-zinc-700 hover:border-secondary px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+              <button className="border border-zinc-700 hover:border-secondary px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer bg-black/50 backdrop-blur-xs">
                 Apply For Certification
               </button>
             </Link>
@@ -88,7 +88,7 @@ export default function HomeHero({ color1, color2 }) {
         </div>
 
         {/* Right */}
-        <div className="bg-zinc-900/70 backdrop-blur-xl border border-zinc-800 rounded-4xl p-8">
+        <div className="bg-zinc-900/50 backdrop-blur-xs border border-zinc-800 rounded-4xl p-8">
 
           <div className="grid md:grid-cols-2 gap-4">
 
@@ -96,7 +96,7 @@ export default function HomeHero({ color1, color2 }) {
 
               <div
                 key={item.title}
-                className="bg-zinc-950 border border-zinc-800 rounded-2xl p-5"
+                className="border border-zinc-800 rounded-2xl p-5 bg-zinc-950/50 backdrop-blur-xs"
               >
 
                 <h3 className="text-lg font-bold">

@@ -14,6 +14,7 @@ const trainingEvents = [
       "Innovation",
     ],
     buttonText: "Register For Workshops",
+    image: "/media/workshop.jpg"
   },
   {
     id: "conferences",
@@ -23,6 +24,7 @@ const trainingEvents = [
       "Annual flagship events that bring together entrepreneurs, executives, consultants, investors, and marketplace leaders around strategy, innovation, and Kingdom impact.",
     topics: [],
     buttonText: "Register For Conferences",
+    image: "/media/conference.jpg"
   },
   {
     id: "webinars",
@@ -37,6 +39,7 @@ const trainingEvents = [
       "Future Trends",
     ],
     buttonText: "Register For Webinars",
+    image: "/media/webinar.jpg"
   },
   {
     id: "mentorship",
@@ -51,6 +54,7 @@ const trainingEvents = [
       "Stewardship",
     ],
     buttonText: "Register For Mentorship",
+    image: "/media/mentorship.jpg"
   },
 ]
 
@@ -85,45 +89,40 @@ export default function TrainingEvents() {
             <div
               key={item.id}
               id={item.id}
-              className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-secondary/30 transition-all duration-300"
+              className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-secondary/30 transition-all duration-300 relative overflow-hidden"
             >
 
-              <span className="text-sm uppercase tracking-[0.2em] text-primary">
-                {item.category}
-              </span>
+              <img src={item.image} alt="" className="absolute inset-0 h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-black/70" />
 
-              <h3 className="text-3xl font-bold mt-4">
-                {item.title}
-              </h3>
-
-              <p className="text-zinc-400 leading-relaxed mt-6">
-                {item.description}
-              </p>
-
-              {item.topics.length > 0 && (
-
-                <div className="flex flex-wrap gap-3 mt-8">
-
-                  {item.topics.map((topic) => (
-
-                    <span
-                      key={topic}
-                      className="bg-zinc-950 border border-zinc-800 rounded-full px-4 py-2 text-sm"
-                    >
-                      {topic}
-                    </span>
-
-                  ))}
-
-                </div>
-
-              )}
-
-              <Link to="/training-events">
-                <button className="mt-8 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-                  {item.buttonText}
-                </button>
-              </Link>
+              <div className="relative z-10">
+                <span className="text-sm uppercase tracking-[0.2em] text-primary">
+                  {item.category}
+                </span>
+                <h3 className="text-3xl font-bold mt-4">
+                  {item.title}
+                </h3>
+                <p className="text-zinc-400 leading-relaxed mt-6">
+                  {item.description}
+                </p>
+                {item.topics.length > 0 && (
+                  <div className="flex flex-wrap gap-3 mt-8">
+                    {item.topics.map((topic) => (
+                      <span
+                        key={topic}
+                        className="bg-zinc-950/70 backdrop-blur-xs border border-zinc-800 rounded-full px-4 py-2 text-sm"
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <Link to="/training-events">
+                  <button className="mt-8 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+                    {item.buttonText}
+                  </button>
+                </Link>
+              </div>
 
             </div>
 

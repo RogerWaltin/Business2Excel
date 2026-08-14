@@ -107,44 +107,43 @@ export default function ServicesCertification() {
 
                 </div>
 
-                {/* Process */}
+                
 
-                <div className="mt-24">
+            </div>
 
-                    <h3 className="text-3xl font-bold text-white">
-                        The Certification Journey
-                    </h3>
+            {/* Process */}
 
-                    <div className="mt-10 grid gap-8 lg:grid-cols-4">
+                <div className="mt-24 py-16 relative overflow-hidden">
 
-                        {process.map((item) => (
+                    <img src="/media/journey.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
 
-                            <div
-                                key={item.step}
-                                className="rounded-3xl border border-zinc-800 bg-black p-8"
-                            >
+                    <div className="absolute inset-0 bg-black/70" />
 
-                                <p className="text-5xl font-bold text-primary">
-                                    {item.step}
-                                </p>
-
-                                <h4 className="mt-4 text-xl font-semibold text-white">
-                                    {item.title}
-                                </h4>
-
-                                <p className="mt-4 leading-relaxed text-zinc-400">
-                                    {item.description}
-                                </p>
-
-                            </div>
-
-                        ))}
-
+                    <div className="mx-auto max-w-7xl px-6 relative z-10">
+                        <h3 className="text-3xl font-bold text-white">
+                            The Certification Journey
+                        </h3>
+                        <div className="mt-10 grid gap-8 lg:grid-cols-4">
+                            {process.map((item) => (
+                                <div
+                                    key={item.step}
+                                    className="rounded-3xl border border-zinc-800 bg-black/50 backdrop-blur-xs p-8"
+                                >
+                                    <p className="text-5xl font-bold text-primary">
+                                        {item.step}
+                                    </p>
+                                    <h4 className="mt-4 text-xl font-semibold text-white">
+                                        {item.title}
+                                    </h4>
+                                    <p className="mt-4 leading-relaxed text-zinc-400">
+                                        {item.description}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                 </div>
-
-            </div>
 
         </section>
     )

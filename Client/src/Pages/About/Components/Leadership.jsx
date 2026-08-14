@@ -18,9 +18,15 @@ export default function Leadership() {
     ]
 
     return (
-        <section id="leadership" className="py-28 border-b border-zinc-900">
+        <section id="leadership" className="py-28 border-b border-zinc-900 relative overflow-hidden">
 
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="absolute inset-y-0 right-0 w-full">
+                <video src="/media/leadershipabout.mp4" className="h-full w-full object-cover" autoPlay muted loop playsInline></video>
+            </div>
+
+            <div className="absolute inset-0 bg-linear-to-r from-zinc-950 via-zinc-950/50 to-zinc-950/20" />
+
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
 
                 <div className="max-w-3xl">
 
@@ -32,7 +38,7 @@ export default function Leadership() {
                         Leadership Rooted in Stewardship and Vision
                     </h2>
 
-                    <p className="text-zinc-400 text-lg leading-relaxed mt-8">
+                    <p className="text-zinc-200 text-lg leading-relaxed mt-8">
                         Our leadership team combines strategic excellence with Kingdom
                         values, ethical leadership, and long-term impact.
                     </p>
@@ -45,7 +51,7 @@ export default function Leadership() {
 
                         <div
                             key={item}
-                            className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300"
+                            className=" border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300 bg-zinc-900/70 backdrop-blur-xs"
                         >
 
                             <h3 className="text-lg font-semibold capitalize text-center">
@@ -64,7 +70,7 @@ export default function Leadership() {
 
                         <div
                             key={item}
-                            className="border border-secondary/20 rounded-2xl p-6 text-center"
+                            className="border border-secondary/20 rounded-2xl p-6 text-center bg-zinc-900/70 backdrop-blur-xs"
                         >
 
                             <span className="capitalize text-primary font-medium">

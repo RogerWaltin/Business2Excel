@@ -8,7 +8,7 @@ const trustItem = [
 
 export default function TrustBar() {
   return (
-    <section id="trust-bar" className="border-b border-zinc-900">
+    <section id="trust-bar" className="border-b border-zinc-900 ">
 
       <div className="max-w-7xl mx-auto px-6 py-8">
 

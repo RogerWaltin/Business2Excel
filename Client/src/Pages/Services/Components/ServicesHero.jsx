@@ -8,17 +8,23 @@ export default function ServicesHero() {
     }
 
     return (
-        <section className="relative overflow-hidden bg-linear-to-b from-zinc-950 via-black to-black pt-20">
+        <section className="relative overflow-hidden pt-20 pb-10">
 
             {/* <div className="absolute pointer-events-none inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_35%)]" /> */}
 
-            <div className="mx-auto max-w-7xl px-6">
+            <div className="absolute inset-y-0 right-0 w-full">
+                <video src="/media/services_handshake.mp4" className="h-full w-full object-cover" autoPlay muted loop playsInline></video>
+            </div>
+
+            <div className="absolute inset-0 bg-linear-to-r from-zinc-950 via-zinc-950/50 to-zinc-950/20" />
+
+            <div className="mx-auto max-w-7xl px-6 relative z-10">
 
                 <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
 
                     {/* Left Content */}
                     <div>
-                        <span className="inline-flex items-center rounded-full border border-secondary/75 px-4 py-2 text-sm tracking-widest uppercase text-primary">
+                        <span className="inline-flex items-center rounded-full border border-secondary/75 px-4 py-2 text-sm tracking-widest uppercase text-primary bg-black/50 backdrop-blur-xs">
                             Services
                         </span>
                         <h1 className="mt-4 text-5xl font-bold leading-tight tracking-tight text-white lg:text-5xl">
@@ -42,7 +48,7 @@ export default function ServicesHero() {
                                 </button>
                             </Link>
 
-                            <button onClick={scrollToServices} className="rounded-xl border border-zinc-700 px-6 py-4 font-semibold text-white transition-all duration-300 hover:border-secondary hover:text-primary cursor-pointer">
+                            <button onClick={scrollToServices} className="rounded-xl border border-zinc-700 px-6 py-4 font-semibold text-white transition-all duration-300 hover:border-secondary hover:text-primary cursor-pointer bg-black/50 backdrop-blur-xs">
                                 Explore Certifications
                             </button>
 
@@ -53,11 +59,11 @@ export default function ServicesHero() {
                     {/* Right Content */}
                     <div>
 
-                        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 backdrop-blur">
+                        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 backdrop-blur-xs">
 
                             <div className="grid gap-6 sm:grid-cols-2">
 
-                                <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+                                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/50 backdrop-blur-xs p-6">
                                     <p className="text-4xl font-bold text-primary">
                                         12+
                                     </p>
@@ -66,7 +72,7 @@ export default function ServicesHero() {
                                     </p>
                                 </div>
 
-                                <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+                                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/50 backdrop-blur-xs p-6">
                                     <p className="text-4xl font-bold text-primary">
                                         AI
                                     </p>
@@ -75,7 +81,7 @@ export default function ServicesHero() {
                                     </p>
                                 </div>
 
-                                <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+                                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/50 backdrop-blur-xs p-6">
                                     <p className="text-4xl font-bold text-primary">
                                         4
                                     </p>
@@ -84,7 +90,7 @@ export default function ServicesHero() {
                                     </p>
                                 </div>
 
-                                <div className="rounded-2xl border border-zinc-800 bg-zinc-950 p-6">
+                                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/50 backdrop-blur-xs p-6">
                                     <p className="text-4xl font-bold text-primary">
                                         ✓
                                     </p>
@@ -95,7 +101,7 @@ export default function ServicesHero() {
 
                             </div>
 
-                            <div className="mt-8 rounded-2xl border border-zinc-800 p-6">
+                            <div className="mt-8 rounded-2xl border border-zinc-800 bg-zinc-950/50 backdrop-blur-xs p-6">
 
                                 <h3 className="text-lg font-semibold text-white">
                                     Kingdom Business Transformation
