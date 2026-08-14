@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { HashLink } from "react-router-hash-link"
-import logo from "../Assets/B2E_Logo.png"
+import logo from "../Assets/B2EOriLogo.jpeg"
 
 const navSections = [
   {
