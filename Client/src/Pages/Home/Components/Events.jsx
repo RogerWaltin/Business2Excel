@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function Events({ color1, color2 }) {
+export default function Events() {
   const eventCards = [
     {
       label: "Workshops",

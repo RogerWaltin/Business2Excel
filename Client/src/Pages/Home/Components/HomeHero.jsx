@@ -21,7 +21,7 @@ const heroPillar = [
   },
 ]
 
-export default function HomeHero({ color1, color2 }) {
+export default function HomeHero() {
   return (
     <section id="hero" className="relative overflow-hidden border-b border-zinc-900">
 

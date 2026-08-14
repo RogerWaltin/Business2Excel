@@ -1,4 +1,4 @@
-export default function KingdomTransformationFramework({ color1, color2 }) {
+export default function KingdomTransformationFramework() {
   const serviceCards = [
     {
       title: "Kingdom Certification",
