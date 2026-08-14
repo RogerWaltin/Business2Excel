@@ -9,7 +9,7 @@ const businessChallenge = [
   "Cultural Fragmentation",
 ]
 
-export default function Challenge({ color1, color2 }) {
+export default function Challenge() {
   return (
     <section id="challenge" className="py-16 border-b border-zinc-900 relative overflow-hidden">
 

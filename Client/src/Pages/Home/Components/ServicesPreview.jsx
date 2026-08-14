@@ -23,7 +23,7 @@ const service = [
     },
 ]
 
-export default function ServicesPreview({ color1, color2 }) {
+export default function ServicesPreview() {
 
     return (
         <section id="services-preview" className="py-16 border-b border-zinc-900">
