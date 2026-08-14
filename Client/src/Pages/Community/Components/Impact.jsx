@@ -21,7 +21,7 @@ export default function CommunityImpact() {
   return (
     <section
       id="impact"
-      className="scroll-mt-24 py-28 border-b border-zinc-900"
+      className="scroll-mt-24 py-24 border-b border-zinc-900"
     >
 
       <div className="max-w-7xl mx-auto px-6">

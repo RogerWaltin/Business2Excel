@@ -6,35 +6,35 @@ export default function FinalCTA() {
 
       <div className="max-w-5xl mx-auto px-6 text-center">
 
-        <div className="bg-zinc-900 border border-zinc-800 rounded-4xl p-12 md:p-16">
+        <div className="bg-zinc-900 border border-zinc-800 rounded-4xl p-12 md:p-16 relative overflow-hidden">
 
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-            Join the Movement
-          </span>
+          <img src="/media/deal.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <div className="absolute inset-0 bg-black/70" />
 
-          <h2 className="text-4xl md:text-6xl font-bold mt-6">
-            Ready to Build Kingdom Impact Together?
-          </h2>
-
-          <p className="text-zinc-400 text-lg leading-relaxed mt-8 max-w-3xl mx-auto">
-            Connect with leaders, accelerate your growth, strengthen your
-            influence, and become part of a global Kingdom business
-            transformation ecosystem.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4 mt-10">
-
-            <Link to="/network">
-              <button className="bg-secondary hover:bg-primary text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
-                Join the Network
-              </button>
-            </Link>
-
-            <Link to="/consultation">
-              <button className="border border-zinc-700 hover:border-secondary px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
-                Book a Consultation
-              </button>
-            </Link>
+          <div className="relative z-10">
+            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+              Join the Movement
+            </span>
+            <h2 className="text-4xl md:text-6xl font-bold mt-6">
+              Ready to Build Kingdom Impact Together?
+            </h2>
+            <p className="text-zinc-300 text-lg leading-relaxed mt-8 max-w-3xl mx-auto">
+              Connect with leaders, accelerate your growth, strengthen your
+              influence, and become part of a global Kingdom business
+              transformation ecosystem.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-10">
+              <Link to="/network">
+                <button className="bg-secondary hover:bg-primary text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
+                  Join the Network
+                </button>
+              </Link>
+              <Link to="/consultation">
+                <button className="border border-zinc-700 hover:border-secondary px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer bg-zinc-900/70 backdrop-blur-xs">
+                  Book a Consultation
+                </button>
+              </Link>
+          </div>
 
           </div>
 
