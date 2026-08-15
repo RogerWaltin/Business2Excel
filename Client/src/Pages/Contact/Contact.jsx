@@ -43,7 +43,7 @@ export default function Contact() {
           </h1>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-8" autoComplete="off">
 
             {/* Row 1 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -94,9 +94,10 @@ export default function Contact() {
 
                 <label className="text-lg text-zinc-200">
                   Mobile Number
+                  <span className="text-red-500 ml-1">*</span>
                 </label>
 
-                <input type="text" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="+91 12345 67890" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors" />
+                <input type="text" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="+91 12345 67890" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors" required/>
 
               </div>
 
@@ -107,11 +108,12 @@ export default function Contact() {
 
               <label className="text-lg text-zinc-200">
                 How did you hear about us?
+                <span className="text-red-500 ml-1">*</span>
               </label>
 
-              <select name="howDidYouHear" value={formData.howDidYouHear} onChange={handleChange} className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors text-zinc-200">
+              <select name="howDidYouHear" value={formData.howDidYouHear} onChange={handleChange} className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors text-zinc-200" required>
 
-                <option value="">Select an option</option>
+                <option value="" disabled>Select an option</option>
                 <option value="google">Google</option>
                 <option value="youtube">YouTube</option>
                 <option value="friend">Friend</option>
@@ -128,9 +130,10 @@ export default function Contact() {
 
               <label className="text-lg text-zinc-200">
                 Your Message
+                <span className="text-red-500 ml-1">*</span>
               </label>
 
-              <textarea name="message" value={formData.message} onChange={handleChange} rows="6" placeholder="Write your message here..." className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-4 text-base outline-none focus:border-primary transition-colors resize-y" />
+              <textarea name="message" value={formData.message} onChange={handleChange} rows="6" placeholder="Write your message here..." className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-4 text-base outline-none focus:border-primary transition-colors resize-y" required/>
 
             </div>
 
