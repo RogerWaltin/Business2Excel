@@ -18,12 +18,41 @@ export default function Contact() {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
 
-    console.log(formData)
+    try {
+      const response = await fetch("http://localhost:8080/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      })
 
-    // send to backend here
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "Something went wrong")
+      }
+
+      console.log("Email sent successfully:", data)
+
+      alert("Your message has been sent successfully!")
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        mobile: "",
+        howDidYouHear: "",
+        message: ""
+      })
+
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      alert("Failed to send your message. Please try again.")
+    }
   }
 
   return (
@@ -97,7 +126,7 @@ export default function Contact() {
                   <span className="text-red-500 ml-1">*</span>
                 </label>
 
-                <input type="text" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="+91 12345 67890" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors" required/>
+                <input type="text" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="+91 12345 67890" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors" required />
 
               </div>
 
@@ -133,7 +162,7 @@ export default function Contact() {
                 <span className="text-red-500 ml-1">*</span>
               </label>
 
-              <textarea name="message" value={formData.message} onChange={handleChange} rows="6" placeholder="Write your message here..." className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-4 text-base outline-none focus:border-primary transition-colors resize-y" required/>
+              <textarea name="message" value={formData.message} onChange={handleChange} rows="6" placeholder="Write your message here..." className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-4 text-base outline-none focus:border-primary transition-colors resize-y" required />
 
             </div>
 
