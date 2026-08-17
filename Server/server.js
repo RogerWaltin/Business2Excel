@@ -3,6 +3,8 @@ import "dotenv/config";
 import { Resend } from "resend";
 import cors from "cors";
 import he from "he";
+import validator from "validator";
+import { rateLimit } from "express-rate-limit";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -12,7 +14,18 @@ const PORT = process.env.PORT || 8080;
 app.use(cors());
 app.use(express.json());
 
-app.post("/api/contact", async (req, res) => {
+const contactLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    limit: 5,
+    standardHeaders: "draft-8",
+    legacyHeaders: false,
+    message: {
+        success: false,
+        message: "Too many submissions. Please try again later."
+    }
+});
+
+app.post("/api/contact", contactLimiter, async (req, res) => {
   try {
     const {
       firstName,
@@ -22,6 +35,55 @@ app.post("/api/contact", async (req, res) => {
       howDidYouHear,
       message
     } = req.body;
+
+    if (
+      typeof firstName !== "string" ||
+      typeof lastName !== "string" ||
+      typeof email !== "string" ||
+      typeof mobile !== "string" ||
+      typeof howDidYouHear !== "string" ||
+      typeof message !== "string"
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid form data."
+      });
+    }
+
+    if (
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !email.trim() ||
+      !mobile.trim() ||
+      !howDidYouHear.trim() ||
+      !message.trim()
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required."
+      });
+    }
+
+    if (!validator.isEmail(email.trim())) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid email address."
+      });
+    }
+
+    if (
+      firstName.length > 50 ||
+      lastName.length > 50 ||
+      email.length > 254 ||
+      mobile.length > 30 ||
+      howDidYouHear.length > 50 ||
+      message.length > 5000
+    ) {
+      return res.status(400).json({
+        success: false,
+        message: "One or more fields are too long."
+      });
+    }
 
     const safeFirstName = he.encode(firstName);
     const safeLastName = he.encode(lastName);
