@@ -23,7 +23,7 @@ export default function AbourHero() {
                     </h1>
 
                     <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mt-8 max-w-3xl">
-                        Business2Excel equips entrepreneurs, executives, and organizations
+                        Business2excel equips entrepreneurs, executives, and organizations
                         to integrate Kingdom principles, ethical leadership, strategic
                         innovation, and AI-age transformation into modern business.
                     </p>

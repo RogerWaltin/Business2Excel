@@ -32,7 +32,7 @@ export default function VisionMission() {
               Our Mission
             </span>
             <p className="text-zinc-200 leading-relaxed text-lg mt-6">
-              Business2Excel exists to equip entrepreneurs, executives, and
+              Business2excel exists to equip entrepreneurs, executives, and
               organizations with Kingdom-centered transformation, leadership
               development, ethical certification systems, strategic consulting,
               and AI-age reinvention.

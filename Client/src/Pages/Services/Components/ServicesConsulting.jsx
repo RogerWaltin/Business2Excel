@@ -50,7 +50,7 @@ export default function ServicesConsulting() {
                             roadmap for long-term growth.
                         </p>
                         <p className="mt-6 max-w-4xl text-lg leading-relaxed text-zinc-200">
-                            Business2Excel helps organizations navigate transformation
+                            Business2excel helps organizations navigate transformation
                             journeys while maintaining their values, strengthening
                             leadership, and building systems that enable sustainable
                             growth and innovation.
@@ -84,7 +84,7 @@ export default function ServicesConsulting() {
                 >
                     <img src="/media/leadership.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
                     <div className="absolute inset-0 bg-black/70" />
-                    
+
 
                     <div className="relative z-10">
                         <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
@@ -132,7 +132,7 @@ export default function ServicesConsulting() {
                 >
                     <img src="/media/wealth.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
                     <div className="absolute inset-0 bg-black/70" />
-                    
+
 
                     <div className="relative z-10">
                         <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
@@ -180,7 +180,7 @@ export default function ServicesConsulting() {
                 >
                     <img src="/media/mission.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
                     <div className="absolute inset-0 bg-black/70" />
-                    
+
 
                     <div className="relative z-10">
                         <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">

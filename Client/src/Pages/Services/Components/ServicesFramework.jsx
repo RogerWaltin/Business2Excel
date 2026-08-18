@@ -14,7 +14,7 @@ export default function ServicesFramework() {
 
         <p className="mt-8 max-w-3xl text-lg leading-relaxed text-zinc-400">
           Lasting transformation requires more than isolated solutions.
-          Business2Excel integrates strategic consulting, leadership
+          Business2excel integrates strategic consulting, leadership
           development, ethical certification, and Kingdom-centered stewardship
           into a unified framework designed to help organizations thrive in a
           rapidly changing world.

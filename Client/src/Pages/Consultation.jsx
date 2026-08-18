@@ -21,7 +21,7 @@ export default function Consultation() {
 
                     <p className="text-zinc-400 text-lg leading-relaxed mt-8 max-w-3xl mx-auto">
                         Schedule a strategic consultation to explore how
-                        Business2Excel can help your organization integrate
+                        Business2excel can help your organization integrate
                         Kingdom principles, leadership excellence, innovation,
                         and lasting impact.
                     </p>

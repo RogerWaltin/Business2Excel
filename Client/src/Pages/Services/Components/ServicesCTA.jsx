@@ -22,7 +22,7 @@ export default function ServicesCTA() {
         {/* Description */}
         <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-zinc-400">
           Whether you're seeking strategic guidance, leadership transformation,
-          Kingdom-centered business practices, or certification, Business2Excel
+          Kingdom-centered business practices, or certification, Business2excel
           provides the framework and support to help your organization thrive
           with purpose, integrity, and lasting impact.
         </p>
@@ -35,18 +35,18 @@ export default function ServicesCTA() {
               Book Consultation
             </button>
           </HashLink>
-          
+
           <HashLink to="/certification">
             <button className="rounded-xl border border-zinc-700 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-secondary hover:text-primary cursor-pointer">
               Apply For Certification
             </button>
-          </HashLink> 
+          </HashLink>
 
         </div>
-    
+
       </div>
 
-      
+
     </section>
   )
 }

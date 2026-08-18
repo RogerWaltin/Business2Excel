@@ -32,9 +32,9 @@ export default function Footer() {
                         <HashLink smooth to="/">
                             <img src={logo} alt="logo" className="w-28 lg:w-32 h-auto" />
                         </HashLink>
-                        
+
                         <p className="text-zinc-400 leading-relaxed mt-2 max-w-md">
-                            Business2Excel equips leaders, entrepreneurs, and organizations
+                            Business2excel equips leaders, entrepreneurs, and organizations
                             to integrate Kingdom principles, ethical leadership,
                             innovation, and AI-age transformation into modern business.
                         </p>
@@ -103,7 +103,7 @@ export default function Footer() {
                 <div className="max-w-7xl mx-auto px-6 py-6 text-center">
 
                     <p className="text-sm text-zinc-500">
-                        © 2026 Business2Excel. All rights reserved.
+                        © 2026 Business2excel. All rights reserved.
                     </p>
 
                 </div>

@@ -36,7 +36,7 @@ export default function CommunityImpact() {
             </h2>
 
             <p className="text-zinc-400 text-lg leading-relaxed mt-8">
-              The Business2Excel ecosystem exists to unite entrepreneurs,
+              The Business2excel ecosystem exists to unite entrepreneurs,
               executives, consultants, investors, and ministry leaders around
               a shared vision of Kingdom-centered business transformation.
             </p>
