@@ -20,11 +20,9 @@ export default function Leadership() {
     return (
         <section id="leadership" className="py-28 border-b border-zinc-900 relative overflow-hidden">
 
-            <div className="absolute inset-y-0 right-0 w-full">
-                <video src="/media/leadershipabout.mp4" className="h-full w-full object-cover" autoPlay muted loop playsInline></video>
-            </div>
+            <img src="/media/leadershipV2.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
 
-            <div className="absolute inset-0 bg-linear-to-r from-zinc-950 via-zinc-950/50 to-zinc-950/20" />
+            <div className="absolute inset-0 bg-black/75" />
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
 

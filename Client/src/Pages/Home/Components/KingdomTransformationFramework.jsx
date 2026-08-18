@@ -13,7 +13,7 @@ export default function KingdomTransformationFramework() {
     {
       title: "Leadership Transformation",
       description: "Develop culture, governance, mission clarity, stewardship, and influence.",
-      image: "/media/simu-lui-leader.webp"
+      image: "/media/leadership.jpg"
     },
     {
       title: "Business as Mission",

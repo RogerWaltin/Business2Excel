@@ -12,10 +12,8 @@ const businessChallenge = [
 export default function Challenge() {
   return (
     <section id="challenge" className="py-16 border-b border-zinc-900 relative overflow-hidden">
-      {/* TODO: put a static image here instead of video cus.....well yeah */}
-      {/* <video muted loop playsInline className="absolute inset-0 w-full h-full object-cover">
-        <source src={citySkyline} type="video/mp4" />
-      </video> */}
+      
+      <img src="/media/busy_city.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
 
       <div className="absolute inset-0 bg-black/75" />
 

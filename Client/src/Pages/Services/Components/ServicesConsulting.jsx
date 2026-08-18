@@ -82,7 +82,7 @@ export default function ServicesConsulting() {
                     id="kingdom-leadership"
                     className="mt-16 rounded-3xl border border-zinc-800 bg-zinc-950 p-12 relative overflow-hidden"
                 >
-                    <img src="/media/simu-lui-leader.webp" alt="" className="absolute inset-0 h-full w-full object-cover" />
+                    <img src="/media/leadership.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
                     <div className="absolute inset-0 bg-black/70" />
                     
 

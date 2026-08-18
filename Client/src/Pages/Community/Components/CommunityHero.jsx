@@ -11,8 +11,8 @@ export default function CommunityHero() {
     <section id="hero" className="relative overflow-hidden border-b border-zinc-900">
 
       {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_35%)]" /> */}
-      {/* TODO: ask Ashok about the legal side of this image */}
-      <img src="/media/simu-lui.webp" alt="" className="absolute inset-0 h-full w-full object-cover" />
+    
+      <img src="/media/community.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
 
       <div className="absolute inset-0 bg-black/70" />
 
