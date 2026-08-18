@@ -62,7 +62,7 @@ export default function HomeHero() {
 
           <p className="text-zinc-400 text-lg leading-relaxed mt-6 max-w-xl">
 
-            Business2Excel equips leaders, entrepreneurs,
+            Business2excel equips leaders, entrepreneurs,
             and organizations to integrate Kingdom principles,
             ethical leadership, innovation, and AI-age
             transformation into modern business.

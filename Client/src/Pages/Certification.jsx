@@ -22,7 +22,7 @@ export default function Certification() {
           <p className="text-zinc-400 text-lg leading-relaxed mt-8 max-w-3xl mx-auto">
             Begin the journey toward ethical excellence, leadership
             accountability, organizational trust, and Kingdom-centered
-            impact through the Business2Excel Certification Framework.
+            impact through the Business2excel Certification Framework.
           </p>
 
         </div>

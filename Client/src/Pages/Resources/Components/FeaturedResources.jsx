@@ -49,7 +49,7 @@ export default function FeaturedResources() {
 
                 {/* Paragraph */}
                 <p className="mt-8 max-w-3xl text-lg leading-relaxed text-zinc-400">
-                    Explore Business2Excel's flagship reports, guides, and
+                    Explore Business2excel's flagship reports, guides, and
                     strategic frameworks designed to help leaders navigate
                     disruption, strengthen stewardship, and create lasting
                     Kingdom impact.

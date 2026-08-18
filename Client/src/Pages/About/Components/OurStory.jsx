@@ -1,49 +1,49 @@
 export default function OurStory() {
-    return (
-        
-        <section id="our-story" className="py-28 border-b border-zinc-900">
+  return (
 
-        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
+    <section id="our-story" className="py-28 border-b border-zinc-900">
 
-          <div>
-            
-            <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-              Our Story
-            </span>
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
 
-            <h2 className="text-4xl md:text-5xl font-bold mt-6">
-              Restoring Purpose, Integrity, and Leadership to Modern Business
-            </h2>
+        <div>
 
-          </div>
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+            Our Story
+          </span>
 
-          <div className="space-y-8 text-zinc-400 leading-relaxed text-lg">
-
-            <p>
-              Business2Excel was born from a growing realization that modern
-              business is facing more than economic disruption — it is facing a
-              crisis of purpose, integrity, and leadership.
-            </p>
-
-            <p>
-              Founded with a vision to bridge biblical wisdom and modern
-              business excellence, Business2Excel equips entrepreneurs,
-              executives, organizations, and marketplace leaders to build
-              businesses that are profitable, ethical, impactful, and eternally
-              significant.
-            </p>
-
-            <p>
-              More than a consulting organization, Business2Excel is building a
-              global movement where faith-driven leadership, strategic
-              innovation, stewardship, and Kingdom impact converge to transform
-              industries, communities, and nations.
-            </p>
-
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold mt-6">
+            Restoring Purpose, Integrity, and Leadership to Modern Business
+          </h2>
 
         </div>
 
-      </section>
-    )
+        <div className="space-y-8 text-zinc-400 leading-relaxed text-lg">
+
+          <p>
+            Business2excel was born from a growing realization that modern
+            business is facing more than economic disruption — it is facing a
+            crisis of purpose, integrity, and leadership.
+          </p>
+
+          <p>
+            Founded with a vision to bridge biblical wisdom and modern
+            business excellence, Business2excel equips entrepreneurs,
+            executives, organizations, and marketplace leaders to build
+            businesses that are profitable, ethical, impactful, and eternally
+            significant.
+          </p>
+
+          <p>
+            More than a consulting organization, Business2excel is building a
+            global movement where faith-driven leadership, strategic
+            innovation, stewardship, and Kingdom impact converge to transform
+            industries, communities, and nations.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+  )
 }

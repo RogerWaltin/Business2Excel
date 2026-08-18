@@ -12,11 +12,11 @@ export default function WhoAreWe() {
         </span>
 
         <h2 className="text-3xl md:text-5xl font-bold mt-6">
-          Why Business2Excel Exists
+          Why Business2excel Exists
         </h2>
 
         <p className="text-zinc-400 text-base md:text-lg leading-relaxed mt-8 max-w-3xl mx-auto">
-          Business2Excel exists to help leaders, entrepreneurs, and
+          Business2excel exists to help leaders, entrepreneurs, and
           organizations integrate Kingdom principles with strategic
           excellence, ethical leadership, innovation, and long-term impact.
         </p>

@@ -1,9 +1,9 @@
 export default function FAQ() {
     const faqItems = [
         {
-            question: "What is Business2Excel?",
+            question: "What is Business2excel?",
             answer:
-                "Business2Excel is a Kingdom-centered business transformation ecosystem focused on consulting, leadership development, ethical certification, strategic reinvention, and marketplace impact.",
+                "Business2excel is a Kingdom-centered business transformation ecosystem focused on consulting, leadership development, ethical certification, strategic reinvention, and marketplace impact.",
         },
         {
             question: "Who do you work with?",
@@ -16,7 +16,7 @@ export default function FAQ() {
                 "Kingdom Certification is an ethical and leadership-based framework designed to align organizations with Kingdom principles and stewardship values.",
         },
         {
-            question: "Is Business2Excel only for Christian organizations?",
+            question: "Is Business2excel only for Christian organizations?",
             answer:
                 "No. Our worldview is biblically grounded, but our frameworks are globally relevant and professionally applicable.",
         },

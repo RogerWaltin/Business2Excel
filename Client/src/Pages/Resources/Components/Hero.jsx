@@ -30,7 +30,7 @@ export default function Hero() {
         </p>
 
         <p className="mt-6 max-w-4xl text-lg leading-relaxed text-zinc-200">
-          Business2Excel provides research, insights, reports, frameworks, and
+          Business2excel provides research, insights, reports, frameworks, and
           practical resources designed to help leaders navigate complexity,
           make principled decisions, and create lasting Kingdom impact in an
           increasingly interconnected world.
