@@ -22,7 +22,7 @@ export default function ServicesFramework() {
 
         <div className="mt-20 grid gap-8 lg:grid-cols-[1fr_auto_1fr]">
 
-          {/* Consulting Side */} {/*TODO Use framer motion or something to make an animation that breaks the consultation box into 4 small boxes*/}
+          {/* Consulting Side */} {/*NOTE: Use framer motion or something to make an animation that breaks the consultation box into 4 small boxes*/}
 
           <div className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-950 p-10">
 
