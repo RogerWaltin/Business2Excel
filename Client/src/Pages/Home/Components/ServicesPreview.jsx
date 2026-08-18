@@ -9,7 +9,7 @@ const service = [
     {
         title: "Kingdom Leadership",
         desc: "Develop leaders grounded in stewardship and purpose.",
-        image: "/media/simu-lui-leader.webp"
+        image: "/media/leadership.jpg"
     },
     {
         title: "Stewardship & Wealth",
