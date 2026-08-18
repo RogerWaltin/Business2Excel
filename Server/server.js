@@ -11,7 +11,13 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://business2excel.surge.sh"
+  ]
+}));
+
 app.use(express.json());
 
 const contactLimiter = rateLimit({
@@ -161,6 +167,6 @@ app.post("/api/contact", contactLimiter, async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Express server listening on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Express server listening on port ${PORT}`);
 });
