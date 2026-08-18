@@ -12,6 +12,8 @@ export default function Contact() {
     message: "",
   })
 
+  console.log(import.meta.env.VITE_API_URL)
+
   const [turnstileToken, setTurnstileToken] = useState("")
 
   const handleChange = (e) => {
@@ -30,7 +32,7 @@ export default function Contact() {
     }
 
     try {
-      const response = await fetch("https://business2excel.onrender.com/api/contact", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
