@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 export default function Contact() {
 
@@ -11,6 +12,8 @@ export default function Contact() {
     message: "",
   })
 
+  const [turnstileToken, setTurnstileToken] = useState("")
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -21,13 +24,21 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    if (!turnstileToken) {
+      alert("Please complete the verification.")
+      return
+    }
+
     try {
       const response = await fetch("http://localhost:8080/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          turnstileToken
+        })
       })
 
       const data = await response.json()
@@ -166,13 +177,18 @@ export default function Contact() {
 
             </div>
 
+            {/* Turnstile */}
+            <Turnstile
+              siteKey="0x4AAAAAAETuJq8fVZb_4Q_P"
+              onSuccess={(token) => setTurnstileToken(token)}
+              onExpire={() => setTurnstileToken("")}
+            />
+
             {/* Submit */}
             <div>
-
               <button type="submit" className="bg-primary text-black font-semibold px-8 py-3 rounded-2xl hover:bg-secondary hover:scale-110 transition-all duration-300 cursor-pointer">
                 Submit
               </button>
-
             </div>
 
           </form>

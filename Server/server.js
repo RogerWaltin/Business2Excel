@@ -15,14 +15,14 @@ app.use(cors());
 app.use(express.json());
 
 const contactLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000,
-    limit: 5,
-    standardHeaders: "draft-8",
-    legacyHeaders: false,
-    message: {
-        success: false,
-        message: "Too many submissions. Please try again later."
-    }
+  windowMs: 15 * 60 * 1000,
+  limit: 5,
+  standardHeaders: "draft-8",
+  legacyHeaders: false,
+  message: {
+    success: false,
+    message: "Too many submissions. Please try again later."
+  }
 });
 
 app.post("/api/contact", contactLimiter, async (req, res) => {
@@ -33,7 +33,8 @@ app.post("/api/contact", contactLimiter, async (req, res) => {
       email,
       mobile,
       howDidYouHear,
-      message
+      message,
+      turnstileToken
     } = req.body;
 
     if (
@@ -82,6 +83,36 @@ app.post("/api/contact", contactLimiter, async (req, res) => {
       return res.status(400).json({
         success: false,
         message: "One or more fields are too long."
+      });
+    }
+
+    if (!turnstileToken || typeof turnstileToken !== "string") {
+      return res.status(400).json({
+        success: false,
+        message: "Turnstile verification is required."
+      });
+    }
+
+    const turnstileResponse = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          secret: process.env.TURNSTILE_SECRET_KEY,
+          response: turnstileToken
+        })
+      }
+    );
+
+    const turnstileResult = await turnstileResponse.json();
+
+    if (!turnstileResult.success) {
+      return res.status(400).json({
+        success: false,
+        message: "Turnstile verification failed. Please try again."
       });
     }
 
