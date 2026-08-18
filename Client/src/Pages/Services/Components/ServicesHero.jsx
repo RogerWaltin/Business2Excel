@@ -11,10 +11,10 @@ export default function ServicesHero() {
         <section className="relative overflow-hidden pt-20 pb-10">
 
             {/* <div className="absolute pointer-events-none inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_35%)]" /> */}
-
-            <div className="absolute inset-y-0 right-0 w-full">
+            {/* TODO: put a static image here instead of video for consistency */}
+            {/* <div className="absolute inset-y-0 right-0 w-full">
                 <video src="/media/services_handshake.mp4" className="h-full w-full object-cover" autoPlay muted loop playsInline></video>
-            </div>
+            </div> */}
 
             <div className="absolute inset-0 bg-linear-to-r from-zinc-950 via-zinc-950/50 to-zinc-950/20" />
 
