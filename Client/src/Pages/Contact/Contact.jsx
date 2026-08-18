@@ -12,8 +12,6 @@ export default function Contact() {
     message: "",
   })
 
-  console.log(import.meta.env.VITE_API_URL)
-
   const [turnstileToken, setTurnstileToken] = useState("")
 
   const handleChange = (e) => {
