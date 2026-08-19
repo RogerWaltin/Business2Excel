@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
+import { customButton } from "../../data/customStylesAndLogic";
 
 export default function Contact() {
 
@@ -13,6 +14,10 @@ export default function Contact() {
   })
 
   const [turnstileToken, setTurnstileToken] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
+
+  const turnstileRef = useRef(null)
 
   const handleChange = (e) => {
     setFormData({
@@ -25,9 +30,12 @@ export default function Contact() {
     e.preventDefault()
 
     if (!turnstileToken) {
-      alert("Please complete the verification.")
+      setSubmitStatus("verification")
       return
     }
+
+    setIsSubmitting(true)
+    setSubmitStatus(null)
 
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
@@ -44,12 +52,8 @@ export default function Contact() {
       const data = await response.json()
 
       if (!response.ok) {
-        throw new Error(data.error || "Something went wrong")
+        throw new Error(data.message || "Something went wrong")
       }
-
-      console.log("Email sent successfully:", data)
-
-      alert("Your message has been sent successfully!")
 
       setFormData({
         firstName: "",
@@ -60,16 +64,127 @@ export default function Contact() {
         message: ""
       })
 
+      setTurnstileToken("")
+      turnstileRef.current?.reset()
+      setSubmitStatus("success")
+
     } catch (error) {
       console.error("Error submitting form:", error)
-      alert("Failed to send your message. Please try again.")
+      setSubmitStatus("error")
+
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
   return (
     <div className="min-h-[calc(100vh-64px)] bg-zinc-950 px-6 py-14 relative overflow-hidden">
 
-      <img src="/media/contact.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+      {/* Loading Popup */}
+      {isSubmitting && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-8 py-6 shadow-2xl flex items-center gap-4">
+            <div className="w-6 h-6 border-4 border-zinc-700 border-t-primary rounded-full animate-spin" />
+
+            <p className="text-lg text-zinc-100">
+              Sending Inquiry...
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Success Popup */}
+      {submitStatus === "success" && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-8 py-7 shadow-2xl text-center max-w-sm mx-6">
+
+            <div className="text-primary text-4xl mb-4">
+              ✓
+            </div>
+
+            <h2 className="text-2xl font-semibold text-zinc-100 mb-2">
+              Inquiry Sent!
+            </h2>
+
+            <p className="text-zinc-400 mb-6">
+              Thank you for contacting us. We'll get back to you soon.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setSubmitStatus(null)}
+              className="bg-primary text-black font-semibold px-6 py-2.5 rounded-xl hover:bg-secondary active:translate-y-1 transition-all duration-150 cursor-pointer"
+            >
+              Close
+            </button>
+
+          </div>
+        </div>
+      )}
+
+      {/* Error Popup */}
+      {submitStatus === "error" && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-8 py-7 shadow-2xl text-center max-w-sm mx-6">
+
+            <div className="text-red-500 text-4xl mb-4">
+              !
+            </div>
+
+            <h2 className="text-2xl font-semibold text-zinc-100 mb-2">
+              Unable to Send
+            </h2>
+
+            <p className="text-zinc-400 mb-6">
+              Something went wrong while sending your inquiry. Please try again.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setSubmitStatus(null)}
+              className="bg-primary text-black font-semibold px-6 py-2.5 rounded-xl hover:bg-secondary active:translate-y-1 transition-all duration-150 cursor-pointer"
+            >
+              Close
+            </button>
+
+          </div>
+        </div>
+      )}
+
+      {/* Turnstile Verification Popup */}
+      {submitStatus === "verification" && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-8 py-7 shadow-2xl text-center max-w-sm mx-6">
+
+            <div className="text-yellow-500 text-4xl mb-4">
+              !
+            </div>
+
+            <h2 className="text-2xl font-semibold text-zinc-100 mb-2">
+              Verification Required
+            </h2>
+
+            <p className="text-zinc-400 mb-6">
+              Please complete the verification before submitting your inquiry.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setSubmitStatus(null)}
+              className="bg-primary text-black font-semibold px-6 py-2.5 rounded-xl hover:bg-secondary active:translate-y-1 transition-all duration-150 cursor-pointer"
+            >
+              Close
+            </button>
+
+          </div>
+        </div>
+      )}
+
+      <img
+        src="/media/contact.jpg"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
+      />
 
       <div className="absolute inset-0 bg-black/70" />
 
@@ -83,7 +198,11 @@ export default function Contact() {
           </h1>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="flex flex-col gap-8" autoComplete="off">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-8"
+            autoComplete="off"
+          >
 
             {/* Row 1 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -96,7 +215,15 @@ export default function Contact() {
                   <span className="text-red-500 ml-1">*</span>
                 </label>
 
-                <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required placeholder="John" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors" />
+                <input
+                  type="text"
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  required
+                  placeholder="John"
+                  className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors"
+                />
 
               </div>
 
@@ -108,7 +235,15 @@ export default function Contact() {
                   <span className="text-red-500 ml-1">*</span>
                 </label>
 
-                <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required placeholder="Doe" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors" />
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  required
+                  placeholder="Doe"
+                  className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors"
+                />
 
               </div>
 
@@ -125,7 +260,15 @@ export default function Contact() {
                   <span className="text-red-500 ml-1">*</span>
                 </label>
 
-                <input type="email" name="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors" />
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  placeholder="john@example.com"
+                  className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors"
+                />
 
               </div>
 
@@ -137,7 +280,15 @@ export default function Contact() {
                   <span className="text-red-500 ml-1">*</span>
                 </label>
 
-                <input type="text" name="mobile" value={formData.mobile} onChange={handleChange} placeholder="+91 12345 67890" className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors" required />
+                <input
+                  type="text"
+                  name="mobile"
+                  value={formData.mobile}
+                  onChange={handleChange}
+                  placeholder="+91 12345 67890"
+                  className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors"
+                  required
+                />
 
               </div>
 
@@ -151,8 +302,13 @@ export default function Contact() {
                 <span className="text-red-500 ml-1">*</span>
               </label>
 
-              <select name="howDidYouHear" value={formData.howDidYouHear} onChange={handleChange} className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors text-zinc-200" required>
-
+              <select
+                name="howDidYouHear"
+                value={formData.howDidYouHear}
+                onChange={handleChange}
+                className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors text-zinc-200"
+                required
+              >
                 <option value="" disabled>Select an option</option>
                 <option value="google">Google</option>
                 <option value="youtube">YouTube</option>
@@ -160,7 +316,6 @@ export default function Contact() {
                 <option value="social-media">Social Media</option>
                 <option value="advertisement">Advertisement</option>
                 <option value="other">Other</option>
-
               </select>
 
             </div>
@@ -173,12 +328,21 @@ export default function Contact() {
                 <span className="text-red-500 ml-1">*</span>
               </label>
 
-              <textarea name="message" value={formData.message} onChange={handleChange} rows="6" placeholder="Write your message here..." className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-4 text-base outline-none focus:border-primary transition-colors resize-y" required />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows="6"
+                placeholder="Write your message here..."
+                className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-4 text-base outline-none focus:border-primary transition-colors resize-y"
+                required
+              />
 
             </div>
 
             {/* Turnstile */}
             <Turnstile
+              ref={turnstileRef}
               siteKey="0x4AAAAAAETuJq8fVZb_4Q_P"
               onSuccess={(token) => setTurnstileToken(token)}
               onExpire={() => setTurnstileToken("")}
@@ -186,9 +350,11 @@ export default function Contact() {
 
             {/* Submit */}
             <div>
-              <button type="submit" className="bg-primary text-black font-semibold px-8 py-3 rounded-2xl hover:bg-secondary hover:scale-110 transition-all duration-300 cursor-pointer">
+
+              <button type="submit" className={customButton}>
                 Submit
               </button>
+
             </div>
 
           </form>
