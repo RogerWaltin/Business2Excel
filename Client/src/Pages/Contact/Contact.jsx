@@ -1,6 +1,8 @@
-import { useRef, useState } from "react";
-import { Turnstile } from "@marsidev/react-turnstile";
+import { useState } from "react";
 import { customButton } from "../../data/customStylesAndLogic";
+import useFormSubmission from "../../Components/hooks/useFormSubmission";
+import FormTurnstile from "../../Components/forms/FormTurnstile";
+import FormSubmissionModal from "../../Components/forms/FormSubmissionModal";
 
 export default function Contact() {
 
@@ -13,11 +15,14 @@ export default function Contact() {
     message: "",
   })
 
-  const [turnstileToken, setTurnstileToken] = useState("")
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState(null)
-
-  const turnstileRef = useRef(null)
+  const {
+    setTurnstileToken,
+    turnstileRef,
+    isSubmitting,
+    submitStatus,
+    setSubmitStatus,
+    handleSubmit
+  } = useFormSubmission("/api/contact")
 
   const handleChange = (e) => {
     setFormData({
@@ -26,35 +31,8 @@ export default function Contact() {
     })
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-
-    if (!turnstileToken) {
-      setSubmitStatus("verification")
-      return
-    }
-
-    setIsSubmitting(true)
-    setSubmitStatus(null)
-
-    try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          ...formData,
-          turnstileToken
-        })
-      })
-
-      const data = await response.json()
-
-      if (!response.ok) {
-        throw new Error(data.message || "Something went wrong")
-      }
-
+  const handleFormSubmit = (e) => {
+    handleSubmit(e, formData, () => {
       setFormData({
         firstName: "",
         lastName: "",
@@ -63,122 +41,17 @@ export default function Contact() {
         howDidYouHear: "",
         message: ""
       })
-
-      setTurnstileToken("")
-      turnstileRef.current?.reset()
-      setSubmitStatus("success")
-
-    } catch (error) {
-      console.error("Error submitting form:", error)
-      setSubmitStatus("error")
-
-    } finally {
-      setIsSubmitting(false)
-    }
+    })
   }
 
   return (
     <div className="min-h-[calc(100vh-64px)] bg-zinc-950 px-6 py-14 relative overflow-hidden">
 
-      {/* Loading Popup */}
-      {isSubmitting && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-8 py-6 shadow-2xl flex items-center gap-4">
-            <div className="w-6 h-6 border-4 border-zinc-700 border-t-primary rounded-full animate-spin" />
-
-            <p className="text-lg text-zinc-100">
-              Sending Inquiry...
-            </p>
-          </div>
-        </div>
-      )}
-
-      {/* Success Popup */}
-      {submitStatus === "success" && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-8 py-7 shadow-2xl text-center max-w-sm mx-6">
-
-            <div className="text-primary text-4xl mb-4">
-              ✓
-            </div>
-
-            <h2 className="text-2xl font-semibold text-zinc-100 mb-2">
-              Inquiry Sent!
-            </h2>
-
-            <p className="text-zinc-400 mb-6">
-              Thank you for contacting us. We'll get back to you soon.
-            </p>
-
-            <button
-              type="button"
-              onClick={() => setSubmitStatus(null)}
-              className="bg-primary text-black font-semibold px-6 py-2.5 rounded-xl hover:bg-secondary active:translate-y-1 transition-all duration-150 cursor-pointer"
-            >
-              Close
-            </button>
-
-          </div>
-        </div>
-      )}
-
-      {/* Error Popup */}
-      {submitStatus === "error" && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-8 py-7 shadow-2xl text-center max-w-sm mx-6">
-
-            <div className="text-red-500 text-4xl mb-4">
-              !
-            </div>
-
-            <h2 className="text-2xl font-semibold text-zinc-100 mb-2">
-              Unable to Send
-            </h2>
-
-            <p className="text-zinc-400 mb-6">
-              Something went wrong while sending your inquiry. Please try again.
-            </p>
-
-            <button
-              type="button"
-              onClick={() => setSubmitStatus(null)}
-              className="bg-primary text-black font-semibold px-6 py-2.5 rounded-xl hover:bg-secondary active:translate-y-1 transition-all duration-150 cursor-pointer"
-            >
-              Close
-            </button>
-
-          </div>
-        </div>
-      )}
-
-      {/* Turnstile Verification Popup */}
-      {submitStatus === "verification" && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-8 py-7 shadow-2xl text-center max-w-sm mx-6">
-
-            <div className="text-yellow-500 text-4xl mb-4">
-              !
-            </div>
-
-            <h2 className="text-2xl font-semibold text-zinc-100 mb-2">
-              Verification Required
-            </h2>
-
-            <p className="text-zinc-400 mb-6">
-              Please complete the verification before submitting your inquiry.
-            </p>
-
-            <button
-              type="button"
-              onClick={() => setSubmitStatus(null)}
-              className="bg-primary text-black font-semibold px-6 py-2.5 rounded-xl hover:bg-secondary active:translate-y-1 transition-all duration-150 cursor-pointer"
-            >
-              Close
-            </button>
-
-          </div>
-        </div>
-      )}
+      <FormSubmissionModal
+        isSubmitting={isSubmitting}
+        submitStatus={submitStatus}
+        onClose={() => setSubmitStatus(null)}
+      />
 
       <img
         src="/media/contact.jpg"
@@ -199,7 +72,7 @@ export default function Contact() {
 
           {/* Form */}
           <form
-            onSubmit={handleSubmit}
+            onSubmit={handleFormSubmit}
             className="flex flex-col gap-8"
             autoComplete="off"
           >
@@ -341,17 +214,20 @@ export default function Contact() {
             </div>
 
             {/* Turnstile */}
-            <Turnstile
+            <FormTurnstile
               ref={turnstileRef}
-              siteKey="0x4AAAAAAETuJq8fVZb_4Q_P"
-              onSuccess={(token) => setTurnstileToken(token)}
+              onSuccess={setTurnstileToken}
               onExpire={() => setTurnstileToken("")}
             />
 
             {/* Submit */}
             <div>
 
-              <button type="submit" className={customButton}>
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`${customButton} disabled:opacity-60 disabled:cursor-not-allowed`}
+              >
                 Submit
               </button>
 

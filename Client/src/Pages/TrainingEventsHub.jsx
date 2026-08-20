@@ -1,3 +1,9 @@
+import { useState } from "react";
+import { customButton } from "../data/customStylesAndLogic";
+import useFormSubmission from "../Components/hooks/useFormSubmission";
+import FormTurnstile from "../Components/forms/FormTurnstile";
+import FormSubmissionModal from "../Components/forms/FormSubmissionModal";
+
 const opportunities = [
     {
         category: "Workshops",
@@ -26,8 +32,57 @@ const opportunities = [
 ]
 
 export default function TrainingEventsHub() {
+
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        organization: "",
+        areaOfInterest: "",
+        message: ""
+    })
+
+    const {
+        setTurnstileToken,
+        turnstileRef,
+        isSubmitting,
+        submitStatus,
+        setSubmitStatus,
+        handleSubmit
+    } = useFormSubmission("/api/training-events")
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleFormSubmit = (e) => {
+        handleSubmit(e, formData, () => {
+            setFormData({
+                fullName: "",
+                email: "",
+                organization: "",
+                areaOfInterest: "",
+                message: ""
+            })
+        })
+    }
+
     return (
         <div className="bg-zinc-950 text-white">
+
+            <FormSubmissionModal
+                isSubmitting={isSubmitting}
+                submitStatus={submitStatus}
+                successTitle="Registration Sent!"
+                successMessage="Thank you for registering your interest. We'll get back to you with more information."
+                errorTitle="Unable to Send"
+                errorMessage="Something went wrong while sending your registration. Please try again."
+                verificationTitle="Verification Required"
+                verificationMessage="Please complete the verification before submitting your registration."
+                onClose={() => setSubmitStatus(null)}
+            />
 
             {/* Hero */}
 
@@ -144,10 +199,17 @@ export default function TrainingEventsHub() {
                             Join Our Programmes
                         </h2>
 
-                        <form className="space-y-6 mt-10">
+                        <form
+                            onSubmit={handleFormSubmit}
+                            className="space-y-6 mt-10"
+                            autoComplete="off"
+                        >
 
                             <input
                                 type="text"
+                                name="fullName"
+                                value={formData.fullName}
+                                onChange={handleChange}
                                 required
                                 placeholder="Full Name"
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
@@ -155,6 +217,9 @@ export default function TrainingEventsHub() {
 
                             <input
                                 type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 required
                                 placeholder="Email Address"
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
@@ -162,30 +227,50 @@ export default function TrainingEventsHub() {
 
                             <input
                                 type="text"
+                                name="organization"
+                                value={formData.organization}
+                                onChange={handleChange}
                                 required
                                 placeholder="Organization"
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
                             />
 
                             <select
+                                name="areaOfInterest"
+                                value={formData.areaOfInterest}
+                                onChange={handleChange}
+                                required
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
                             >
-                                <option selected disabled >Select Area of Interest</option>
-                                <option>Workshops</option>
-                                <option>Conferences</option>
-                                <option>Webinars</option>
-                                <option>Mentorship</option>
+                                <option value="" disabled>
+                                    Select Area of Interest
+                                </option>
+                                <option value="Workshops">Workshops</option>
+                                <option value="Conferences">Conferences</option>
+                                <option value="Webinars">Webinars</option>
+                                <option value="Mentorship">Mentorship</option>
                             </select>
 
                             <textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
                                 rows="5"
                                 placeholder="Tell us about your goals..."
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary resize-none"
+                                required
+                            />
+
+                            <FormTurnstile
+                                ref={turnstileRef}
+                                onSuccess={setTurnstileToken}
+                                onExpire={() => setTurnstileToken("")}
                             />
 
                             <button
                                 type="submit"
-                                className="w-full bg-secondary hover:bg-primary text-black font-semibold py-4 rounded-xl transition-all duration-300 cursor-pointer"
+                                disabled={isSubmitting}
+                                className={`${customButton} w-full disabled:opacity-60 disabled:cursor-not-allowed`}
                             >
                                 Submit Registration
                             </button>

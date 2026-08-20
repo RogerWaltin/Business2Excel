@@ -1,0 +1,23 @@
+export const verifyTurnstile = async (token) => {
+    if (!token || typeof token !== "string") {
+        return false;
+    }
+
+    const response = await fetch(
+        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                secret: process.env.TURNSTILE_SECRET_KEY,
+                response: token
+            })
+        }
+    );
+
+    const result = await response.json();
+
+    return result.success === true;
+};

@@ -1,6 +1,61 @@
+import { useState } from "react";
+import { customButton } from "../data/customStylesAndLogic";
+import useFormSubmission from "../Components/hooks/useFormSubmission";
+import FormTurnstile from "../Components/forms/FormTurnstile";
+import FormSubmissionModal from "../Components/forms/FormSubmissionModal";
+
 export default function Network() {
+
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        organization: "",
+        role: "",
+        message: ""
+    })
+
+    const {
+        setTurnstileToken,
+        turnstileRef,
+        isSubmitting,
+        submitStatus,
+        setSubmitStatus,
+        handleSubmit
+    } = useFormSubmission("/api/network")
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleFormSubmit = (e) => {
+        handleSubmit(e, formData, () => {
+            setFormData({
+                fullName: "",
+                email: "",
+                organization: "",
+                role: "",
+                message: ""
+            })
+        })
+    }
+
     return (
         <div className="bg-zinc-950 text-white">
+
+            <FormSubmissionModal
+                isSubmitting={isSubmitting}
+                submitStatus={submitStatus}
+                successTitle="Application Sent!"
+                successMessage="Thank you for your interest in joining the Kingdom Business Network. We'll get back to you soon."
+                errorTitle="Unable to Send"
+                errorMessage="Something went wrong while sending your application. Please try again."
+                verificationTitle="Verification Required"
+                verificationMessage="Please complete the verification before submitting your application."
+                onClose={() => setSubmitStatus(null)}
+            />
 
             {/* Hero */}
 
@@ -41,41 +96,72 @@ export default function Network() {
                             Join the Movement
                         </h2>
 
-                        <form className="space-y-6 mt-10">
+                        <form
+                            onSubmit={handleFormSubmit}
+                            className="space-y-6 mt-10"
+                            autoComplete="off"
+                        >
 
                             <input
                                 type="text"
+                                name="fullName"
+                                value={formData.fullName}
+                                onChange={handleChange}
                                 placeholder="Full Name"
+                                required
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
                             />
 
                             <input
                                 type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 placeholder="Email Address"
+                                required
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
                             />
 
                             <input
                                 type="text"
+                                name="organization"
+                                value={formData.organization}
+                                onChange={handleChange}
                                 placeholder="Organization"
+                                required
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
                             />
 
                             <input
                                 type="text"
+                                name="role"
+                                value={formData.role}
+                                onChange={handleChange}
                                 placeholder="Role / Position"
+                                required
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
                             />
 
                             <textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
                                 rows="5"
                                 placeholder="Tell us a little about yourself and why you would like to join the network..."
+                                required
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary resize-none"
+                            />
+
+                            <FormTurnstile
+                                ref={turnstileRef}
+                                onSuccess={setTurnstileToken}
+                                onExpire={() => setTurnstileToken("")}
                             />
 
                             <button
                                 type="submit"
-                                className="w-full bg-secondary hover:bg-primary text-black font-semibold py-4 rounded-xl transition-all duration-300 cursor-pointer"
+                                disabled={isSubmitting}
+                                className={`${customButton} w-full disabled:opacity-60 disabled:cursor-not-allowed`}
                             >
                                 Submit Application
                             </button>

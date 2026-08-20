@@ -1,6 +1,63 @@
+import { useState } from "react";
+import { customButton } from "../data/customStylesAndLogic";
+import useFormSubmission from "../Components/hooks/useFormSubmission";
+import FormTurnstile from "../Components/forms/FormTurnstile";
+import FormSubmissionModal from "../Components/forms/FormSubmissionModal";
+
 export default function Certification() {
+
+  const [formData, setFormData] = useState({
+    organizationName: "",
+    contactName: "",
+    email: "",
+    industry: "",
+    organizationSize: "",
+    message: ""
+  })
+
+  const {
+    setTurnstileToken,
+    turnstileRef,
+    isSubmitting,
+    submitStatus,
+    setSubmitStatus,
+    handleSubmit
+  } = useFormSubmission("/api/certification")
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleFormSubmit = (e) => {
+    handleSubmit(e, formData, () => {
+      setFormData({
+        organizationName: "",
+        contactName: "",
+        email: "",
+        industry: "",
+        organizationSize: "",
+        message: ""
+      })
+    })
+  }
+
   return (
     <div className="bg-zinc-950 text-white">
+
+      <FormSubmissionModal
+        isSubmitting={isSubmitting}
+        submitStatus={submitStatus}
+        successTitle="Application Sent!"
+        successMessage="Thank you for applying for Kingdom Certification. We'll get back to you soon."
+        errorTitle="Unable to Send"
+        errorMessage="Something went wrong while sending your application. Please try again."
+        verificationTitle="Verification Required"
+        verificationMessage="Please complete the verification before submitting your application."
+        onClose={() => setSubmitStatus(null)}
+      />
 
       {/* Hero */}
 
@@ -87,51 +144,88 @@ export default function Certification() {
               Certification Application
             </h2>
 
-            <form className="space-y-6 mt-10">
+            <form
+              onSubmit={handleFormSubmit}
+              className="space-y-6 mt-10"
+              autoComplete="off"
+            >
 
               <input
                 type="text"
+                name="organizationName"
+                value={formData.organizationName}
+                onChange={handleChange}
                 placeholder="Organization Name"
+                required
                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
               />
 
               <input
                 type="text"
+                name="contactName"
+                value={formData.contactName}
+                onChange={handleChange}
                 placeholder="Primary Contact Name"
+                required
                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
               />
 
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Email Address"
+                required
                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
               />
 
               <input
                 type="text"
+                name="industry"
+                value={formData.industry}
+                onChange={handleChange}
                 placeholder="Industry / Sector"
+                required
                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
               />
 
               <select
+                name="organizationSize"
+                value={formData.organizationSize}
+                onChange={handleChange}
+                required
                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
               >
-                <option>Organization Size</option>
-                <option>1 - 10 Employees</option>
-                <option>11 - 50 Employees</option>
-                <option>51 - 200 Employees</option>
-                <option>201+ Employees</option>
+                <option value="" disabled>
+                  Organization Size
+                </option>
+                <option value="1 - 10 Employees">1 - 10 Employees</option>
+                <option value="11 - 50 Employees">11 - 50 Employees</option>
+                <option value="51 - 200 Employees">51 - 200 Employees</option>
+                <option value="201+ Employees">201+ Employees</option>
               </select>
 
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 rows="6"
                 placeholder="Tell us about your organization, mission, and why you are seeking certification..."
+                required
                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary resize-none"
+              />
+
+              <FormTurnstile
+                ref={turnstileRef}
+                onSuccess={setTurnstileToken}
+                onExpire={() => setTurnstileToken("")}
               />
 
               <button
                 type="submit"
-                className="w-full bg-secondary hover:bg-primary text-black font-semibold py-4 rounded-xl transition-all duration-300 cursor-pointer"
+                disabled={isSubmitting}
+                className={`${customButton} w-full disabled:opacity-60 disabled:cursor-not-allowed`}
               >
                 Submit Application
               </button>
