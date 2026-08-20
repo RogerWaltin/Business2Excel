@@ -1,6 +1,59 @@
+import { useState } from "react";
+import { customButton } from "../data/customStylesAndLogic";
+import useFormSubmission from "../Components/hooks/useFormSubmission";
+import FormTurnstile from "../Components/forms/FormTurnstile";
+import FormSubmissionModal from "../Components/forms/FormSubmissionModal";
+
 export default function Consultation() {
+
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        organization: "",
+        message: ""
+    })
+
+    const {
+        setTurnstileToken,
+        turnstileRef,
+        isSubmitting,
+        submitStatus,
+        setSubmitStatus,
+        handleSubmit
+    } = useFormSubmission("/api/consultation")
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleFormSubmit = (e) => {
+        handleSubmit(e, formData, () => {
+            setFormData({
+                fullName: "",
+                email: "",
+                organization: "",
+                message: ""
+            })
+        })
+    }
+
     return (
         <div className="bg-zinc-950 text-white">
+
+            <FormSubmissionModal
+                isSubmitting={isSubmitting}
+                submitStatus={submitStatus}
+                successTitle="Request Sent!"
+                successMessage="Thank you for requesting a consultation. We'll get back to you soon."
+                errorTitle="Unable to Send"
+                errorMessage="Something went wrong while sending your consultation request. Please try again."
+                verificationTitle="Verification Required"
+                verificationMessage="Please complete the verification before submitting your consultation request."
+                onClose={() => setSubmitStatus(null)}
+            />
 
             {/* Hero */}
 
@@ -42,35 +95,62 @@ export default function Consultation() {
                             Request A Consultation
                         </h2>
 
-                        <form className="space-y-6 mt-10">
+                        <form
+                            onSubmit={handleFormSubmit}
+                            className="space-y-6 mt-10"
+                            autoComplete="off"
+                        >
 
                             <input
                                 type="text"
+                                name="fullName"
+                                value={formData.fullName}
+                                onChange={handleChange}
                                 placeholder="Full Name"
+                                required
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
                             />
 
                             <input
                                 type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                                 placeholder="Email Address"
+                                required
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
                             />
 
                             <input
                                 type="text"
+                                name="organization"
+                                value={formData.organization}
+                                onChange={handleChange}
                                 placeholder="Organization"
+                                required
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
                             />
 
                             <textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
                                 rows="6"
                                 placeholder="Tell us about your goals and challenges..."
+                                required
                                 className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary resize-none"
+                            />
+
+                            <FormTurnstile
+                                ref={turnstileRef}
+                                onSuccess={setTurnstileToken}
+                                onExpire={() => setTurnstileToken("")}
                             />
 
                             <button
                                 type="submit"
-                                className="w-full bg-secondary hover:bg-primary text-black font-semibold py-4 rounded-xl transition-all duration-300 cursor-pointer"
+                                disabled={isSubmitting}
+                                className={`${customButton} w-full disabled:opacity-60 disabled:cursor-not-allowed`}
                             >
                                 Submit Consultation Request
                             </button>
