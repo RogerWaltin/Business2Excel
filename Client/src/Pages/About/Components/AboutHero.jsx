@@ -1,34 +1,35 @@
+import Reveal from "../../../Components/Reveal"
+
 export default function AbourHero() {
     return (
-        <section className="relative overflow-hidden pb-30 border-b border-zinc-900">
-
-            {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_35%)]" /> */}
+        <section className="relative overflow-hidden border-b border-zinc-800/60">
 
             <img src="/media/about.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
 
-            <div className="absolute inset-0 bg-black/70" />
+            <div className="absolute inset-0 bg-linear-to-r from-zinc-950/95 via-black/80 to-zinc-950/50" />
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-zinc-950 to-transparent" />
 
-            <div className="max-w-7xl mx-auto px-6 py-17 relative z-10">
+            <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32 relative z-10">
 
-                <div className="max-w-4xl">
-                    <span className="inline-flex items-center rounded-full border border-secondary/75 px-4 py-2 text-sm tracking-widest uppercase text-primary bg-black/50 backdrop-blur-xs">
+                <Reveal className="max-w-4xl">
+                    <span className="badge-pill">
                         About
                     </span>
-                    <h1 className="text-5xl md:text-5xl font-bold leading-tight mt-8">
+                    <h1 className="heading-1 mt-6">
                         Building a Global
-                        <span className="text-primary block">
+                        <span className="text-primary block italic">
                             Kingdom Business
                         </span>
                         Transformation Ecosystem
                     </h1>
 
-                    <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mt-8 max-w-3xl">
+                    <p className="body-text mt-6 max-w-3xl">
                         Business2excel equips entrepreneurs, executives, and organizations
                         to integrate Kingdom principles, ethical leadership, strategic
                         innovation, and AI-age transformation into modern business.
                     </p>
 
-                </div>
+                </Reveal>
 
             </div>
 

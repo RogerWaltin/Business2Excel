@@ -1,46 +1,55 @@
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import Reveal from "../../../Components/Reveal";
 
 export default function FinalCTA() {
   return (
-    <section id="final-cta" className="py-24">
+    <section id="final-cta" className="py-20 sm:py-24 lg:py-28 relative overflow-hidden">
 
-      <div className="max-w-5xl mx-auto px-6 text-center">
+      {/* Ambient glows */}
+      <div className="glow -top-32 left-[15%] h-80 w-80 bg-primary/10" />
+      <div className="glow -bottom-40 right-[10%] h-96 w-96 bg-primary/[0.07]" />
 
-        <h2 className="text-4xl md:text-6xl font-bold">
-          Build a Business That Creates
-          <span className="text-primary block">
-            Lasting Kingdom Impact
-          </span>
-        </h2>
+      <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 text-center relative">
 
-        <p className="text-zinc-400 text-lg leading-relaxed mt-8 max-w-3xl mx-auto">
-          Join a growing ecosystem of leaders, organizations,
-          entrepreneurs, and innovators committed to Kingdom-centered
-          transformation.
-        </p>
+        <Reveal>
 
-        <div className="flex flex-wrap justify-center gap-4 mt-10">
+          <h2 className="heading-1">
+            Build a Business That Creates
+            <span className="text-primary block italic">
+              Lasting Kingdom Impact
+            </span>
+          </h2>
 
-          <Link to="/consultation">
-            <button className="bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              Book Consultation
-            </button>
-          </Link>
+          <p className="body-text mt-6 max-w-2xl mx-auto">
+            Join a growing ecosystem of leaders, organizations,
+            entrepreneurs, and innovators committed to Kingdom-centered
+            transformation.
+          </p>
 
-          <HashLink to="community#training-events">
-            <button className="border border-zinc-700 hover:border-secondary px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              Trainings & Events
-            </button>
-          </HashLink>
+          <div className="flex flex-wrap justify-center gap-3 mt-9">
 
-          <Link to="certification">
-            <button className="bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              Explore Certifications
-            </button>
-          </Link>
+            <Link to="/consultation">
+              <button className="btn btn-primary">
+                Book Consultation
+              </button>
+            </Link>
 
-        </div>
+            <HashLink to="community#training-events">
+              <button className="btn btn-ghost">
+                Trainings & Events
+              </button>
+            </HashLink>
+
+            <Link to="certification">
+              <button className="btn btn-primary">
+                Explore Certifications
+              </button>
+            </Link>
+
+          </div>
+
+        </Reveal>
 
       </div>
 

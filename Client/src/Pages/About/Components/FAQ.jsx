@@ -1,3 +1,5 @@
+import Reveal from "../../../Components/Reveal"
+
 export default function FAQ() {
     const faqItems = [
         {
@@ -23,36 +25,43 @@ export default function FAQ() {
     ]
 
     return (
-        <section id="faq" className="py-28">
+        <section id="faq" className="py-16 sm:py-20 lg:py-24 scroll-mt-16">
 
-            <div className="max-w-5xl mx-auto px-6">
+            <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8">
 
-                <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                    FAQ
-                </span>
+                <Reveal>
 
-                <h2 className="text-4xl md:text-5xl font-bold mt-6">
-                    Frequently Asked Questions
-                </h2>
+                    <span className="eyebrow">
+                        FAQ
+                    </span>
 
-                <div className="space-y-6 mt-16">
+                    <h2 className="heading-2 mt-5">
+                        Frequently Asked Questions
+                    </h2>
 
-                    {faqItems.map((item) => (
+                </Reveal>
 
-                        <div
-                            key={item.question}
-                            className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8"
-                        >
+                <div className="space-y-4 mt-10 sm:mt-12">
 
-                            <h3 className="text-2xl font-semibold">
-                                {item.question}
-                            </h3>
+                    {faqItems.map((item, index) => (
 
-                            <p className="text-zinc-400 leading-relaxed mt-4">
-                                {item.answer}
-                            </p>
+                        <Reveal key={item.question} delay={index * 0.06}>
 
-                        </div>
+                            <div
+                                className="card p-6 transition-colors duration-300 hover:border-primary/30"
+                            >
+
+                                <h3 className="text-base sm:text-lg font-semibold tracking-tight">
+                                    {item.question}
+                                </h3>
+
+                                <p className="text-sm leading-relaxed text-zinc-400 mt-2.5">
+                                    {item.answer}
+                                </p>
+
+                            </div>
+
+                        </Reveal>
 
                     ))}
 

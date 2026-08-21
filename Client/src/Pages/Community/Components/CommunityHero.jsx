@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Reveal from "../../../Components/Reveal";
 
 export default function CommunityHero() {
   const scrollToEvents = () => {
@@ -8,50 +9,52 @@ export default function CommunityHero() {
   }
 
   return (
-    <section id="hero" className="relative overflow-hidden border-b border-zinc-900">
+    <section id="hero" className="relative overflow-hidden border-b border-zinc-800/60">
 
-      {/* <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_35%)]" /> */}
-    
       <img src="/media/community.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
 
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-linear-to-r from-zinc-950/95 via-black/80 to-zinc-950/50" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-zinc-950 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6 pt-17 pb-40 relative z-10">
+      {/* Ambient glow */}
+      <div className="glow -top-24 right-[15%] h-72 w-72 bg-primary/10" />
 
-        <div className="max-w-5xl">
-          <span className="inline-flex items-center rounded-full border border-secondary/75 px-4 py-2 text-sm tracking-widest uppercase text-primary bg-black/50 backdrop-blur-xs">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-16 pb-20 sm:pt-20 sm:pb-24 lg:pt-24 lg:pb-32 relative z-10">
+
+        <Reveal className="max-w-3xl">
+          <span className="badge-pill">
             Community
           </span>
-          <h1 className="text-5xl md:text-5xl font-bold leading-tight mt-8">
+          <h1 className="heading-1 mt-6">
             Building a Global
-            <span className="text-primary block">
+            <span className="text-primary block italic">
               Kingdom Business
             </span>
             Movement
           </h1>
 
-          <p className="text-zinc-200 text-lg md:text-xl leading-relaxed mt-8 max-w-4xl">
+          <p className="body-text mt-6 max-w-2xl">
             Connecting leaders, equipping organizations, and creating lasting
             Kingdom impact through strategic relationships, leadership
             development, mentorship, collaboration, and transformational
             initiatives.
           </p>
 
-          <div className="flex flex-wrap gap-4 mt-10">
+          <div className="flex flex-wrap gap-3 mt-8">
 
             <Link to="/network">
-              <button className="bg-secondary hover:bg-primary text-black font-semibold px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer">
+              <button className="btn btn-primary">
                 Join the Network
               </button>
             </Link>
 
-            <button onClick={scrollToEvents} className="border border-zinc-700 hover:border-secondary text-white px-8 py-4 rounded-2xl transition-all duration-300 cursor-pointer bg-black/50 backdrop-blur-xs">
+            <button onClick={scrollToEvents} className="btn btn-ghost">
               Explore All Events
             </button>
 
           </div>
 
-        </div>
+        </Reveal>
 
       </div>
 

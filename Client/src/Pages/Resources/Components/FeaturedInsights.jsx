@@ -1,47 +1,52 @@
+import Reveal from "../../../Components/Reveal"
+
 export default function FeaturedInsights() {
     return (
-        <section id="featured-insight" className="bg-black pt-20">
+        <section id="featured-insight" className="bg-black pt-16 sm:pt-20 scroll-mt-16">
 
-            <div className="mx-auto max-w-7xl px-6">
+            <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                    Featured Insight
-                </p>
+                <Reveal>
+                    <span className="eyebrow">
+                        Featured Insight
+                    </span>
+                </Reveal>
 
-                <div className="mt-8 overflow-hidden rounded-3xl border border-zinc-800 bg-black">
+                <Reveal delay={0.1}>
+                    <div className="mt-6 sm:mt-8 overflow-hidden rounded-2xl border border-zinc-800 bg-black shadow-[0_32px_80px_-40px_rgba(0,0,0,0.9)]">
 
-                    <div className="grid lg:grid-cols-2">
+                        <div className="grid lg:grid-cols-2">
 
-                        {/* Content */}
+                            {/* Content */}
 
-                        <div className="relative overflow-hidden p-10 md:p-14">
+                            <div className="group relative overflow-hidden p-6 sm:p-10 lg:p-12">
 
-                            <img src="/media/robot.jpg" alt="hero" className="absolute inset-0 w-full h-full object-cover" />
-                            <div className="absolute inset-0 bg-black/70" />
+                                <img src="/media/robot.jpg" alt="hero" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                                <div className="absolute inset-0 bg-linear-to-br from-black/90 via-black/75 to-black/60" />
 
-                            <div className="relative z-10">
-                                <p className="text-sm uppercase tracking-[0.15em] text-zinc-300">
-                                    Featured Report
-                                </p>
-                                <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
-                                    AI, Ethics, And The Future Of Kingdom Leadership
-                                </h2>
-                                <p className="mt-8 text-lg leading-relaxed text-zinc-400">
-                                    Artificial intelligence is reshaping every industry,
-                                    creating unprecedented opportunities alongside profound
-                                    ethical challenges. As organizations accelerate adoption,
-                                    leaders must learn to balance innovation, responsibility,
-                                    human dignity, and long-term stewardship.
-                                </p>
-                                <p className="mt-6 text-lg leading-relaxed text-zinc-400">
-                                    This report explores how Kingdom-centered leadership can
-                                    navigate technological disruption without sacrificing
-                                    ethical clarity, organizational trust, or meaningful
-                                    human impact.
-                                </p>
-                            </div>
-                            {/* NOTE due to lack of content, i've temporarily disabled these two buttons */}
-                            {/* <div className="mt-10 flex flex-wrap gap-4">
+                                <div className="relative z-10">
+                                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-zinc-400">
+                                        Featured Report
+                                    </p>
+                                    <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight tracking-tight text-white mt-4">
+                                        AI, Ethics, And The Future Of Kingdom Leadership
+                                    </h2>
+                                    <p className="mt-5 text-sm sm:text-base leading-relaxed text-zinc-300 max-w-xl">
+                                        Artificial intelligence is reshaping every industry,
+                                        creating unprecedented opportunities alongside profound
+                                        ethical challenges. As organizations accelerate adoption,
+                                        leaders must learn to balance innovation, responsibility,
+                                        human dignity, and long-term stewardship.
+                                    </p>
+                                    <p className="mt-4 text-sm sm:text-base leading-relaxed text-zinc-400 max-w-xl">
+                                        This report explores how Kingdom-centered leadership can
+                                        navigate technological disruption without sacrificing
+                                        ethical clarity, organizational trust, or meaningful
+                                        human impact.
+                                    </p>
+                                </div>
+                                {/* NOTE due to lack of content, i've temporarily disabled these two buttons */}
+                                {/* <div className="mt-10 flex flex-wrap gap-4">
 
                                 <button className="cursor-pointer rounded-xl bg-secondary px-6 py-3 font-semibold text-black transition-all duration-300 hover:bg-primary">
                                     Read Full Report
@@ -53,55 +58,57 @@ export default function FeaturedInsights() {
 
                             </div> */}
 
-                        </div>
+                            </div>
 
-                        {/* Visual Side */}
+                            {/* Visual Side */}
 
-                        <div className="relative overflow-hidden flex items-center justify-center border-t border-zinc-800 p-10 lg:border-t-0 lg:border-l">
+                            <div className="group relative overflow-hidden flex items-center justify-center border-t border-zinc-800 p-6 sm:p-10 lg:border-t-0 lg:border-l">
 
-                            <img src="/media/research.jpg" alt="hero" className="absolute inset-0 w-full h-full object-cover" />
-                            <div className="absolute inset-0 bg-black/70" />
+                                <img src="/media/research.jpg" alt="hero" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                                <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/65 to-black/45" />
 
-                            <div className="relative z-10">
+                                <div className="relative z-10 w-full flex justify-center py-4">
 
-                                <div className="backdrop-blur-sm w-full max-w-md rounded-3xl border border-zinc-800 bg-zinc-950/50 p-8">
+                                    <div className="backdrop-blur-md w-full max-w-md rounded-2xl border border-zinc-800 bg-zinc-950/70 p-5 sm:p-7 shadow-[0_24px_60px_-24px_rgba(0,0,0,0.8)]">
 
-                                    <p className="text-sm uppercase tracking-[0.15em] text-primary">
-                                        Research Report
-                                    </p>
+                                        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
+                                            Research Report
+                                        </p>
 
-                                    <h3 className="mt-4 text-2xl font-bold text-white">
-                                        AI & Biblical Leadership
-                                    </h3>
+                                        <h3 className="font-display mt-3 text-xl sm:text-2xl font-bold text-white">
+                                            AI & Biblical Leadership
+                                        </h3>
 
-                                    <div className="mt-8 space-y-4">
+                                        <div className="mt-6 space-y-2.5">
 
-                                        <div className="rounded-xl border border-zinc-800 p-4">
-                                            Ethical Decision Making
-                                        </div>
+                                            {[
+                                                "Ethical Decision Making",
+                                                "Human Dignity & Technology",
+                                                "Responsible AI Adoption",
+                                                "Kingdom Leadership Principles",
+                                            ].map((item) => (
 
-                                        <div className="rounded-xl border border-zinc-800 p-4">
-                                            Human Dignity & Technology
-                                        </div>
+                                                <div
+                                                    key={item}
+                                                    className="flex items-center gap-3 rounded-lg border border-zinc-800 bg-black/50 px-4 py-3 text-sm text-zinc-300 transition-colors duration-300 hover:border-primary/40"
+                                                >
+                                                    <span className="h-1.5 w-1.5 rounded-full bg-primary/70 shrink-0" />
+                                                    {item}
+                                                </div>
 
-                                        <div className="rounded-xl border border-zinc-800 p-4">
-                                            Responsible AI Adoption
-                                        </div>
+                                            ))}
 
-                                        <div className="rounded-xl border border-zinc-800 p-4">
-                                            Kingdom Leadership Principles
                                         </div>
 
                                     </div>
 
                                 </div>
-
                             </div>
+
                         </div>
 
                     </div>
-
-                </div>
+                </Reveal>
 
             </div>
 

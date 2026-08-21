@@ -1,3 +1,5 @@
+import Reveal from "../../../Components/Reveal"
+
 export default function ServicesCertification() {
     const benefits = [
         {
@@ -47,59 +49,68 @@ export default function ServicesCertification() {
     return (
         <section
             id="kingdom-certification"
-            className="bg-black pt-20"
+            className="bg-black pt-16 sm:pt-20 scroll-mt-16"
         >
 
-            <div className="mx-auto max-w-7xl px-6">
+            <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                    Kingdom Certification
-                </p>
+                <Reveal>
+                    <span className="eyebrow">
+                        Kingdom Certification
+                    </span>
 
-                <h2 className="mt-4 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
-                    The Standard For Kingdom-Centered Excellence
-                </h2>
+                    <h2 className="heading-2 mt-5 max-w-4xl">
+                        The Standard For Kingdom-Centered Excellence
+                    </h2>
 
-                <p className="mt-8 max-w-4xl text-lg leading-relaxed text-zinc-400">
-                    Kingdom Certification is more than a credential. It is a comprehensive
-                    framework designed to help organizations integrate biblical values,
-                    ethical leadership, responsible stewardship, and long-term impact into
-                    every aspect of their operations.
-                </p>
+                    <p className="body-text mt-5 max-w-4xl">
+                        Kingdom Certification is more than a credential. It is a comprehensive
+                        framework designed to help organizations integrate biblical values,
+                        ethical leadership, responsible stewardship, and long-term impact into
+                        every aspect of their operations.
+                    </p>
 
-                <p className="mt-6 max-w-4xl text-lg leading-relaxed text-zinc-400">
-                    In a business environment increasingly shaped by uncertainty,
-                    disruption, and competing priorities, certification provides a clear
-                    pathway toward organizational alignment, credibility, and sustainable
-                    transformation rooted in Kingdom principles.
-                </p>
+                    <p className="body-text mt-4 max-w-4xl">
+                        In a business environment increasingly shaped by uncertainty,
+                        disruption, and competing priorities, certification provides a clear
+                        pathway toward organizational alignment, credibility, and sustainable
+                        transformation rooted in Kingdom principles.
+                    </p>
+                </Reveal>
 
                 {/* Benefits */}
 
-                <div className="mt-20">
+                <div className="mt-12 sm:mt-16">
 
-                    <h3 className="text-3xl font-bold text-white">
-                        Why Certification Matters
-                    </h3>
+                    <Reveal>
+                        <h3 className="heading-3 text-white">
+                            Why Certification Matters
+                        </h3>
+                    </Reveal>
 
-                    <div className="mt-10 grid gap-8 lg:grid-cols-3">
+                    <div className="mt-6 sm:mt-8 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-                        {benefits.map((benefit) => (
+                        {benefits.map((benefit, index) => (
 
-                            <div
-                                key={benefit.title}
-                                className="rounded-3xl border border-zinc-800 bg-black p-8"
-                            >
+                            <Reveal key={benefit.title} delay={index * 0.08} className="h-full">
 
-                                <h4 className="text-2xl font-semibold text-white">
-                                    {benefit.title}
-                                </h4>
+                                <div
+                                    className="group h-full rounded-2xl border border-zinc-800 bg-zinc-950 p-6 sm:p-7 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
+                                >
 
-                                <p className="mt-4 leading-relaxed text-zinc-400">
-                                    {benefit.description}
-                                </p>
+                                    <div className="h-px w-8 bg-primary/60 transition-all duration-300 group-hover:w-14" />
 
-                            </div>
+                                    <h4 className="text-lg font-semibold tracking-tight text-white mt-5">
+                                        {benefit.title}
+                                    </h4>
+
+                                    <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                                        {benefit.description}
+                                    </p>
+
+                                </div>
+
+                            </Reveal>
 
                         ))}
 
@@ -107,43 +118,51 @@ export default function ServicesCertification() {
 
                 </div>
 
-                
+
 
             </div>
 
             {/* Process */}
 
-                <div className="mt-24 py-16 relative overflow-hidden">
+            <div className="mt-16 sm:mt-20 py-14 sm:py-16 relative overflow-hidden">
 
-                    <img src="/media/journey.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
+                <img src="/media/journey.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
 
-                    <div className="absolute inset-0 bg-black/70" />
+                <div className="absolute inset-0 bg-linear-to-b from-black/90 via-black/75 to-black/90" />
 
-                    <div className="mx-auto max-w-7xl px-6 relative z-10">
-                        <h3 className="text-3xl font-bold text-white">
+                <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 relative z-10">
+
+                    <Reveal>
+                        <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
                             The Certification Journey
                         </h3>
-                        <div className="mt-10 grid gap-8 lg:grid-cols-4">
-                            {process.map((item) => (
+                    </Reveal>
+
+                    <div className="mt-8 sm:mt-10 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+                        {process.map((item, index) => (
+                            <Reveal key={item.step} delay={index * 0.08} className="h-full">
                                 <div
-                                    key={item.step}
-                                    className="rounded-3xl border border-zinc-800 bg-black/50 backdrop-blur-xs p-8"
+                                    className="group h-full rounded-2xl border border-zinc-800 bg-black/50 backdrop-blur-sm p-6 transition-colors duration-300 hover:border-primary/40"
                                 >
-                                    <p className="text-5xl font-bold text-primary">
+                                    <p className="font-display text-4xl font-bold text-primary">
                                         {item.step}
                                     </p>
-                                    <h4 className="mt-4 text-xl font-semibold text-white">
+                                    <h4 className="mt-3.5 text-base font-semibold tracking-tight text-white">
                                         {item.title}
                                     </h4>
-                                    <p className="mt-4 leading-relaxed text-zinc-400">
+                                    <p className="mt-2.5 text-sm leading-relaxed text-zinc-400">
                                         {item.description}
                                     </p>
                                 </div>
-                            ))}
-                        </div>
+                            </Reveal>
+                        ))}
+
                     </div>
 
                 </div>
+
+            </div>
 
         </section>
     )

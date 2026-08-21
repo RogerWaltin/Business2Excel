@@ -1,6 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap");
 @import "tailwindcss";
 
 @theme {
   --color-primary: #ebb318;
   --color-secondary: #cb9604;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-zinc-950 font-sans text-white antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgb(235 179 24 / 0.28);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(235 179 24 / 0.7);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #3f3f46 transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 8px;
+    border: 2px solid #18181b;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
+  }
+}
+
+@layer components {
+  /* ── Layout ─────────────────────────────── */
+  .site-container {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  /* ── Typography ─────────────────────────── */
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary sm:text-xs;
+  }
+
+  .eyebrow::before {
+    content: "";
+    @apply h-px w-6 shrink-0 bg-primary/60;
+  }
+
+  .badge-pill {
+    @apply inline-flex items-center rounded-full border border-primary/40 bg-black/50 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-primary backdrop-blur-sm sm:text-xs;
+  }
+
+  .heading-1 {
+    @apply font-display text-3xl font-bold leading-[1.12] tracking-tight sm:text-4xl lg:text-5xl;
+  }
+
+  .heading-2 {
+    @apply text-2xl font-bold leading-tight tracking-tight sm:text-3xl lg:text-4xl;
+  }
+
+  .heading-3 {
+    @apply text-lg font-semibold tracking-tight sm:text-xl;
+  }
+
+  .body-text {
+    @apply text-base leading-relaxed text-zinc-400 lg:text-lg;
+  }
+
+  /* ── Buttons ────────────────────────────── */
+  .btn {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition-all duration-200 select-none;
+  }
+
+  .btn-primary {
+    @apply bg-secondary text-black shadow-[0_10px_30px_-12px_rgba(235,179,24,0.45)] hover:-translate-y-0.5 hover:bg-primary active:translate-y-0;
+  }
+
+  .btn-ghost {
+    @apply border border-zinc-700 bg-black/40 text-white backdrop-blur-sm hover:border-primary/60 hover:text-primary;
+  }
+
+  /* ── Surfaces ───────────────────────────── */
+  .card {
+    @apply rounded-2xl border border-zinc-800 bg-zinc-900;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-zinc-800 bg-zinc-950/70 px-3.5 py-1.5 text-xs text-zinc-300 backdrop-blur-sm;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-zinc-800 bg-zinc-950 px-4 py-3 text-sm text-white outline-none transition-colors duration-200 placeholder:text-zinc-500 focus:border-primary/70;
+  }
+
+  /* ── Effects ────────────────────────────── */
+  .glow {
+    @apply pointer-events-none absolute rounded-full bg-primary/10 blur-[110px];
+  }
+
+  .image-card {
+    @apply relative overflow-hidden rounded-2xl border border-zinc-800 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.9)];
+  }
 }

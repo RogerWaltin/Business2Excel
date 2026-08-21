@@ -20,73 +20,80 @@ export default function Footer() {
     ]
 
     return (
-        <footer className="bg-zinc-950 border-t border-zinc-800">
+        <footer className="bg-zinc-950 relative overflow-hidden">
 
-            <div className="max-w-7xl mx-auto px-6 py-16">
+            {/* Subtle top glow */}
+            <div className="glow -top-40 left-1/2 h-72 w-xl -translate-x-1/2 bg-primary/5" />
 
-                <div className="grid lg:grid-cols-[1.5fr_1fr_1fr] gap-12">
+            <div className="relative">
 
-                    {/* Brand */}
+                <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-12 sm:py-16">
 
-                    <div>
-                        <HashLink smooth to="/">
-                            <img src={logo} alt="logo" className="w-28 lg:w-32 h-auto" />
-                        </HashLink>
+                    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr] lg:gap-12">
 
-                        <p className="text-zinc-400 leading-relaxed mt-2 max-w-md">
-                            Business2excel equips leaders, entrepreneurs, and organizations
-                            to integrate Kingdom principles, ethical leadership,
-                            innovation, and AI-age transformation into modern business.
-                        </p>
-                    </div>
+                        {/* Brand */}
 
-                    {/* Quick Links */}
+                        <div>
+                            <HashLink smooth to="/" className="inline-block">
+                                <img src={logo} alt="logo" className="w-28 lg:w-32 h-auto" />
+                            </HashLink>
 
-                    <div>
+                            <p className="text-sm leading-relaxed text-zinc-500 mt-4 max-w-md">
+                                Business2excel equips leaders, entrepreneurs, and organizations
+                                to integrate Kingdom principles, ethical leadership,
+                                innovation, and AI-age transformation into modern business.
+                            </p>
+                        </div>
 
-                        <h3 className="text-white font-semibold text-lg mb-6">
-                            Quick Links
-                        </h3>
+                        {/* Quick Links */}
 
-                        <div className="grid grid-cols-2 gap-y-4">
+                        <div>
 
-                            {quickLinks.map((link) => (
+                            <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-white mb-5">
+                                Quick Links
+                            </h3>
 
-                                <HashLink
-                                    key={link.label}
-                                    to={link.to}
-                                    className="text-zinc-400 hover:text-primary transition-colors duration-300"
-                                >
-                                    {link.label}
-                                </HashLink>
+                            <div className="grid grid-cols-2 gap-x-6 gap-y-3">
 
-                            ))}
+                                {quickLinks.map((link) => (
+
+                                    <HashLink
+                                        key={link.label}
+                                        to={link.to}
+                                        className="text-sm text-zinc-400 hover:text-primary transition-colors duration-300"
+                                    >
+                                        {link.label}
+                                    </HashLink>
+
+                                ))}
+
+                            </div>
 
                         </div>
 
-                    </div>
+                        {/* Contact */}
 
-                    {/* Contact */}
+                        <div>
 
-                    <div>
+                            <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-white mb-5">
+                                Reach Out To Us
+                            </h3>
 
-                        <h3 className="text-white font-semibold text-lg mb-6">
-                            Reach Out To Us
-                        </h3>
+                            <div className="flex flex-col gap-y-3">
 
-                        <div className="flex flex-col gap-y-4">
+                                {mainLinks.map((link) => (
 
-                            {mainLinks.map((link) => (
+                                    <HashLink
+                                        key={link.label}
+                                        to={link.to}
+                                        className="text-sm text-zinc-400 hover:text-primary transition-colors duration-300"
+                                    >
+                                        {link.label}
+                                    </HashLink>
 
-                                <HashLink
-                                    key={link.label}
-                                    to={link.to}
-                                    className="text-zinc-400 hover:text-primary transition-colors duration-300"
-                                >
-                                    {link.label}
-                                </HashLink>
+                                ))}
 
-                            ))}
+                            </div>
 
                         </div>
 
@@ -94,17 +101,17 @@ export default function Footer() {
 
                 </div>
 
-            </div>
+                {/* Bottom Bar */}
 
-            {/* Bottom Bar */}
+                <div className="border-t border-zinc-800/70">
 
-            <div className="border-t border-zinc-800">
+                    <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-6 text-center">
 
-                <div className="max-w-7xl mx-auto px-6 py-6 text-center">
+                        <p className="text-xs text-zinc-600">
+                            © 2026 Business2excel. All rights reserved.
+                        </p>
 
-                    <p className="text-sm text-zinc-500">
-                        © 2026 Business2excel. All rights reserved.
-                    </p>
+                    </div>
 
                 </div>
 

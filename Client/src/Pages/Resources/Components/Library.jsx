@@ -1,196 +1,148 @@
 import { Link } from "react-router-dom"
+import Reveal from "../../../Components/Reveal"
+
+function LibraryColumn({ label, image, imageClassName = "", children }) {
+  return (
+    <div className="group relative h-full overflow-hidden rounded-2xl border border-zinc-800 bg-black p-6 sm:p-7 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.9)] transition-colors duration-300 hover:border-primary/30">
+
+      <img src={image} alt="hero" className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03] ${imageClassName}`} />
+      <div className="absolute inset-0 bg-linear-to-b from-black/85 via-black/75 to-black/90" />
+
+      <div className="relative z-10">
+
+        <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
+          {label}
+        </p>
+
+        <div className="mt-4 space-y-1.5">
+          {children}
+        </div>
+
+      </div>
+
+    </div>
+  )
+}
+
+function LibraryLink({ to, title, desc }) {
+  return (
+    <Link
+      to={to}
+      className="group/link block rounded-xl px-3.5 py-3 transition-colors duration-300 hover:bg-white/[0.06]"
+    >
+      <h3 className="flex items-center gap-2 text-sm sm:text-base font-semibold text-white transition-colors duration-300 group-hover/link:text-primary">
+        {title}
+        <span className="text-primary/70 transition-transform duration-300 group-hover/link:translate-x-1">→</span>
+      </h3>
+
+      <p className="mt-1 text-xs sm:text-sm leading-relaxed text-zinc-400">
+        {desc}
+      </p>
+    </Link>
+  )
+}
 
 export default function Library() {
   return (
-    <section id="library" className="bg-black py-20">
+    <section id="library" className="bg-black py-16 sm:py-20 scroll-mt-16">
 
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-          Resource Library
-        </p>
+        <Reveal>
+          <span className="eyebrow">
+            Resource Library
+          </span>
 
-        <h2 className="mt-4 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
-          Browse By Format
-        </h2>
+          <h2 className="heading-2 mt-5 max-w-4xl">
+            Browse By Format
+          </h2>
 
-        <p className="mt-8 max-w-4xl text-lg leading-relaxed text-zinc-200">
-          Whether you prefer reading, listening, watching, or downloading,
-          explore resources designed to help leaders navigate complexity,
-          strengthen stewardship, and create lasting Kingdom impact.
-        </p>
+          <p className="body-text mt-5 max-w-3xl text-zinc-300">
+            Whether you prefer reading, listening, watching, or downloading,
+            explore resources designed to help leaders navigate complexity,
+            strengthen stewardship, and create lasting Kingdom impact.
+          </p>
+        </Reveal>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
+        <div className="mt-12 sm:mt-16 grid gap-5 sm:gap-6 lg:grid-cols-3 items-stretch">
 
           {/* READ */}
 
-          <div className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-black p-10">
+          <Reveal className="h-full">
+            <LibraryColumn label="Read" image="/media/books.jpg">
 
-            <img src="/media/books.jpg" alt="hero" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/70" />
+              <LibraryLink
+                to="/resources/articles"
+                title="Articles"
+                desc="Strategic insights and practical business guidance."
+              />
 
-            <div className="relative z-10">
+              <LibraryLink
+                to="/resources/whitepapers"
+                title="Whitepapers"
+                desc="Research and analysis on emerging marketplace trends."
+              />
 
-              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
-                Read
-              </p>
+              <LibraryLink
+                to="/resources/ai-ethics-reports"
+                title="AI & Ethics Reports"
+                desc="Exploring technology, innovation, and ethical leadership."
+              />
 
-              <div className="mt-6 space-y-2">
+              <LibraryLink
+                to="/resources/biblical-business-insights"
+                title="Biblical Business Insights"
+                desc="Applying biblical wisdom to modern business challenges."
+              />
 
-                <Link
-                  to="/resources/articles"
-                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-                >
-                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                    Articles →
-                  </h3>
+              <LibraryLink
+                to="/resources/leadership-devotionals"
+                title="Leadership Devotionals"
+                desc="Encouragement for leaders seeking Kingdom impact."
+              />
 
-                  <p className="mt-1 text-sm text-zinc-200">
-                    Strategic insights and practical business guidance.
-                  </p>
-                </Link>
-
-                <Link
-                  to="/resources/whitepapers"
-                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-                >
-                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                    Whitepapers →
-                  </h3>
-
-                  <p className="mt-1 text-sm text-zinc-200">
-                    Research and analysis on emerging marketplace trends.
-                  </p>
-                </Link>
-
-                <Link
-                  to="/resources/ai-ethics-reports"
-                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-                >
-                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                    AI & Ethics Reports →
-                  </h3>
-
-                  <p className="mt-1 text-sm text-zinc-200">
-                    Exploring technology, innovation, and ethical leadership.
-                  </p>
-                </Link>
-
-                <Link
-                  to="/resources/biblical-business-insights"
-                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-                >
-                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                    Biblical Business Insights →
-                  </h3>
-
-                  <p className="mt-1 text-sm text-zinc-200">
-                    Applying biblical wisdom to modern business challenges.
-                  </p>
-                </Link>
-
-                <Link
-                  to="/resources/leadership-devotionals"
-                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-                >
-                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                    Leadership Devotionals →
-                  </h3>
-
-                  <p className="mt-1 text-sm text-zinc-200">
-                    Encouragement for leaders seeking Kingdom impact.
-                  </p>
-                </Link>
-
-              </div>
-            </div>
-
-          </div>
+            </LibraryColumn>
+          </Reveal>
 
           {/* WATCH & LISTEN */}
 
-          <div className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-black p-10">
+          <Reveal delay={0.1} className="h-full">
+            <LibraryColumn label="Watch & Listen" image="/media/podcast.jpeg" imageClassName="right-30">
 
-            <img src="/media/podcast.jpeg" alt="hero" className="absolute inset-0 w-full h-full object-cover right-30" />
-            <div className="absolute inset-0 bg-black/70" />
+              <LibraryLink
+                to="/resources/videos"
+                title="Videos"
+                desc="Interviews, training sessions, and keynote presentations."
+              />
 
-            <div className="relative z-10">
+              <LibraryLink
+                to="/resources/podcasts"
+                title="Podcasts"
+                desc="Conversations with leaders, entrepreneurs, and practitioners."
+              />
 
-              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
-                Watch & Listen
-              </p>
-
-              <div className="mt-6 space-y-2">
-
-                <Link
-                  to="/resources/videos"
-                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-                >
-                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                    Videos →
-                  </h3>
-
-                  <p className="mt-1 text-sm text-zinc-200">
-                    Interviews, training sessions, and keynote presentations.
-                  </p>
-                </Link>
-
-                <Link
-                  to="/resources/podcasts"
-                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-                >
-                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                    Podcasts →
-                  </h3>
-
-                  <p className="mt-1 text-sm text-zinc-200">
-                    Conversations with leaders, entrepreneurs, and practitioners.
-                  </p>
-                </Link>
-
-              </div>
-            </div>
-
-          </div>
+            </LibraryColumn>
+          </Reveal>
 
           {/* DOWNLOAD */}
 
-          <div className="relative overflow-hidden rounded-3xl border border-zinc-800 bg-black p-10">
+          <Reveal delay={0.2} className="h-full">
+            <LibraryColumn label="Download" image="/media/downloads.jpg">
 
-            <img src="/media/downloads.jpg" alt="hero" className="absolute inset-0 w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-black/70" />
+              <LibraryLink
+                to="/resources/frameworks"
+                title="Frameworks"
+                desc="Practical tools and implementation guides."
+              />
 
-            <div className="relative z-10">
-              <p className="text-sm font-semibold uppercase tracking-[0.15em] text-primary">
-                Download
-              </p>
-              <div className="mt-6 space-y-2">
-                <Link
-                  to="/resources/frameworks"
-                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-                >
-                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                    Frameworks →
-                  </h3>
-                  <p className="mt-1 text-sm text-zinc-200">
-                    Practical tools and implementation guides.
-                  </p>
-                </Link>
-                <Link
-                  to="/resources/case-studies"
-                  className="group block rounded-xl p-4 transition-all duration-300 hover:bg-zinc-900"
-                >
-                  <h3 className="font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                    Case Studies →
-                  </h3>
-                  <p className="mt-1 text-sm text-zinc-200">
-                    Real-world examples of transformation and impact.
-                  </p>
-                </Link>
-              </div>
-            </div>
+              <LibraryLink
+                to="/resources/case-studies"
+                title="Case Studies"
+                desc="Real-world examples of transformation and impact."
+              />
 
-          </div>
+            </LibraryColumn>
+          </Reveal>
 
         </div>
 

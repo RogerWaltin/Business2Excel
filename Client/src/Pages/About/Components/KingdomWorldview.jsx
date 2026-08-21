@@ -1,3 +1,5 @@
+import Reveal from "../../../Components/Reveal"
+
 export default function KingdomWorldview() {
     const worldviewPrinciples = [
         "integrity",
@@ -11,36 +13,41 @@ export default function KingdomWorldview() {
     ]
 
     return (
-        <section id="kingdom-worldview" className="py-28 border-b border-zinc-900">
+        <section id="kingdom-worldview" className="py-16 sm:py-20 lg:py-24 border-b border-zinc-800/60 scroll-mt-16">
 
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-                <div className="max-w-3xl">
+                <Reveal className="max-w-3xl">
 
-                    <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                    <span className="eyebrow">
                         Kingdom Worldview
                     </span>
 
-                    <h2 className="text-4xl md:text-5xl font-bold mt-6">
+                    <h2 className="heading-2 mt-5">
                         Business as a Platform for Stewardship and Transformation
                     </h2>
 
-                </div>
+                </Reveal>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 mt-10 sm:mt-12">
 
-                    {worldviewPrinciples.map((item) => (
+                    {worldviewPrinciples.map((item, index) => (
 
-                        <div
-                            key={item}
-                            className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8"
-                        >
+                        <Reveal key={item} delay={(index % 4) * 0.06} className="h-full">
 
-                            <h3 className="capitalize text-lg font-semibold">
-                                {item}
-                            </h3>
+                            <div
+                                className="group card h-full px-6 py-6 flex items-center justify-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
+                            >
 
-                        </div>
+                                <span className="h-1.5 w-1.5 rounded-full bg-primary/70 shrink-0 mr-3" />
+
+                                <h3 className="capitalize text-sm sm:text-base font-medium text-zinc-100 text-center">
+                                    {item}
+                                </h3>
+
+                            </div>
+
+                        </Reveal>
 
                     ))}
 

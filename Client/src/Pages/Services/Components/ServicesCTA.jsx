@@ -1,48 +1,55 @@
 import { HashLink } from "react-router-hash-link";
+import Reveal from "../../../Components/Reveal";
 
 export default function ServicesCTA() {
   return (
-    <section className="bg-black py-20">
+    <section className="bg-black py-16 sm:py-20 lg:py-24 relative overflow-hidden">
 
-      <div className="mx-auto max-w-5xl px-6 text-center">
+      {/* Ambient glow */}
+      <div className="glow top-1/2 left-1/2 h-72 w-[42rem] -translate-x-1/2 -translate-y-1/2 bg-primary/[0.07]" />
 
-        {/* Section Label */}
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-          Take The Next Step
-        </p>
+      <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8 text-center relative">
 
-        {/* Heading */}
-        <h2 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl">
-          Ready To Transform
-          <span className="block">
-            Your Organization?
+        <Reveal>
+          {/* Section Label */}
+          <span className="eyebrow">
+            Take The Next Step
           </span>
-        </h2>
 
-        {/* Description */}
-        <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-zinc-400">
-          Whether you're seeking strategic guidance, leadership transformation,
-          Kingdom-centered business practices, or certification, Business2excel
-          provides the framework and support to help your organization thrive
-          with purpose, integrity, and lasting impact.
-        </p>
+          {/* Heading */}
+          <h2 className="heading-1 mt-5">
+            Ready To Transform
+            <span className="block italic">
+              Your Organization?
+            </span>
+          </h2>
 
-        {/* CTA Buttons */}
-        <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
+          {/* Description */}
+          <p className="body-text mx-auto mt-6 max-w-2xl">
+            Whether you're seeking strategic guidance, leadership transformation,
+            Kingdom-centered business practices, or certification, Business2excel
+            provides the framework and support to help your organization thrive
+            with purpose, integrity, and lasting impact.
+          </p>
 
-          <HashLink to="/consultation">
-            <button className="cursor-pointer rounded-xl bg-secondary px-8 py-4 font-semibold text-black transition-all duration-300 hover:bg-primary">
-              Book Consultation
-            </button>
-          </HashLink>
+          {/* CTA Buttons */}
+          <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
 
-          <HashLink to="/certification">
-            <button className="rounded-xl border border-zinc-700 px-8 py-4 font-semibold text-white transition-all duration-300 hover:border-secondary hover:text-primary cursor-pointer">
-              Apply For Certification
-            </button>
-          </HashLink>
+            <HashLink to="/consultation">
+              <button className="btn btn-primary w-full sm:w-auto">
+                Book Consultation
+              </button>
+            </HashLink>
 
-        </div>
+            <HashLink to="/certification">
+              <button className="btn btn-ghost w-full sm:w-auto">
+                Apply For Certification
+              </button>
+            </HashLink>
+
+          </div>
+
+        </Reveal>
 
       </div>
 

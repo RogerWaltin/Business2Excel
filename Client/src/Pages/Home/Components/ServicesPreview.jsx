@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Reveal from "../../../Components/Reveal"
 
 const service = [
     {
@@ -26,54 +27,53 @@ const service = [
 export default function ServicesPreview() {
 
     return (
-        <section id="services-preview" className="py-16 border-b border-zinc-900">
-            <div className="max-w-7xl mx-auto px-6">
-                <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <section id="services-preview" className="py-16 sm:py-20 lg:py-24 border-b border-zinc-800/60">
+            <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+                <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                     {/* Left Side */}
-                    <div>
-                        <span className="text-primary uppercase tracking-widest text-sm">
+                    <Reveal>
+                        <span className="eyebrow">
                             Services
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-bold mt-6">
+                        <h2 className="heading-2 mt-5">
                             Consulting For
                             <span className="text-primary block">
                                 Sustainable Transformation
                             </span>
                         </h2>
-                        <p className="text-zinc-400 text-lg leading-relaxed mt-8">
+                        <p className="body-text mt-6">
                             Practical solutions designed to help organizations
                             navigate complexity, drive innovation, strengthen
                             leadership, and build long-term Kingdom impact.
                         </p>
                         <Link to="/services">
-                            <button className="mt-10 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+                            <button className="btn btn-primary mt-8">
                                 View All Services
                             </button>
                         </Link>
-                    </div>
+                    </Reveal>
                     {/* Right Side */}
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {service.map((item) => (
-                            <div
-                                key={item.title}
-                                className="relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-3xl p-8"
-                            >
-                                <img
-                                    src={item.image}
-                                    alt=""
-                                    className="absolute inset-0 w-full h-full object-cover"
-                                />
-                                <div className="absolute inset-0 bg-black/70" />
+                    <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
+                        {service.map((item, index) => (
+                            <Reveal key={item.title} delay={index * 0.08} className="h-full">
+                                <div className="image-card group h-full min-h-44 transition-colors duration-300 hover:border-secondary/40">
+                                    <img
+                                        src={item.image}
+                                        alt=""
+                                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/60 to-black/30" />
 
-                                <div className="relative z-10">
-                                    <h3 className="text-xl font-bold">
-                                        {item.title}
-                                    </h3>
-                                    <p className="text-zinc-200 mt-4 leading-relaxed">
-                                        {item.desc}
-                                    </p>
+                                    <div className="relative z-10 p-5 sm:p-6">
+                                        <h3 className="text-lg font-semibold tracking-tight">
+                                            {item.title}
+                                        </h3>
+                                        <p className="text-sm text-zinc-300 mt-2 leading-relaxed">
+                                            {item.desc}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            </Reveal>
                         ))}
                     </div>
                 </div>
@@ -81,4 +81,3 @@ export default function ServicesPreview() {
         </section>
     )
 }
-

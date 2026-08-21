@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Reveal from "../../../Components/Reveal"
 
 export default function Events() {
   const eventCards = [
@@ -29,28 +30,28 @@ export default function Events() {
   ]
 
   return (
-    <section id="events" className="py-16 border-b border-zinc-900">
+    <section id="events" className="py-16 sm:py-20 lg:py-24 border-b border-zinc-800/60">
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
           {/* Left Side */}
 
-          <div>
+          <Reveal>
 
-            <span className="text-primary uppercase tracking-widest text-sm">
+            <span className="eyebrow">
               Training & Events
             </span>
 
-            <h2 className="text-4xl md:text-5xl font-bold mt-6">
+            <h2 className="heading-2 mt-5">
               Equipping Leaders
               <span className="text-primary block">
                 For The Future
               </span>
             </h2>
 
-            <p className="text-zinc-400 text-lg leading-relaxed mt-8">
+            <p className="body-text mt-6">
               Practical learning experiences designed to help leaders
               navigate transformation, stewardship, innovation,
               organizational growth, and Kingdom influence in a
@@ -58,55 +59,58 @@ export default function Events() {
             </p>
 
             <Link to="/community">
-              <button className="mt-10 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
+              <button className="btn btn-primary mt-8">
                 Explore Community
               </button>
             </Link>
 
-          </div>
+          </Reveal>
 
           {/* Right Side */}
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-5">
 
-            {eventCards.map((card) => (
+            {eventCards.map((card, index) => (
 
-              <div
-                key={card.label}
-                className={"relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-secondary/30 transition-all duration-300"}
-              >
+              <Reveal key={card.label} delay={index * 0.08} className="h-full">
 
-                {/* Background Image */}
+                <div
+                  className={"image-card group h-full min-h-48 transition-colors duration-300 hover:border-secondary/40"}
+                >
 
-                <img
-                  src={card.image}
-                  alt=""
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+                  {/* Background Image */}
 
-                {/* Dark Overlay */}
+                  <img
+                    src={card.image}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
 
-                <div className="absolute inset-0 bg-black/70" />
+                  {/* Dark Overlay */}
 
-                {/* Content */}
+                  <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/60 to-black/30" />
 
-                <div className="relative z-10">
+                  {/* Content */}
 
-                  <span className={"text-primary uppercase tracking-wider text-sm"}>
-                    {card.label}
-                  </span>
+                  <div className="relative z-10 p-5 sm:p-6">
 
-                  <h3 className="text-2xl font-bold mt-4">
-                    {card.title}
-                  </h3>
+                    <span className={"text-[11px] font-semibold uppercase tracking-[0.18em] text-primary"}>
+                      {card.label}
+                    </span>
 
-                  <p className="text-zinc-200 leading-relaxed mt-4">
-                    {card.description}
-                  </p>
+                    <h3 className="text-lg font-semibold tracking-tight mt-2">
+                      {card.title}
+                    </h3>
+
+                    <p className="text-sm text-zinc-300 leading-relaxed mt-2">
+                      {card.description}
+                    </p>
+
+                  </div>
 
                 </div>
 
-              </div>
+              </Reveal>
 
             ))}
 

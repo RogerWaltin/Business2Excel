@@ -12,11 +12,11 @@ export default function FormSubmissionModal({
 
     if (isSubmitting) {
         return (
-            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-                <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-8 py-6 shadow-2xl flex items-center gap-4">
-                    <div className="w-6 h-6 border-4 border-zinc-700 border-t-primary rounded-full animate-spin" />
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm px-5">
+                <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-7 py-6 shadow-[0_32px_64px_-24px_rgba(0,0,0,0.8)] flex items-center gap-4">
+                    <div className="w-5 h-5 border-[3px] border-zinc-700 border-t-primary rounded-full animate-spin" />
 
-                    <p className="text-lg text-zinc-100">
+                    <p className="text-sm font-medium text-zinc-100">
                         Sending Inquiry...
                     </p>
                 </div>
@@ -32,19 +32,19 @@ export default function FormSubmissionModal({
     const isVerification = submitStatus === "verification"
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-            <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-8 py-7 shadow-2xl text-center max-w-sm mx-6">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+            <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-7 py-8 shadow-[0_32px_64px_-24px_rgba(0,0,0,0.8)] text-center max-w-sm mx-5">
 
-                <div className={`text-4xl mb-4 ${isSuccess
-                    ? "text-primary"
+                <div className={`mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-full border text-xl font-bold ${isSuccess
+                    ? "border-primary/40 bg-primary/10 text-primary"
                     : isVerification
-                        ? "text-yellow-500"
-                        : "text-red-500"
+                        ? "border-yellow-500/40 bg-yellow-500/10 text-yellow-500"
+                        : "border-red-500/40 bg-red-500/10 text-red-500"
                     }`}>
                     {isSuccess ? "✓" : "!"}
                 </div>
 
-                <h2 className="text-2xl font-semibold text-zinc-100 mb-2">
+                <h2 className="text-lg font-semibold text-zinc-100 mb-2">
                     {isSuccess
                         ? successTitle
                         : isVerification
@@ -52,7 +52,7 @@ export default function FormSubmissionModal({
                             : errorTitle}
                 </h2>
 
-                <p className="text-zinc-400 mb-6">
+                <p className="text-sm leading-relaxed text-zinc-400 mb-6">
                     {isSuccess
                         ? successMessage
                         : isVerification
@@ -63,7 +63,7 @@ export default function FormSubmissionModal({
                 <button
                     type="button"
                     onClick={onClose}
-                    className="bg-primary text-black font-semibold px-6 py-2.5 rounded-xl hover:bg-secondary active:translate-y-1 transition-all duration-150 cursor-pointer"
+                    className="inline-flex cursor-pointer items-center justify-center rounded-xl bg-secondary px-6 py-2.5 text-sm font-semibold text-black transition-all duration-200 hover:bg-primary active:translate-y-0"
                 >
                     Close
                 </button>
