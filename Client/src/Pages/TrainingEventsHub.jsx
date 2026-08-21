@@ -3,6 +3,7 @@ import { customButton } from "../data/customStylesAndLogic";
 import useFormSubmission from "../Components/hooks/useFormSubmission";
 import FormTurnstile from "../Components/forms/FormTurnstile";
 import FormSubmissionModal from "../Components/forms/FormSubmissionModal";
+import Reveal from "../Components/Reveal";
 
 const opportunities = [
     {
@@ -86,26 +87,32 @@ export default function TrainingEventsHub() {
 
             {/* Hero */}
 
-            <section className="py-20 border-b border-zinc-900">
+            <section className="py-16 sm:py-20 lg:py-24 border-b border-zinc-800/60 relative overflow-hidden">
 
-                <div className="max-w-5xl mx-auto px-6 text-center">
+                <div className="glow -top-24 left-1/2 h-64 w-[36rem] -translate-x-1/2 bg-primary/[0.07]" />
 
-                    <span className="text-primary uppercase tracking-widest text-sm">
-                        Training & Events
-                    </span>
+                <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center relative">
 
-                    <h1 className="text-4xl md:text-6xl font-bold mt-6">
-                        Equipping Leaders
-                        <span className="text-primary block">
-                            For Kingdom Impact
+                    <Reveal>
+
+                        <span className="eyebrow justify-center">
+                            Training & Events
                         </span>
-                    </h1>
 
-                    <p className="text-zinc-400 text-lg leading-relaxed mt-8 max-w-3xl mx-auto">
-                        Participate in workshops, conferences, webinars, and mentorship
-                        opportunities designed to strengthen leadership, stewardship,
-                        innovation, and organizational transformation.
-                    </p>
+                        <h1 className="heading-1 mt-5">
+                            Equipping Leaders
+                            <span className="text-primary block italic">
+                                For Kingdom Impact
+                            </span>
+                        </h1>
+
+                        <p className="body-text mt-5">
+                            Participate in workshops, conferences, webinars, and mentorship
+                            opportunities designed to strengthen leadership, stewardship,
+                            innovation, and organizational transformation.
+                        </p>
+
+                    </Reveal>
 
                 </div>
 
@@ -113,32 +120,37 @@ export default function TrainingEventsHub() {
 
             {/* Opportunities */}
 
-            <section className="py-16 border-b border-zinc-900">
+            <section className="py-14 sm:py-16 border-b border-zinc-800/60">
 
-                <div className="max-w-7xl mx-auto px-6">
+                <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
 
-                        {opportunities.map((item) => (
+                        {opportunities.map((item, index) => (
 
-                            <div
-                                key={item.category}
-                                className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8"
-                            >
+                            <Reveal key={item.category} delay={index * 0.07} className="h-full">
 
-                                <span className="text-primary uppercase text-sm tracking-wider">
-                                    {item.category}
-                                </span>
+                                <div
+                                    className="card group h-full p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
+                                >
 
-                                <h3 className="text-2xl font-bold mt-4">
-                                    {item.title}
-                                </h3>
+                                    <div className="h-px w-8 bg-primary/60 transition-all duration-300 group-hover:w-14" />
 
-                                <p className="text-zinc-400 mt-4">
-                                    {item.description}
-                                </p>
+                                    <span className="block text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mt-4">
+                                        {item.category}
+                                    </span>
 
-                            </div>
+                                    <h3 className="text-lg font-semibold tracking-tight mt-2.5">
+                                        {item.title}
+                                    </h3>
+
+                                    <p className="text-sm text-zinc-400 leading-relaxed mt-2.5">
+                                        {item.description}
+                                    </p>
+
+                                </div>
+
+                            </Reveal>
 
                         ))}
 
@@ -189,95 +201,97 @@ export default function TrainingEventsHub() {
 
             {/* Registration Form */}
 
-            <section className="py-16 border-b border-zinc-900">
+            <section className="py-14 sm:py-16 border-b border-zinc-800/60">
 
-                <div className="max-w-4xl mx-auto px-6">
+                <div className="max-w-2xl mx-auto px-5 sm:px-6 lg:px-8">
 
-                    <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+                    <Reveal>
+                        <div className="card p-6 sm:p-8 shadow-[0_32px_80px_-40px_rgba(0,0,0,0.9)]">
 
-                        <h2 className="text-3xl font-bold text-center">
-                            Join Our Programmes
-                        </h2>
+                            <h2 className="heading-3 text-center">
+                                Join Our Programmes
+                            </h2>
 
-                        <form
-                            onSubmit={handleFormSubmit}
-                            className="space-y-6 mt-10"
-                            autoComplete="off"
-                        >
-
-                            <input
-                                type="text"
-                                name="fullName"
-                                value={formData.fullName}
-                                onChange={handleChange}
-                                required
-                                placeholder="Full Name"
-                                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
-                            />
-
-                            <input
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                required
-                                placeholder="Email Address"
-                                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
-                            />
-
-                            <input
-                                type="text"
-                                name="organization"
-                                value={formData.organization}
-                                onChange={handleChange}
-                                required
-                                placeholder="Organization"
-                                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
-                            />
-
-                            <select
-                                name="areaOfInterest"
-                                value={formData.areaOfInterest}
-                                onChange={handleChange}
-                                required
-                                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary"
+                            <form
+                                onSubmit={handleFormSubmit}
+                                className="space-y-5 mt-8"
+                                autoComplete="off"
                             >
-                                <option value="" disabled>
-                                    Select Area of Interest
-                                </option>
-                                <option value="Workshops">Workshops</option>
-                                <option value="Conferences">Conferences</option>
-                                <option value="Webinars">Webinars</option>
-                                <option value="Mentorship">Mentorship</option>
-                            </select>
 
-                            <textarea
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                rows="5"
-                                placeholder="Tell us about your goals..."
-                                className="w-full bg-zinc-950 border border-zinc-800 rounded-xl px-4 py-4 outline-none focus:border-secondary resize-none"
-                                required
-                            />
+                                <input
+                                    type="text"
+                                    name="fullName"
+                                    value={formData.fullName}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Full Name"
+                                    className="input-field"
+                                />
 
-                            <FormTurnstile
-                                ref={turnstileRef}
-                                onSuccess={setTurnstileToken}
-                                onExpire={() => setTurnstileToken("")}
-                            />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Email Address"
+                                    className="input-field"
+                                />
 
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className={`${customButton} w-full disabled:opacity-60 disabled:cursor-not-allowed`}
-                            >
-                                Submit Registration
-                            </button>
+                                <input
+                                    type="text"
+                                    name="organization"
+                                    value={formData.organization}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Organization"
+                                    className="input-field"
+                                />
 
-                        </form>
+                                <select
+                                    name="areaOfInterest"
+                                    value={formData.areaOfInterest}
+                                    onChange={handleChange}
+                                    required
+                                    className="input-field"
+                                >
+                                    <option value="" disabled>
+                                        Select Area of Interest
+                                    </option>
+                                    <option value="Workshops">Workshops</option>
+                                    <option value="Conferences">Conferences</option>
+                                    <option value="Webinars">Webinars</option>
+                                    <option value="Mentorship">Mentorship</option>
+                                </select>
 
-                    </div>
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    rows="5"
+                                    placeholder="Tell us about your goals..."
+                                    className="input-field resize-none"
+                                    required
+                                />
+
+                                <FormTurnstile
+                                    ref={turnstileRef}
+                                    onSuccess={setTurnstileToken}
+                                    onExpire={() => setTurnstileToken("")}
+                                />
+
+                                <button
+                                    type="submit"
+                                    disabled={isSubmitting}
+                                    className={`${customButton} w-full disabled:opacity-60 disabled:cursor-not-allowed`}
+                                >
+                                    Submit Registration
+                                </button>
+
+                            </form>
+
+                        </div>
+                    </Reveal>
 
                 </div>
 

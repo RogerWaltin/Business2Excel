@@ -1,56 +1,65 @@
+import Reveal from "../../../Components/Reveal"
+
 export default function Testimonials() {
   return (
-    <section id="testimonials-case-studies" className="py-28 border-b border-zinc-900 relative overflow-hidden">
+    <section id="testimonials-case-studies" className="py-16 sm:py-20 lg:py-24 border-b border-zinc-800/60 relative overflow-hidden scroll-mt-16">
 
       <img src="/media/casestudy.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
 
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-linear-to-b from-zinc-950/95 via-black/85 to-zinc-950/95" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 relative z-10">
 
-        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-          Case Studies
-        </span>
+        <Reveal className="max-w-3xl">
 
-        <h2 className="text-4xl md:text-5xl font-bold mt-6">
-          Real Organizational Transformation
-        </h2>
+          <span className="eyebrow">
+            Case Studies
+          </span>
 
-        <div className="grid lg:grid-cols-3 gap-8 mt-16">
+          <h2 className="heading-2 mt-5">
+            Real Organizational Transformation
+          </h2>
 
-          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
-            <h3 className="text-2xl font-bold">
-              Leadership Transformation
-            </h3>
+        </Reveal>
 
-            <p className="text-zinc-400 leading-relaxed mt-6">
-              Improved executive alignment, stronger team culture, and
-              mission-driven decision making through leadership
-              transformation frameworks.
-            </p>
-          </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-10 sm:mt-12">
 
-          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
-            <h3 className="text-2xl font-bold">
-              Business Reinvention
-            </h3>
+          {[
+            {
+              title: "Leadership Transformation",
+              desc: "Improved executive alignment, stronger team culture, and mission-driven decision making through leadership transformation frameworks.",
+            },
+            {
+              title: "Business Reinvention",
+              desc: "Strategic reinvention guidance for organizations navigating digital disruption and AI transformation.",
+            },
+            {
+              title: "Ethical Framework",
+              desc: "Governance and accountability systems that strengthened trust, stewardship, and organizational credibility.",
+            },
+          ].map((item, index) => (
 
-            <p className="text-zinc-400 leading-relaxed mt-6">
-              Strategic reinvention guidance for organizations navigating
-              digital disruption and AI transformation.
-            </p>
-          </div>
+            <Reveal key={item.title} delay={index * 0.08} className="h-full">
 
-          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
-            <h3 className="text-2xl font-bold">
-              Ethical Framework
-            </h3>
+              <div className="group h-full rounded-2xl border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
 
-            <p className="text-zinc-400 leading-relaxed mt-6">
-              Governance and accountability systems that strengthened trust,
-              stewardship, and organizational credibility.
-            </p>
-          </div>
+                <span className="font-display text-sm font-bold text-primary">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <h3 className="text-lg font-semibold tracking-tight mt-3">
+                  {item.title}
+                </h3>
+
+                <p className="text-sm text-zinc-400 leading-relaxed mt-3">
+                  {item.desc}
+                </p>
+
+              </div>
+
+            </Reveal>
+
+          ))}
 
         </div>
 

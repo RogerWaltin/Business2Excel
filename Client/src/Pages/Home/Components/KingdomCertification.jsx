@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Reveal from "../../../Components/Reveal"
 
 const certificationBenefit = [
   "Build Customer Trust",
@@ -20,114 +21,130 @@ const certificationJourney = [
 
 export default function KingdomCertification() {
   return (
-    <section id="kingdom-certification" className="py-16 border-b border-zinc-900">
+    <section id="kingdom-certification" className="py-16 sm:py-20 lg:py-24 border-b border-zinc-800/60">
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-        <div className="max-w-4xl mx-auto text-center">
+        <Reveal className="max-w-3xl mx-auto text-center">
 
-          <h2 className="text-3xl md:text-5xl font-bold">
+          <span className="eyebrow">
+            Kingdom Certification
+          </span>
+
+          <h2 className="heading-2 mt-5">
             The Kingdom Certification Framework
           </h2>
 
-          <p className="text-zinc-400 text-base md:text-lg leading-relaxed mt-8">
+          <p className="body-text mt-5">
             More than a credential, Kingdom Certification provides a pathway
             toward ethical excellence, leadership accountability,
             organizational trust, and Kingdom-centered impact.
           </p>
 
-        </div>
+        </Reveal>
 
         {/* Benefits & Journey */}
 
-        <div className="grid lg:grid-cols-2 gap-8 mt-16 max-w-5xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 mt-12 sm:mt-16 max-w-5xl mx-auto">
 
           {/* What You Gain */}
-          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+          <Reveal>
+            <div className="card p-6 sm:p-8 h-full">
 
-            <span className="text-primary uppercase tracking-wider text-sm">
-              What You Gain
-            </span>
+              <span className="eyebrow">
+                What You Gain
+              </span>
 
-            <div className="space-y-4 mt-8">
+              <div className="mt-6">
 
-              {certificationBenefit.map((item) => (
+                {certificationBenefit.map((item) => (
 
-                <div
-                  key={item}
-                  className="flex items-center gap-4 border-b border-zinc-800 pb-4 last:border-0 last:pb-0"
-                >
+                  <div
+                    key={item}
+                    className="flex items-center gap-3.5 border-b border-zinc-800/70 py-3.5 last:border-0"
+                  >
 
-                  <span className="text-primary font-bold min-w-6">
-                    ✓
-                  </span>
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
+                      ✓
+                    </span>
 
-                  <span className="font-medium">
-                    {item}
-                  </span>
+                    <span className="text-sm sm:text-base font-medium text-zinc-200">
+                      {item}
+                    </span>
 
-                </div>
+                  </div>
 
-              ))}
+                ))}
+
+              </div>
 
             </div>
-
-          </div>
+          </Reveal>
 
           {/* Certification Journey */}
-          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+          <Reveal delay={0.1}>
+            <div className="card p-6 sm:p-8 h-full">
 
-            <span className="text-primary uppercase tracking-wider text-sm">
-              Certification Journey
-            </span>
+              <span className="eyebrow">
+                Certification Journey
+              </span>
 
-            <div className="space-y-4 mt-8">
+              <div className="mt-6">
 
-              {certificationJourney.map((item, index) => (
+                {certificationJourney.map((item, index) => (
 
-                <div
-                  key={item}
-                  className="flex items-center gap-4 border-b border-zinc-800 pb-4 last:border-0 last:pb-0"
-                >
+                  <div
+                    key={item}
+                    className="flex items-center gap-3.5 border-b border-zinc-800/70 py-3.5 last:border-0"
+                  >
 
-                  <span className="text-primary font-bold min-w-6">
-                    {(index + 1).toString().padStart(2, "0")}
-                  </span>
+                    <span className="w-7 shrink-0 font-display text-sm font-bold text-primary">
+                      {(index + 1).toString().padStart(2, "0")}
+                    </span>
 
-                  <span className="font-medium">
-                    {item}
-                  </span>
+                    <span className="text-sm sm:text-base font-medium text-zinc-200">
+                      {item}
+                    </span>
 
-                </div>
+                  </div>
 
-              ))}
+                ))}
+
+              </div>
 
             </div>
-
-          </div>
+          </Reveal>
 
         </div>
 
         {/* CTA */}
 
-        <div className="mt-12 bg-zinc-900 border border-zinc-800 rounded-3xl p-8 max-w-5xl mx-auto text-center">
+        <Reveal delay={0.15}>
+          <div className="relative overflow-hidden mt-8 sm:mt-10 rounded-2xl border border-zinc-800 bg-zinc-900 p-6 sm:p-8 max-w-5xl mx-auto text-center">
 
-          <h3 className="text-xl md:text-2xl font-bold">
-            Ready To Pursue Kingdom Certification?
-          </h3>
+            <div className="glow -top-20 left-1/2 h-48 w-96 -translate-x-1/2 bg-primary/10" />
 
-          <p className="text-zinc-400 mt-4 max-w-2xl mx-auto">
-            Begin the journey toward ethical excellence, leadership
-            accountability, organizational trust, and lasting Kingdom impact.
-          </p>
+            <div className="relative">
 
-          <Link to="/certification">
-            <button className="mt-6 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              Start Certification
-            </button>
-          </Link>
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight">
+                Ready To Pursue Kingdom Certification?
+              </h3>
 
-        </div>
+              <p className="text-sm sm:text-base text-zinc-400 leading-relaxed mt-3 max-w-2xl mx-auto">
+                Begin the journey toward ethical excellence, leadership
+                accountability, organizational trust, and lasting Kingdom impact.
+              </p>
+
+              <Link to="/certification">
+                <button className="btn btn-primary mt-6">
+                  Start Certification
+                </button>
+              </Link>
+
+            </div>
+
+          </div>
+        </Reveal>
 
       </div>
 

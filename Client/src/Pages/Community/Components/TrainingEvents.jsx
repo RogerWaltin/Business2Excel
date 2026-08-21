@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import Reveal from "../../../Components/Reveal"
 
 const trainingEvents = [
   {
@@ -60,71 +61,76 @@ const trainingEvents = [
 
 export default function TrainingEvents() {
   return (
-    <section id="training-events" className="scroll-mt-24 py-28 border-b border-zinc-900">
+    <section id="training-events" className="scroll-mt-16 py-16 sm:py-20 lg:py-24 border-b border-zinc-800/60">
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-        <div className="max-w-4xl">
+        <Reveal className="max-w-3xl">
 
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+          <span className="eyebrow">
             Training & Events
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-6">
+          <h2 className="heading-2 mt-5">
             Equipping Leaders for the Future
           </h2>
 
-          <p className="text-zinc-400 text-lg leading-relaxed mt-8">
+          <p className="body-text mt-5">
             Practical learning experiences designed to help leaders navigate
             transformation, stewardship, innovation, organizational growth,
             and Kingdom influence in a rapidly changing world.
           </p>
 
-        </div>
+        </Reveal>
 
-        <div className="grid lg:grid-cols-2 gap-8 mt-20">
+        <div className="grid lg:grid-cols-2 gap-5 sm:gap-6 mt-12 sm:mt-16">
 
-          {trainingEvents.map((item) => (
+          {trainingEvents.map((item, index) => (
 
-            <div
-              key={item.id}
-              id={item.id}
-              className="scroll-mt-24 bg-zinc-900 border border-zinc-800 rounded-3xl p-10 hover:border-secondary/30 transition-all duration-300 relative overflow-hidden"
-            >
+            <Reveal key={item.id} delay={(index % 2) * 0.1} className="h-full">
 
-              <img src={item.image} alt="" className="absolute inset-0 h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-black/70" />
+              <div
+                id={item.id}
+                className="image-card group h-full scroll-mt-24 transition-colors duration-300 hover:border-secondary/40"
+              >
 
-              <div className="relative z-10">
-                <span className="text-sm uppercase tracking-[0.2em] text-primary">
-                  {item.category}
-                </span>
-                <h3 className="text-3xl font-bold mt-4">
-                  {item.title}
-                </h3>
-                <p className="text-zinc-400 leading-relaxed mt-6">
-                  {item.description}
-                </p>
-                {item.topics.length > 0 && (
-                  <div className="flex flex-wrap gap-3 mt-8">
-                    {item.topics.map((topic) => (
-                      <span
-                        key={topic}
-                        className="bg-zinc-950/70 backdrop-blur-xs border border-zinc-800 rounded-full px-4 py-2 text-sm"
-                      >
-                        {topic}
-                      </span>
-                    ))}
+                <img src={item.image} alt="" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/65 to-black/40" />
+
+                <div className="relative z-10 flex h-full flex-col p-6 sm:p-8">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
+                    {item.category}
+                  </span>
+                  <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight mt-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-zinc-300 leading-relaxed mt-3.5">
+                    {item.description}
+                  </p>
+                  {item.topics.length > 0 && (
+                    <div className="flex flex-wrap gap-2.5 mt-6">
+                      {item.topics.map((topic) => (
+                        <span
+                          key={topic}
+                          className="chip"
+                        >
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <div className="mt-auto pt-7">
+                    <Link to="/training-events">
+                      <button className="btn btn-primary">
+                        {item.buttonText}
+                      </button>
+                    </Link>
                   </div>
-                )}
-                <Link to="/training-events">
-                  <button className="mt-8 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-                    {item.buttonText}
-                  </button>
-                </Link>
+                </div>
+
               </div>
 
-            </div>
+            </Reveal>
 
           ))}
 

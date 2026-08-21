@@ -1,3 +1,5 @@
+import Reveal from "../../../Components/Reveal"
+
 const impactStats = [
   {
     number: "500+",
@@ -21,27 +23,31 @@ export default function CommunityImpact() {
   return (
     <section
       id="impact"
-      className="scroll-mt-24 py-24 border-b border-zinc-900"
+      className="scroll-mt-16 py-16 sm:py-20 lg:py-24 border-b border-zinc-800/60"
     >
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
           {/* Left Side */}
-          <div>
+          <Reveal>
 
-            <h2 className="text-4xl md:text-5xl font-bold mt-6">
+            <span className="eyebrow">
+              Our Impact
+            </span>
+
+            <h2 className="heading-2 mt-5">
               Connection That Leads to <span className="text-primary">Impact</span> & Transformation
             </h2>
 
-            <p className="text-zinc-400 text-lg leading-relaxed mt-8">
+            <p className="body-text mt-6">
               The Business2excel ecosystem exists to unite entrepreneurs,
               executives, consultants, investors, and ministry leaders around
               a shared vision of Kingdom-centered business transformation.
             </p>
 
-            <p className="text-zinc-400 text-lg leading-relaxed mt-6">
+            <p className="body-text mt-4">
               Through strategic relationships, collaboration opportunities,
               mission initiatives, and transformational stories, we are
               building a movement that influences industries, communities,
@@ -50,27 +56,30 @@ export default function CommunityImpact() {
 
 
 
-          </div>
+          </Reveal>
 
           {/* Right Side */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-3.5 sm:gap-5">
 
-            {impactStats.map((stat) => (
+            {impactStats.map((stat, index) => (
 
-              <div
-                key={stat.label}
-                className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 text-center"
-              >
+              <Reveal key={stat.label} delay={index * 0.07} className="h-full">
 
-                <h3 className="text-5xl font-bold text-primary">
-                  {stat.number}
-                </h3>
+                <div
+                  className="group card h-full p-5 sm:p-7 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/40"
+                >
 
-                <p className="text-zinc-400 mt-4">
-                  {stat.label}
-                </p>
+                  <h3 className="font-display text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-primary">
+                    {stat.number}
+                  </h3>
 
-              </div>
+                  <p className="text-xs sm:text-sm text-zinc-400 mt-2.5 font-medium">
+                    {stat.label}
+                  </p>
+
+                </div>
+
+              </Reveal>
 
             ))}
 

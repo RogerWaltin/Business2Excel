@@ -1,80 +1,72 @@
+import Reveal from "../../../Components/Reveal"
+
 export default function NetworkProjectsStories() {
   return (
     <section
       id="network-projects-stories"
-      className="scroll-mt-24 py-10 border-b border-zinc-900"
+      className="scroll-mt-16 py-16 sm:py-20 border-b border-zinc-800/60"
     >
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-        <span className="inline-flex items-center rounded-full border border-secondary/30 bg-secondary/10 px-4 py-2 text-sm tracking-widest uppercase text-primary">
-          Networks, Projects & Stories
-        </span>
+        <Reveal>
+          <span className="badge-pill">
+            Networks, Projects & Stories
+          </span>
+        </Reveal>
 
-        <div className="grid lg:grid-cols-3 gap-8 mt-24">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-10 sm:mt-14">
 
-          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
+          {[
+            {
+              label: "Kingdom Business Network",
+              title: "Build Strategic Relationships",
+              desc: "Connect with entrepreneurs, executives, consultants, investors, and Kingdom-minded leaders who share your vision for impact.",
+              button: "Join Network",
+            },
+            {
+              label: "Mission Projects",
+              title: "Advance Meaningful Change",
+              desc: "Participate in initiatives focused on community development, economic empowerment, leadership formation, and Kingdom impact.",
+              button: "Explore Projects",
+            },
+            {
+              label: "Transformation Stories",
+              title: "See Real Impact",
+              desc: "Discover stories of leaders, businesses, and organizations experiencing transformation through Kingdom-centered leadership.",
+              button: "Read Stories",
+            },
+          ].map((item, index) => (
 
-            <span className="text-primary uppercase tracking-wider text-sm">
-              Kingdom Business Network
-            </span>
+            <Reveal key={item.label} delay={index * 0.08} className="h-full">
 
-            <h3 className="text-3xl font-bold mt-4">
-              Build Strategic Relationships
-            </h3>
+              <div className="card group flex h-full flex-col p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40">
 
-            <p className="text-zinc-400 leading-relaxed mt-6">
-              Connect with entrepreneurs, executives, consultants, investors,
-              and Kingdom-minded leaders who share your vision for impact.
-            </p>
+                <span className="eyebrow">
+                  {item.label}
+                </span>
 
-            <button className="mt-8 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              Join Network
-            </button>
+                <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight mt-4">
+                  {item.title}
+                </h3>
 
-          </div>
+                <p className="text-sm text-zinc-400 leading-relaxed mt-3.5">
+                  {item.desc}
+                </p>
 
-          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
+                <div className="mt-auto pt-7">
 
-            <span className="text-primary uppercase tracking-wider text-sm">
-              Mission Projects
-            </span>
+                  <button className="btn btn-primary">
+                    {item.button}
+                  </button>
 
-            <h3 className="text-3xl font-bold mt-4">
-              Advance Meaningful Change
-            </h3>
+                </div>
 
-            <p className="text-zinc-400 leading-relaxed mt-6">
-              Participate in initiatives focused on community development,
-              economic empowerment, leadership formation, and Kingdom impact.
-            </p>
+              </div>
 
-            <button className="mt-8 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              Explore Projects
-            </button>
+            </Reveal>
 
-          </div>
-
-          <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
-
-            <span className="text-primary uppercase tracking-wider text-sm">
-              Transformation Stories
-            </span>
-
-            <h3 className="text-3xl font-bold mt-4">
-              See Real Impact
-            </h3>
-
-            <p className="text-zinc-400 leading-relaxed mt-6">
-              Discover stories of leaders, businesses, and organizations
-              experiencing transformation through Kingdom-centered leadership.
-            </p>
-
-            <button className="mt-8 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300 cursor-pointer">
-              Read Stories
-            </button>
-
-          </div>
+          ))}
 
         </div>
 

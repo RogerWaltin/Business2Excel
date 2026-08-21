@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Reveal from "../../../Components/Reveal";
 
 export default function ServicesHero() {
     const scrollToServices = () => {
@@ -7,105 +8,87 @@ export default function ServicesHero() {
         });
     }
 
-    return (
-        <section className="relative overflow-hidden pt-20 pb-10">
+    const stats = [
+        { value: "12+", label: "Years Experience" },
+        { value: "AI", label: "Business Reinvention" },
+        { value: "4", label: "Strategic Pillars" },
+        { value: "✓", label: "Ethical Certification" },
+    ]
 
-            {/* <div className="absolute pointer-events-none inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.15),transparent_35%)]" /> */}
-            
+    return (
+        <section className="relative overflow-hidden pt-16 pb-16 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-24 border-b border-zinc-800/60">
+
             <img src="/media/services.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
 
-            <div className="absolute inset-0 bg-black/70" />
+            <div className="absolute inset-0 bg-linear-to-r from-zinc-950/95 via-black/80 to-zinc-950/50" />
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-zinc-950 to-transparent" />
 
-            <div className="mx-auto max-w-7xl px-6 relative z-10">
+            <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 relative z-10">
 
-                <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
+                <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 lg:items-center">
 
                     {/* Left Content */}
-                    <div>
-                        <span className="inline-flex items-center rounded-full border border-secondary/75 px-4 py-2 text-sm tracking-widest uppercase text-primary bg-black/50 backdrop-blur-xs">
+                    <Reveal>
+                        <span className="badge-pill">
                             Services
                         </span>
-                        <h1 className="mt-4 text-5xl font-bold leading-tight tracking-tight text-white lg:text-5xl">
+                        <h1 className="heading-1 mt-6">
                             Transforming Organizations
-                            <span className="block text-primary">
+                            <span className="block text-primary italic">
                                 For Lasting Kingdom Impact
                             </span>
                         </h1>
 
-                        <p className="mt-8 max-w-xl text-lg leading-relaxed text-zinc-400">
+                        <p className="body-text mt-6 max-w-xl">
                             Helping leaders navigate disruption, strengthen leadership,
                             embrace innovation, and build organizations rooted in purpose,
                             stewardship, and excellence.
                         </p>
 
-                        <div className="mt-10 flex flex-wrap gap-4">
+                        <div className="mt-8 flex flex-wrap gap-3">
 
                             <Link to="/consultation">
-                                <button className="rounded-xl bg-secondary px-6 py-4 font-semibold text-black transition-all duration-300 hover:bg-primary cursor-pointer">
+                                <button className="btn btn-primary">
                                     Book Consultation
                                 </button>
                             </Link>
 
-                            <button onClick={scrollToServices} className="rounded-xl border border-zinc-700 px-6 py-4 font-semibold text-white transition-all duration-300 hover:border-secondary hover:text-primary cursor-pointer bg-black/50 backdrop-blur-xs">
+                            <button onClick={scrollToServices} className="btn btn-ghost">
                                 Explore Certifications
                             </button>
 
                         </div>
 
-                    </div>
+                    </Reveal>
 
                     {/* Right Content */}
-                    <div>
+                    <Reveal delay={0.15}>
+                        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/60 p-5 sm:p-7 backdrop-blur-md shadow-[0_32px_64px_-24px_rgba(0,0,0,0.8)]">
 
-                        <div className="rounded-3xl border border-zinc-800 bg-zinc-900/50 p-8 backdrop-blur-xs">
+                            <div className="grid gap-3.5 grid-cols-2">
 
-                            <div className="grid gap-6 sm:grid-cols-2">
+                                {stats.map((stat) => (
 
-                                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/50 backdrop-blur-xs p-6">
-                                    <p className="text-4xl font-bold text-primary">
-                                        12+
-                                    </p>
-                                    <p className="mt-2 text-zinc-400">
-                                        Years Experience
-                                    </p>
-                                </div>
+                                    <div key={stat.label} className="rounded-xl border border-zinc-800 bg-zinc-950/60 backdrop-blur-sm p-4 sm:p-5 transition-colors duration-300 hover:border-primary/40">
+                                        <p className="font-display text-2xl sm:text-3xl font-bold text-primary">
+                                            {stat.value}
+                                        </p>
+                                        <p className="mt-1.5 text-xs sm:text-sm text-zinc-400">
+                                            {stat.label}
+                                        </p>
+                                    </div>
 
-                                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/50 backdrop-blur-xs p-6">
-                                    <p className="text-4xl font-bold text-primary">
-                                        AI
-                                    </p>
-                                    <p className="mt-2 text-zinc-400">
-                                        Business Reinvention
-                                    </p>
-                                </div>
-
-                                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/50 backdrop-blur-xs p-6">
-                                    <p className="text-4xl font-bold text-primary">
-                                        4
-                                    </p>
-                                    <p className="mt-2 text-zinc-400">
-                                        Strategic Pillars
-                                    </p>
-                                </div>
-
-                                <div className="rounded-2xl border border-zinc-800 bg-zinc-950/50 backdrop-blur-xs p-6">
-                                    <p className="text-4xl font-bold text-primary">
-                                        ✓
-                                    </p>
-                                    <p className="mt-2 text-zinc-400">
-                                        Ethical Certification
-                                    </p>
-                                </div>
+                                ))}
 
                             </div>
 
-                            <div className="mt-8 rounded-2xl border border-zinc-800 bg-zinc-950/50 backdrop-blur-xs p-6">
+                            <div className="mt-4 rounded-xl border border-zinc-800 bg-zinc-950/60 backdrop-blur-sm p-4 sm:p-5">
 
-                                <h3 className="text-lg font-semibold text-white">
+                                <h3 className="text-base font-semibold text-white">
                                     Kingdom Business Transformation
                                 </h3>
 
-                                <p className="mt-3 text-zinc-400">
+                                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
                                     A strategic framework that integrates leadership,
                                     stewardship, innovation, and Kingdom principles into
                                     sustainable organizational growth.
@@ -114,8 +97,7 @@ export default function ServicesHero() {
                             </div>
 
                         </div>
-
-                    </div>
+                    </Reveal>
 
                 </div>
 

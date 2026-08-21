@@ -1,39 +1,45 @@
-import { Link } from "react-router-dom"
 import { HashLink } from "react-router-hash-link"
+import Reveal from "../../../Components/Reveal"
 
 export default function WhoAreWe() {
   return (
-    <section id="who-are-we" className="py-16 border-b border-zinc-900">
+    <section id="who-are-we" className="py-16 sm:py-20 lg:py-24 border-b border-zinc-800/60 relative overflow-hidden">
 
-      <div className="max-w-5xl mx-auto px-6 text-center">
+      <div className="glow top-0 left-1/2 h-64 w-[40rem] -translate-x-1/2 bg-primary/5" />
 
-        <span className="text-primary uppercase tracking-widest text-sm">
-          Who Are We?
-        </span>
+      <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center relative">
 
-        <h2 className="text-3xl md:text-5xl font-bold mt-6">
-          Why Business2excel Exists
-        </h2>
+        <Reveal>
 
-        <p className="text-zinc-400 text-base md:text-lg leading-relaxed mt-8 max-w-3xl mx-auto">
-          Business2excel exists to help leaders, entrepreneurs, and
-          organizations integrate Kingdom principles with strategic
-          excellence, ethical leadership, innovation, and long-term impact.
-        </p>
+          <span className="eyebrow">
+            Who Are We?
+          </span>
 
-        <p className="text-zinc-400 text-base md:text-lg leading-relaxed mt-6 max-w-3xl mx-auto">
-          We believe business can be a powerful force for transformation.
-          Through consulting, certification, leadership development,
-          community, and business as mission initiatives, we equip
-          organizations to thrive while creating meaningful Kingdom impact.
-        </p>
+          <h2 className="heading-2 mt-5">
+            Why Business2excel Exists
+          </h2>
 
-        <HashLink
-          to="/about#our-story"
-          className="inline-block mt-10 bg-secondary hover:bg-primary text-black font-semibold px-6 py-3 rounded-xl transition-all duration-300"
-        >
-          Read Our Story
-        </HashLink>
+          <p className="body-text mt-6">
+            Business2excel exists to help leaders, entrepreneurs, and
+            organizations integrate Kingdom principles with strategic
+            excellence, ethical leadership, innovation, and long-term impact.
+          </p>
+
+          <p className="body-text mt-4">
+            We believe business can be a powerful force for transformation.
+            Through consulting, certification, leadership development,
+            community, and business as mission initiatives, we equip
+            organizations to thrive while creating meaningful Kingdom impact.
+          </p>
+
+          <HashLink
+            to="/about#our-story"
+            className="btn btn-primary mt-8"
+          >
+            Read Our Story
+          </HashLink>
+
+        </Reveal>
 
       </div>
 

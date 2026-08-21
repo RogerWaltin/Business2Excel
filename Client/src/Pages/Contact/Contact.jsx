@@ -45,7 +45,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-[calc(100vh-64px)] bg-zinc-950 px-6 py-14 relative overflow-hidden">
+    <div className="min-h-[calc(100vh-64px)] bg-zinc-950 px-5 sm:px-6 py-12 sm:py-16 relative overflow-hidden">
 
       <FormSubmissionModal
         isSubmitting={isSubmitting}
@@ -59,31 +59,36 @@ export default function Contact() {
         className="absolute inset-0 h-full w-full object-cover"
       />
 
-      <div className="absolute inset-0 bg-black/70" />
+      <div className="absolute inset-0 bg-linear-to-b from-zinc-950/90 via-black/85 to-zinc-950/95" />
 
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-3xl mx-auto relative z-10">
 
-        <div className="bg-zinc-900 border border-zinc-800 rounded-3xl p-8 md:p-10 shadow-2xl">
+        <div className="bg-zinc-900/80 backdrop-blur-md border border-zinc-800 rounded-2xl p-6 sm:p-10 shadow-[0_32px_80px_-32px_rgba(0,0,0,0.9)]">
 
           {/* Heading */}
-          <h1 className="text-4xl font-bold text-primary mb-12">
-            Contact Us
-          </h1>
+          <div className="mb-8 sm:mb-10">
+            <span className="eyebrow">
+              Get In Touch
+            </span>
+            <h1 className="heading-2 mt-4">
+              Contact Us
+            </h1>
+          </div>
 
           {/* Form */}
           <form
             onSubmit={handleFormSubmit}
-            className="flex flex-col gap-8"
+            className="flex flex-col gap-6"
             autoComplete="off"
           >
 
             {/* Row 1 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
 
               {/* First Name */}
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
 
-                <label className="text-lg text-zinc-200">
+                <label className="text-sm font-medium text-zinc-300">
                   First Name
                   <span className="text-red-500 ml-1">*</span>
                 </label>
@@ -95,15 +100,15 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="John"
-                  className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors"
+                  className="input-field bg-zinc-950/80"
                 />
 
               </div>
 
               {/* Last Name */}
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
 
-                <label className="text-lg text-zinc-200">
+                <label className="text-sm font-medium text-zinc-300">
                   Last Name
                   <span className="text-red-500 ml-1">*</span>
                 </label>
@@ -115,7 +120,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="Doe"
-                  className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors"
+                  className="input-field bg-zinc-950/80"
                 />
 
               </div>
@@ -123,12 +128,12 @@ export default function Contact() {
             </div>
 
             {/* Row 2 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
 
               {/* Email */}
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
 
-                <label className="text-lg text-zinc-200">
+                <label className="text-sm font-medium text-zinc-300">
                   Email
                   <span className="text-red-500 ml-1">*</span>
                 </label>
@@ -140,15 +145,15 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   placeholder="john@example.com"
-                  className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors"
+                  className="input-field bg-zinc-950/80"
                 />
 
               </div>
 
               {/* Mobile */}
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
 
-                <label className="text-lg text-zinc-200">
+                <label className="text-sm font-medium text-zinc-300">
                   Mobile Number
                   <span className="text-red-500 ml-1">*</span>
                 </label>
@@ -159,7 +164,7 @@ export default function Contact() {
                   value={formData.mobile}
                   onChange={handleChange}
                   placeholder="+91 12345 67890"
-                  className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors"
+                  className="input-field bg-zinc-950/80"
                   required
                 />
 
@@ -168,9 +173,9 @@ export default function Contact() {
             </div>
 
             {/* How did you hear about us */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2">
 
-              <label className="text-lg text-zinc-200">
+              <label className="text-sm font-medium text-zinc-300">
                 How did you hear about us?
                 <span className="text-red-500 ml-1">*</span>
               </label>
@@ -179,7 +184,7 @@ export default function Contact() {
                 name="howDidYouHear"
                 value={formData.howDidYouHear}
                 onChange={handleChange}
-                className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-base outline-none focus:border-primary transition-colors text-zinc-200"
+                className="input-field bg-zinc-950/80"
                 required
               >
                 <option value="" disabled>Select an option</option>
@@ -194,9 +199,9 @@ export default function Contact() {
             </div>
 
             {/* Message */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2">
 
-              <label className="text-lg text-zinc-200">
+              <label className="text-sm font-medium text-zinc-300">
                 Your Message
                 <span className="text-red-500 ml-1">*</span>
               </label>
@@ -207,7 +212,7 @@ export default function Contact() {
                 onChange={handleChange}
                 rows="6"
                 placeholder="Write your message here..."
-                className="bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-4 text-base outline-none focus:border-primary transition-colors resize-y"
+                className="input-field bg-zinc-950/80 resize-y"
                 required
               />
 

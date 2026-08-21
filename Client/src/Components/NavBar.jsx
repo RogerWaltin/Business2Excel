@@ -222,27 +222,27 @@ export default function Navbar() {
       <div className="relative">
 
         {/* Navbar */}
-        <nav className="bg-zinc-900/75 backdrop-blur-md border-b border-zinc-800">
+        <nav className="bg-zinc-950/80 backdrop-blur-md">
 
-          <div className="max-w-7xl mx-auto px-6 h-18 flex items-center">
+          <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-16 flex items-center">
 
             {/* Logo */}
-            <HashLink smooth to="/" className="mr-auto">
-              <img src={logo} alt="logo" className="w-28 lg:w-32 h-auto" />
+            <HashLink smooth to="/" className="mr-auto flex items-center">
+              <img src={logo} alt="logo" className="w-24 sm:w-28 lg:w-32 h-auto" />
             </HashLink>
 
             {/* Hamburger */} {/* BUG rapidly clicking hamburger menu causes the logo to not switch and the dropdown menu stuck in current state */}
             <button
               onClick={handleMenu}
-              className="lg:hidden ml-auto text-white hover:text-primary transition-colors duration-300 cursor-pointer"
+              className="lg:hidden ml-auto text-zinc-300 hover:text-primary transition-colors duration-300 cursor-pointer rounded-lg p-1.5 -mr-1.5"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
               {menuOpen ? (
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
@@ -262,13 +262,13 @@ export default function Navbar() {
                   <HashLink
                     smooth
                     to={section.to}
-                    className="h-fit w-fit flex items-center gap-2 mx-7 text-white hover:text-primary transition-all duration-300"
+                    className="h-fit w-fit flex items-center gap-1.5 mx-5 text-sm text-zinc-300 hover:text-primary transition-colors duration-300"
                   >
                     <span className="font-medium">{section.label}</span>
 
                     {section.dropdownGroups && (
                       <svg
-                        className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180"
+                        className="w-3.5 h-3.5 mt-px opacity-70 transition-transform duration-300 group-hover:rotate-180"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
@@ -281,21 +281,21 @@ export default function Navbar() {
 
                   {/* Desktop Dropdown */}
                   {section.dropdownGroups && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                      <div className="w-225 bg-zinc-900/95 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 shadow-2xl grid grid-cols-2 gap-12">
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300">
+                      <div className="w-136 bg-zinc-900/95 backdrop-blur-xl border border-zinc-800 rounded-2xl p-6 shadow-[0_32px_64px_-24px_rgba(0,0,0,0.8)] grid grid-cols-2 gap-x-8 gap-y-6">
                         {section.dropdownGroups.map((group) => (
                           <div key={group.title}>
-                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary">
                               {group.title}
                             </p>
-                            <div className="mt-3 h-px bg-zinc-800" />
-                            <div className="mt-5 flex flex-col">
+                            <div className="mt-3 h-px bg-linear-to-r from-primary/25 to-transparent" />
+                            <div className="mt-3 flex flex-col">
                               {group.links.map((link) => (
                                 <HashLink
                                   key={link.label}
                                   smooth
                                   to={link.to}
-                                  className="rounded-xl px-4 py-3 text-zinc-300 transition-all duration-300 hover:bg-zinc-800 hover:text-primary"
+                                  className="rounded-lg px-3 py-2 text-sm text-zinc-400 transition-colors duration-200 hover:bg-zinc-800/70 hover:text-primary"
                                 >
                                   {link.label}
                                 </HashLink>
@@ -315,12 +315,15 @@ export default function Navbar() {
 
           </div>
 
+          {/* Gold hairline */}
+          <div className="h-px bg-linear-to-r from-transparent via-primary/40 to-transparent" />
+
         </nav>
 
         {/* ── Mobile Menu Overlay ── */}
         <div
           className={`
-            lg:hidden fixed inset-x-0 top-18 bottom-0 z-40
+            lg:hidden fixed inset-x-0 top-16 bottom-0 z-40
             bg-zinc-950/98 backdrop-blur-xl
             overflow-y-auto overscroll-contain
             transition-all duration-300 ease-in-out
@@ -330,7 +333,7 @@ export default function Navbar() {
             }
           `}
         >
-          <div className="px-6 py-6 flex flex-col gap-1 pb-16">
+          <div className="px-5 py-5 flex flex-col gap-1 pb-16">
 
             {navSections.map((section) => {
               const hasDropdown = Boolean(section.dropdownGroups)
@@ -344,7 +347,7 @@ export default function Navbar() {
 
                     <button
                       onClick={() => toggleSection(section.label)}
-                      className="w-full flex items-center justify-between py-4 text-lg font-medium text-white hover:text-primary transition-colors duration-200 cursor-pointer"
+                      className="w-full flex items-center justify-between py-3.5 text-base font-medium text-white hover:text-primary transition-colors duration-200 cursor-pointer"
                       aria-label={isOpen ? `Collapse ${section.label}` : `Expand ${section.label}`}
                     >
 
@@ -360,7 +363,7 @@ export default function Navbar() {
                       </HashLink>
 
                       <svg
-                        className={`w-5 h-5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                        className={`w-4.5 h-4.5 text-zinc-500 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
@@ -377,7 +380,7 @@ export default function Navbar() {
                       smooth
                       to={section.to}
                       onClick={handleMenu}
-                      className="block py-4 text-lg font-medium text-white hover:text-primary transition-colors duration-200"
+                      className="block py-3.5 text-base font-medium text-white hover:text-primary transition-colors duration-200"
                     >
                       {section.label}
                     </HashLink>
@@ -386,12 +389,12 @@ export default function Navbar() {
 
                   {/* Accordion body — rendered when open */}
                   {hasDropdown && isOpen && (
-                    <div className="pb-4 flex flex-col gap-6">
+                    <div className="pb-4 flex flex-col gap-5">
                       {section.dropdownGroups.map((group) => (
                         <div key={group.title}>
 
                           {/* Group title */}
-                          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary px-2 mb-2">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-primary px-2 mb-1.5">
                             {group.title}
                           </p>
 
@@ -403,7 +406,7 @@ export default function Navbar() {
                                 smooth
                                 to={link.to}
                                 onClick={handleMenu}
-                                className="rounded-xl px-4 py-3 text-zinc-300 hover:bg-zinc-800 hover:text-primary transition-all duration-200"
+                                className="rounded-lg px-3 py-2.5 text-sm text-zinc-400 hover:bg-zinc-800/70 hover:text-primary transition-colors duration-200"
                               >
                                 {link.label}
                               </HashLink>

@@ -1,3 +1,5 @@
+import Reveal from "../../../Components/Reveal"
+
 export default function ServicesInsights() {
     const insights = [
         {
@@ -62,34 +64,36 @@ export default function ServicesInsights() {
     ]
 
     return (
-        <section className="bg-black pt-20">
-            <div className="mx-auto max-w-7xl px-6">
+        <section className="bg-black pt-16 sm:pt-20">
+            <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
 
                 {/* Section Label */}
-                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                    Industry Insights
-                </p>
+                <Reveal>
+                    <span className="eyebrow">
+                        Industry Insights
+                    </span>
 
-                {/* Heading */}
-                <h2 className="mt-4 max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white md:text-5xl">
-                    Businesses Are Facing A Crisis Of Meaning
-                </h2>
+                    {/* Heading */}
+                    <h2 className="heading-2 mt-5 max-w-4xl">
+                        Businesses Are Facing A Crisis Of Meaning
+                    </h2>
 
-                {/* Paragraph */}
-                <p className="mt-8 max-w-3xl text-lg leading-relaxed text-zinc-400">
-                    Organizations today face unprecedented pressure to adapt.
-                    Rapid technological change, shifting cultural expectations,
-                    and growing demands for ethical leadership are reshaping
-                    the future of business.
-                </p>
+                    {/* Paragraph */}
+                    <p className="body-text mt-5 max-w-3xl">
+                        Organizations today face unprecedented pressure to adapt.
+                        Rapid technological change, shifting cultural expectations,
+                        and growing demands for ethical leadership are reshaping
+                        the future of business.
+                    </p>
+                </Reveal>
 
                 {/* Insights Grid */}
-                <div className="mt-16 grid gap-6 md:grid-cols-2 md:auto-rows-[20rem] lg:gap-8">
+                <div className="mt-12 sm:mt-16 grid gap-6 md:grid-cols-2 md:auto-rows-[20rem] lg:gap-8">
 
                     {insights.map((insight, index) => (
                         <div
                             key={insight.title}
-                            className="group relative min-h-80 overflow-hidden rounded-3xl border border-zinc-800"
+                            className="group relative min-h-80 overflow-hidden rounded-2xl border border-zinc-800 shadow-[0_24px_60px_-32px_rgba(0,0,0,0.9)]"
                         >
 
                             {/* Shared Image Cut-Out */}
@@ -97,19 +101,19 @@ export default function ServicesInsights() {
                                 src="/media/insights.jpg"
                                 alt=""
                                 aria-hidden="true"
-                                className={`absolute h-[calc(600%+7.5rem)] w-full max-w-none object-cover md:h-[calc(300%+3rem)] md:w-[calc(200%+1.5rem)] ${imagePositions[index].mobile} ${imagePositions[index].desktop}`}
+                                className={`absolute h-[calc(600%+7.5rem)] w-full max-w-none object-cover transition-transform duration-500 group-hover:scale-[1.03] md:h-[calc(300%+3rem)] md:w-[calc(200%+1.5rem)] ${imagePositions[index].mobile} ${imagePositions[index].desktop}`}
                             />
 
                             {/* Dark Overlay */}
-                            <div className="absolute inset-0 bg-black/65 transition-all duration-300 group-hover:bg-black/50" />
+                            <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/65 to-black/45 transition-all duration-300 group-hover:from-black/75 group-hover:via-black/50 group-hover:to-black/30" />
 
                             {/* Card Content */}
-                            <div className="relative z-10 flex h-full flex-col justify-start p-8 md:p-10">
-                                <h3 className="text-2xl font-semibold text-white">
+                            <div className="relative z-10 flex h-full flex-col justify-start p-6 sm:p-8">
+                                <h3 className="text-xl sm:text-2xl font-semibold tracking-tight text-white">
                                     {insight.title}
                                 </h3>
 
-                                <p className="mt-5 leading-relaxed text-zinc-300">
+                                <p className="mt-4 text-sm sm:text-base leading-relaxed text-zinc-300">
                                     {insight.description}
                                 </p>
                             </div>
