@@ -1,5 +1,5 @@
 import { HashLink } from "react-router-hash-link"
-import logo from "../Assets/B2E_LogoOld.png"
+import logo from "/media/Business2excel_Logo.png"
 
 export default function Footer() {
 
