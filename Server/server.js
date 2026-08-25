@@ -1,13 +1,13 @@
 import express from "express";
 import "dotenv/config";
 import cors from "cors";
-import {
-  submitContactForm,
-  submitCertificationForm,
-  submitConsultationForm,
-  submitNetworkForm,
-  submitTrainingEventsForm
-} from "./controllers/formController.js";
+
+import { submitContactForm } from "./controllers/contactController.js";
+import { submitCertificationForm } from "./controllers/certificationController.js";
+import { submitConsultationForm } from "./controllers/consultationController.js";
+import { submitNetworkForm } from "./controllers/networkController.js";
+import { submitTrainingEventsForm } from "./controllers/trainingEventsController.js";
+
 import { formLimiter } from "./middleware/rateLimiter.js";
 
 const app = express();
